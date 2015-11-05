@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: 5ecc83855c294ac4287a825418c5ed87
+timeCreated: 1437825802
+licenseType: Pro
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c000000
+  assetHash:
+    serializedVersion: 2
+    Hash: a9fc65567366f64a18608f10594a0450
+  longitude: -105.283
+  latitude: 40.017000000000003
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -1.51201463, y: 7.38500738, z: 27.3482971}
+      lookAt: {x: 1.57707286, y: 4.01991224, z: 19.679163}
+      up: {x: .140848637, y: .926221788, z: -.349678397}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: aileron_l
+    100002: aileron_r
+    100004: armament
+    100006: cockpit
+    100008: elevator_l
+    100010: gear_l
+    100012: gear_l 1
+    100014: Gears
+    100016: Group 1
+    100018: Group 12
+    100020: Group 13
+    100022: Group 15
+    100024: Group 17
+    100026: Group 18
+    100028: Group 2
+    100030: Group 20
+    100032: Group 22
+    100034: Group 24
+    100036: Group 26
+    100038: Group 29
+    100040: Group 33
+    100042: Group 35
+    100044: Group 4
+    100046: Group 43
+    100048: Group 45
+    100050: Group 5
+    100052: Group 54
+    100054: Group 66
+    100056: Group 83
+    100058: Group 87
+    100060: Group 89
+    100062: Gruppe#15
+    100064: Gruppe#15 1
+    100066: Gruppe#16
+    100068: Gruppe#16 1
+    100070: Gruppe#16 2
+    100072: Gruppe#16 3
+    100074: Gruppe#17
+    100076: Gruppe#17 1
+    100078: Gruppe#17 2
+    100080: Gruppe#17 3
+    100082: Gruppe#20
+    100084: Gruppe#20 1
+    100086: misc_a
+    100088: misc_b
+    100090: rudder
+    100092: static_p01
+    100094: static_p01 1
+    100096: //RootNode
+    100098: wheel_lm_d
+    100100: wheel_rm_d
+    400000: aileron_l
+    400002: aileron_r
+    400004: armament
+    400006: cockpit
+    400008: elevator_l
+    400010: gear_l
+    400012: gear_l 1
+    400014: Gears
+    400016: Group 1
+    400018: Group 12
+    400020: Group 13
+    400022: Group 15
+    400024: Group 17
+    400026: Group 18
+    400028: Group 2
+    400030: Group 20
+    400032: Group 22
+    400034: Group 24
+    400036: Group 26
+    400038: Group 29
+    400040: Group 33
+    400042: Group 35
+    400044: Group 4
+    400046: Group 43
+    400048: Group 45
+    400050: Group 5
+    400052: Group 54
+    400054: Group 66
+    400056: Group 83
+    400058: Group 87
+    400060: Group 89
+    400062: Gruppe#15
+    400064: Gruppe#15 1
+    400066: Gruppe#16
+    400068: Gruppe#16 1
+    400070: Gruppe#16 2
+    400072: Gruppe#16 3
+    400074: Gruppe#17
+    400076: Gruppe#17 1
+    400078: Gruppe#17 2
+    400080: Gruppe#17 3
+    400082: Gruppe#20
+    400084: Gruppe#20 1
+    400086: misc_a
+    400088: misc_b
+    400090: rudder
+    400092: static_p01
+    400094: static_p01 1
+    400096: //RootNode
+    400098: wheel_lm_d
+    400100: wheel_rm_d
+    2300000: aileron_l
+    2300002: aileron_r
+    2300004: cockpit
+    2300006: elevator_l
+    2300008: Gears
+    2300010: Group 13
+    2300012: Group 15
+    2300014: Group 18
+    2300016: Group 2
+    2300018: Group 20
+    2300020: Group 22
+    2300022: Group 24
+    2300024: Group 26
+    2300026: Group 29
+    2300028: Group 33
+    2300030: Group 35
+    2300032: Group 43
+    2300034: Group 45
+    2300036: Group 54
+    2300038: Group 66
+    2300040: Group 83
+    2300042: Group 87
+    2300044: Group 89
+    2300046: Gruppe#15
+    2300048: Gruppe#15 1
+    2300050: Gruppe#16
+    2300052: Gruppe#16 1
+    2300054: Gruppe#16 2
+    2300056: Gruppe#16 3
+    2300058: Gruppe#17
+    2300060: Gruppe#17 1
+    2300062: Gruppe#17 2
+    2300064: Gruppe#17 3
+    2300066: Gruppe#20
+    2300068: Gruppe#20 1
+    2300070: misc_a
+    2300072: misc_b
+    2300074: rudder
+    2300076: static_p01
+    2300078: static_p01 1
+    2300080: wheel_lm_d
+    2300082: wheel_rm_d
+    3300000: aileron_l
+    3300002: aileron_r
+    3300004: cockpit
+    3300006: elevator_l
+    3300008: Gears
+    3300010: Group 13
+    3300012: Group 15
+    3300014: Group 18
+    3300016: Group 2
+    3300018: Group 20
+    3300020: Group 22
+    3300022: Group 24
+    3300024: Group 26
+    3300026: Group 29
+    3300028: Group 33
+    3300030: Group 35
+    3300032: Group 43
+    3300034: Group 45
+    3300036: Group 54
+    3300038: Group 66
+    3300040: Group 83
+    3300042: Group 87
+    3300044: Group 89
+    3300046: Gruppe#15
+    3300048: Gruppe#15 1
+    3300050: Gruppe#16
+    3300052: Gruppe#16 1
+    3300054: Gruppe#16 2
+    3300056: Gruppe#16 3
+    3300058: Gruppe#17
+    3300060: Gruppe#17 1
+    3300062: Gruppe#17 2
+    3300064: Gruppe#17 3
+    3300066: Gruppe#20
+    3300068: Gruppe#20 1
+    3300070: misc_a
+    3300072: misc_b
+    3300074: rudder
+    3300076: static_p01
+    3300078: static_p01 1
+    3300080: wheel_lm_d
+    3300082: wheel_rm_d
+    4300000: Mesh Group 2
+    4300002: Mesh wheel_lm_d
+    4300004: Mesh wheel_rm_d
+    4300006: Mesh elevator_l
+    4300008: Mesh Group 13
+    4300010: Mesh Group 15
+    4300012: Mesh Group 18
+    4300014: Mesh Group 20
+    4300016: Mesh Group 22
+    4300018: Mesh Group 24
+    4300020: Mesh Group 26
+    4300022: Mesh Group 29
+    4300024: Mesh Gruppe#20
+    4300026: Mesh Group 33
+    4300028: Mesh Group 35
+    4300030: Mesh rudder
+    4300032: Mesh misc_b
+    4300034: Mesh misc_a
+    4300036: Mesh Group 43
+    4300038: Mesh aileron_l
+    4300040: Mesh aileron_r
+    4300042: Mesh Gruppe#15
+    4300044: Mesh Group 54
+    4300046: Mesh Gruppe#16
+    4300048: Mesh Gruppe#17
+    4300050: Mesh cockpit
+    4300052: Mesh static_p01
+    4300054: Mesh Gears
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

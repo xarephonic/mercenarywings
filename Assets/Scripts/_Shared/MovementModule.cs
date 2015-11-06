@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AircraftMovement : MonoBehaviour {
+public class MovementModule : MonoBehaviour {
 
 	public float airSpeed;
 	public float altitude;

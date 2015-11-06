@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AircraftCore : MonoBehaviour {
+public class AircraftFireControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

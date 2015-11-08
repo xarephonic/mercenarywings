@@ -22,7 +22,7 @@ public class planeswapper : MonoBehaviour {
 
 	public Image pilotPic;
 
-	public plane currentPlane;
+	public AircraftCore currentPlane;
 
 	public bool stopAutoMove;
 
@@ -39,7 +39,7 @@ public class planeswapper : MonoBehaviour {
 
 		planesArray[planesArrayIndex].SetActive(true);
 
-		currentPlane = planesArray[planesArrayIndex].GetComponent<plane>();
+		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
 	}
 
 	public void Back()
@@ -55,7 +55,7 @@ public class planeswapper : MonoBehaviour {
 		
 		planesArray[planesArrayIndex].SetActive(true);
 
-		currentPlane = planesArray[planesArrayIndex].GetComponent<plane>();
+		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
 	}
 
 	public void GoToIndex(int i)
@@ -68,18 +68,21 @@ public class planeswapper : MonoBehaviour {
 
 		planesArray[planesArrayIndex].SetActive(true);
 		
-		currentPlane = planesArray[planesArrayIndex].GetComponent<plane>();
+		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
 	}
 
 	// Use this for initialization
 	void Start () {
+
+        currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
 
 		planeName.text = currentPlane.name;
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+
+    void Update () {
 
 		//plane camera control
 		if(!stopAutoMove)
@@ -102,7 +105,7 @@ public class planeswapper : MonoBehaviour {
 		}
 
 		//plane bars
-
+        /*
 		planeName.text = currentPlane.name;
 
 		Image airAttBar = planeStatBars[0];
@@ -132,6 +135,7 @@ public class planeswapper : MonoBehaviour {
 		pilotName.text = currentPlane.driver.name;
 
 		pilotPic.sprite = currentPlane.driver.picture;
+        */
 
 	}
 }

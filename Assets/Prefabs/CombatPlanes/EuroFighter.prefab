@@ -2336,6 +2336,9 @@ GameObject:
   - 114: {fileID: 11449556}
   - 114: {fileID: 11469850}
   - 114: {fileID: 11407080}
+  - 114: {fileID: 11465986}
+  - 114: {fileID: 11478806}
+  - 114: {fileID: 11427434}
   m_Layer: 0
   m_Name: EuroFighter
   m_TagString: Untagged
@@ -9128,14 +9131,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airSpeed: 0
   altitude: 0
-  stallSpeed: 0
-  maxSpeed: 0
-  accelerationRate: 0
-  decelerationRate: 0
-  climbSpeedLoss: 0
-  diveSpeedGain: 0
-  turnRate: 0
-  turnEfficiencyMultiplier: 0
+  stallSpeed: 10
+  maxSpeed: 30
+  accelerationRate: 10
+  decelerationRate: 5
+  climbSpeedLoss: 1
+  diveSpeedGain: 3
+  turnRate: 60
+  turnEfficiencyMultiplier: .25
+--- !u!114 &11427434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2c1214a960745559fd63763801602e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterMeasuresCount: 10
+  flareCount: 0
+  chaffCount: 0
+  radarEcmStrength: 4
+  infraredEcmStrength: 4
 --- !u!114 &11449556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9147,6 +9166,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422dc06663d3e4ec490829bec355694c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aircraftId: 0
+  movementModule: {fileID: 0}
+  trackingModule: {fileID: 0}
+  loadoutModule: {fileID: 0}
+  fireControlModule: {fileID: 0}
+--- !u!114 &11465986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c36b84dd7fd24d158677444f9f2f7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  lastTrackedPosition: {x: 0, y: 0, z: 0}
+  trackType: 0
+  trackAngle: 0
+  trackRange: 0
+  locked: 0
+  trackProgress: 0
+  sensorStrength: 0
+  baseLockTimeConstant: 0
 --- !u!114 &11469850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9161,6 +9205,26 @@ MonoBehaviour:
   hardPointsRoot: {fileID: 185700}
   hardPointPositions: []
   loadedArmament: []
+--- !u!114 &11478806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c36b84dd7fd24d158677444f9f2f7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  lastTrackedPosition: {x: 0, y: 0, z: 0}
+  trackType: 1
+  trackAngle: 0
+  trackRange: 0
+  locked: 0
+  trackProgress: 0
+  sensorStrength: 0
+  baseLockTimeConstant: 0
 --- !u!198 &19871294
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -10255,7 +10319,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: turnEfficiencyMultiplier
-      value: .5
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stallSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: accelerationRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: decelerationRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: climbSpeedLoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: diveSpeedGain
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: turnRate
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: trackType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: counterMeasuresCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: radarEcmStrength
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: infraredEcmStrength
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

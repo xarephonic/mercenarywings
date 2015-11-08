@@ -5,92 +5,37 @@ public class TestMissileMovement : MonoBehaviour {
 
 	public GameObject target;
 
-	public Vector3 targetHeading;
-	public float targetSpeed;
-
-	public float angleToTarget;
-
-	public float angleDifferenceBetweenHeadings;
-	public float delta;
+    public float losAngle;
 
 	public LineRenderer headingRenderer;
 	public LineRenderer losRenderer;
 
 	public MovementModule movementModule;
 
-	public void GetTargetHeading()
-	{
-		targetHeading = target.transform.forward;
-	}
-
-	public void GetTargetSpeed()
-	{
-		targetSpeed = target.GetComponent<MovementModule>().airSpeed;
-	}
-
-	public void GetAngleToTarget()
-	{
-		angleToTarget = Vector3.Angle(transform.forward,targetHeading);
-	}
 
 	public void GetAngleDifference()
 	{
-		float newAngleDiff = 0;
+        Vector3 losToTarget = target.transform.position - transform.position;
 
-		newAngleDiff = Vector3.Angle(transform.forward,(target.transform.position - transform.position));
+        float newLosAngle = Vector3.Angle(losToTarget, transform.forward);
 
-		delta = newAngleDiff - angleDifferenceBetweenHeadings;
+        if(losAngle == 0)
+        {
+            losAngle = newLosAngle;
+        }
 
-		angleDifferenceBetweenHeadings = newAngleDiff;
+        float deltaLosAngle = losAngle - newLosAngle;
 
-		Vector3 targetLocalPos = transform.InverseTransformPoint(target.transform.position);
+        Debug.Log(deltaLosAngle);
 
-		Debug.Log("Target "+targetLocalPos);
+        movementModule.SetCommandsForThisTurn(100, deltaLosAngle * 100, 0, 0);
 
-		if(delta > 1)
-		{
-			Debug.Log("turning into target");
+        losAngle = newLosAngle;
 
-			if(targetLocalPos.x > 0)
-			{
-				Debug.Log("target to my right");
-
-				movementModule.SetCommandsForThisTurn(100,100,0,0);
-			}
-			else if(targetLocalPos.x < 0)
-			{
-				Debug.Log("target to my left");
-
-				movementModule.SetCommandsForThisTurn(100,-100,0,0);
-			}
-
-		}
-		else if(delta < -1)
-		{
-			Debug.Log("turning away from target");
-
-			if(targetLocalPos.x > 0)
-			{
-				Debug.Log("target to my right");
-
-				movementModule.SetCommandsForThisTurn(100,-100,0,0);
-			}
-			else if(targetLocalPos.x < 0)
-			{
-				Debug.Log("target to my left");
-
-				movementModule.SetCommandsForThisTurn(100,100,0,0);
-			}
-		}
-		else
-		{
-			movementModule.SetCommandsForThisTurn(100,0,0,0);
-		}
-
-		movementModule.ExecuteMovement();
+        movementModule.ExecuteMovement();
 
 		losRenderer.SetPosition(0,transform.position);
-		losRenderer.SetPosition(1,target.transform.position);
+		losRenderer.SetPosition(1,transform.position + losToTarget);
 
 		headingRenderer.SetPosition(0,transform.position);
 		headingRenderer.SetPosition(1,transform.position+transform.forward*100);
@@ -104,10 +49,7 @@ public class TestMissileMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		GetTargetSpeed();
-		GetTargetHeading();
-		GetAngleToTarget();
+
 		GetAngleDifference();
 	}
 }

@@ -16,7 +16,7 @@ public class BottomBarControl : MonoBehaviour {
 
 			x.transform.SetParent(gameObject.transform);
 
-			x.GetComponent<Button>().image.sprite = ps.planesArray[i].GetComponent<plane>().planePicture;
+			x.GetComponent<Button>().image.sprite = ps.planesArray[i].GetComponent<AircraftCore>().aircraftPicture;
 
 			int indexToGoTo = i;
 

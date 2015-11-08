@@ -10,6 +10,8 @@ public class AircraftCore : MonoBehaviour {
 	public AircraftLoadout loadoutModule;
 	public AircraftFireControl fireControlModule;
 
+    public Sprite aircraftPicture;
+
 	// Use this for initialization
 	void Start () {
 	

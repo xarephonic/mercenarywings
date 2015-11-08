@@ -117,11 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 203734431}
-  targetHeading: {x: 0, y: 0, z: 0}
-  targetSpeed: 0
-  angleToTarget: 0
-  angleDifferenceBetweenHeadings: 0
-  delta: 0
+  losAngle: 0
   headingRenderer: {fileID: 399248391}
   losRenderer: {fileID: 2026625355}
   movementModule: {fileID: 0}
@@ -174,8 +170,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 125890077}
-  m_LocalRotation: {x: 0, y: .969352543, z: 0, w: .245673999}
-  m_LocalPosition: {x: 394.899994, y: 95.7993011, z: 180.100006}
+  m_LocalRotation: {x: 0, y: .897674918, z: 0, w: .44065842}
+  m_LocalPosition: {x: 395, y: 95.7993011, z: 338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 399248392}

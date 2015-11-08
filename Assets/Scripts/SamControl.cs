@@ -26,7 +26,7 @@ public class SamControl : MonoBehaviour {
 		{
 			myMissile.transform.SetParent(null);
 
-			myMissile.GetComponent<MissileMovement>().Fire(target);
+			//myMissile.GetComponent<MissileMovement>().Fire(target);
 
 			myMissile = null;
 		}

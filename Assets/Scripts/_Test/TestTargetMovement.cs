@@ -5,6 +5,8 @@ public class TestTargetMovement : MonoBehaviour {
 
 	public LineRenderer headingRenderer;
 
+	public float x;
+
 	// Use this for initialization
 	void Start () {
 
@@ -14,7 +16,7 @@ public class TestTargetMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		GetComponent<MovementModule>().SetCommandsForThisTurn(0,0,0,0);
+		GetComponent<MovementModule>().SetCommandsForThisTurn(100,x,0,0);
 
 		GetComponent<MovementModule>().ExecuteMovement();
 

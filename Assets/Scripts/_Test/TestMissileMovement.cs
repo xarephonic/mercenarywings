@@ -12,33 +12,36 @@ public class TestMissileMovement : MonoBehaviour {
 
 	public MovementModule movementModule;
 
+	public float fuel;
 
 	public void GetAngleDifference()
 	{
-        Vector3 losToTarget = target.transform.position - transform.position;
+		if(fuel <= 0)
+			return;
 
-        float newLosAngle = Vector3.Angle(losToTarget, transform.forward);
+		float distanceToTarget = Vector3.Distance(target.transform.position,transform.position);
 
-        if(losAngle == 0)
-        {
-            losAngle = newLosAngle;
-        }
+		float myCurrentAirSpeed = movementModule.airSpeed;
 
-        float deltaLosAngle = losAngle - newLosAngle;
+		float framesToReachTarget = distanceToTarget / (myCurrentAirSpeed * Constants.delta);
 
-        Debug.Log(deltaLosAngle);
+		Vector3 interceptionPoint = target.transform.position + target.GetComponent<MovementModule>().airSpeed * Constants.delta * framesToReachTarget * target.transform.forward;
 
-        movementModule.SetCommandsForThisTurn(100, deltaLosAngle * 100, 0, 0);
+		Vector3 relativeInterceptPoint = transform.InverseTransformPoint(interceptionPoint);
 
-        losAngle = newLosAngle;
+		relativeInterceptPoint.Normalize();
+
+		movementModule.SetCommandsForThisTurn(100,Mathf.Clamp(relativeInterceptPoint.x * Constants.navigationConstant * 100,-100,100),Mathf.Clamp(relativeInterceptPoint.y * Constants.navigationConstant * -100,-100,100),0);
 
         movementModule.ExecuteMovement();
 
 		losRenderer.SetPosition(0,transform.position);
-		losRenderer.SetPosition(1,transform.position + losToTarget);
+		losRenderer.SetPosition(1,target.transform.position);
 
-		headingRenderer.SetPosition(0,transform.position);
+		headingRenderer.SetPosition(0,transform.position+transform.forward*10);
 		headingRenderer.SetPosition(1,transform.position+transform.forward*100);
+
+		fuel -= Constants.delta;
 	}
 
 	// Use this for initialization
@@ -49,7 +52,6 @@ public class TestMissileMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		GetAngleDifference();
 	}
 }

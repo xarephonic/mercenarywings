@@ -2339,13 +2339,14 @@ GameObject:
   - 114: {fileID: 11465986}
   - 114: {fileID: 11478806}
   - 114: {fileID: 11427434}
+  - 114: {fileID: 11499508}
   m_Layer: 0
   m_Name: EuroFighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &180044
 GameObject:
   m_ObjectHideFlags: 1
@@ -2526,7 +2527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &188830
 GameObject:
   m_ObjectHideFlags: 1
@@ -3068,8 +3069,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -300.945648, y: 131.494858, z: -64.049202}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: -28.3758678, y: 7.12900019, z: -1.2968173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441148}
@@ -9166,11 +9167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422dc06663d3e4ec490829bec355694c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aircraftId: 0
+  aircraftId: 1
   movementModule: {fileID: 0}
   trackingModule: {fileID: 0}
   loadoutModule: {fileID: 0}
   fireControlModule: {fileID: 0}
+  aircraftPicture: {fileID: 21300000, guid: f858e3f61c11f6c4e86789b56f59e396, type: 3}
 --- !u!114 &11465986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9225,6 +9227,17 @@ MonoBehaviour:
   trackProgress: 0
   sensorStrength: 0
   baseLockTimeConstant: 0
+--- !u!114 &11499508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2eb1c9cf7874a2c90dda4463fb9e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19871294
 ParticleSystem:
   m_ObjectHideFlags: 1

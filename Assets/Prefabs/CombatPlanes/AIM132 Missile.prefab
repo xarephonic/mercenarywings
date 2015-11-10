@@ -8,6 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410728}
+  - 114: {fileID: 11493212}
+  - 114: {fileID: 11442064}
+  - 114: {fileID: 11402514}
+  - 114: {fileID: 11430966}
   m_Layer: 0
   m_Name: AIM132 Missile
   m_TagString: Untagged
@@ -54,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.17001343, y: -.460006714, z: -.809997559}
+  m_LocalPosition: {x: 17.9430218, y: 3.26890779, z: 4.01961374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452192}
@@ -121,6 +125,74 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180294}
   m_Mesh: {fileID: 4300000, guid: e38f4a76fbf174a90833026d42a8d5e0, type: 3}
+--- !u!114 &11402514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261fcb3324ed8c42b376d63a9de787d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  movementModule: {fileID: 0}
+--- !u!114 &11430966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ca9464e8c2042a5ae60cdb3411c49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementModule: {fileID: 0}
+  trackingModule: {fileID: 0}
+  fireAndForget: 0
+--- !u!114 &11442064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5a21eff6a67469181955ca4dbd9d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airSpeed: 0
+  altitude: 0
+  stallSpeed: 10
+  maxSpeed: 100
+  accelerationRate: 30
+  decelerationRate: 10
+  climbSpeedLoss: 1
+  diveSpeedGain: 3
+  turnRate: 30
+  turnEfficiencyMultiplier: .25
+--- !u!114 &11493212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c36b84dd7fd24d158677444f9f2f7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  lastTrackedPosition: {x: 0, y: 0, z: 0}
+  trackType: 0
+  trackAngle: 0
+  trackRange: 0
+  locked: 0
+  trackProgress: 0
+  sensorStrength: 0
+  baseLockTimeConstant: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

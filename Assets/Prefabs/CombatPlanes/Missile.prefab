@@ -108,7 +108,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478088}
-  - 114: {fileID: 11486644}
+  - 114: {fileID: 11485248}
+  - 114: {fileID: 11409240}
+  - 114: {fileID: 11466950}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -440,9 +442,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149964}
-  m_LocalRotation: {x: -.273379564, y: .652122498, z: .273379564, w: .652122378}
-  m_LocalPosition: {x: -26.4080009, y: .655409396, z: 46.8889999}
-  m_LocalScale: {x: .100000001, y: .100000001, z: 1.07759953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.15999997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 10}
   m_Children:
   - {fileID: 499000}
   m_Father: {fileID: 0}
@@ -918,7 +920,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148986}
   m_Mesh: {fileID: 4300002, guid: 42d305a8900404b85a6200d3863354f2, type: 3}
---- !u!114 &11486644
+--- !u!114 &11409240
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -926,20 +928,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 149964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df62202a1ceff42559866739932414a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c36b84dd7fd24d158677444f9f2f7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  fireAndForget: 1
   lastTrackedPosition: {x: 0, y: 0, z: 0}
-  airSpeed: 60
-  turnRate: 60
-  climbSpeedLoss: 0
-  diveSpeedGain: 0
-  remainingFuel: 0
-  trackAngle: 120
-  trackRange: 100
-  delta: .0199999996
+  trackType: 0
+  trackAngle: 0
+  trackRange: 0
+  locked: 0
+  trackProgress: 0
+  sensorStrength: 0
+  baseLockTimeConstant: 0
+--- !u!114 &11466950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0261fcb3324ed8c42b376d63a9de787d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  movementModule: {fileID: 0}
+--- !u!114 &11485248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb5a21eff6a67469181955ca4dbd9d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airSpeed: 0
+  altitude: 0
+  stallSpeed: 0
+  maxSpeed: 100
+  accelerationRate: 50
+  decelerationRate: 10
+  climbSpeedLoss: 1
+  diveSpeedGain: 3
+  turnRate: 30
+  turnEfficiencyMultiplier: .25
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -953,11 +987,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: turnRate
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: trackAngle
-      value: 120
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: accelerationRate
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: decelerationRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: climbSpeedLoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: diveSpeedGain
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: turnEfficiencyMultiplier
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

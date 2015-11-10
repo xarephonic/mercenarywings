@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MissileCore : MonoBehaviour {
 
-	public MissileMovement movementModule;
+	public MovementModule movementModule;
 	public TrackingModule trackingModule;
 		
 	public bool fireAndForget;				//if this is a fire and forget missile, it has tracking of its own and moves towards the target each turn regardless
@@ -17,7 +17,7 @@ public class MissileCore : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		movementModule = GetComponent<MissileMovement>();
+		movementModule = GetComponent<MovementModule>();
 		trackingModule = GetComponent<TrackingModule>();
 
 	}

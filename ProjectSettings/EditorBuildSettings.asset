@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/testScene.unity
+  - enabled: 1
     path: Assets/Scenes/Hangar.unity
   - enabled: 1
     path: Assets/Scenes/TestFlight.unity

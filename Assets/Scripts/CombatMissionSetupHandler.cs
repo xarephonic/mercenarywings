@@ -5,6 +5,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 	public GameObject[] aircraftAssets;
 	public GameObject playerSpawnPositionsRoot;
+	public SceneAssetsKeeper sceneAssetsKeeper;
 
 	public Vector3[] spawnPositions;
 
@@ -34,11 +35,19 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 			}
 			
 			GameObject x = Instantiate(aircraftToBeSpawned,spawnPositions[i],Quaternion.identity) as GameObject;
+
+			sceneAssetsKeeper.instantiatedAssets.Add(x);
+			sceneAssetsKeeper.playerAssets.Add(x);
 		}
+
+		CombatSelectionHandler.selectedObject = sceneAssetsKeeper.playerAssets[0];
 	}
 
 	// Use this for initialization
 	void Start () {
+
+		sceneAssetsKeeper = GetComponent<SceneAssetsKeeper>();
+
 		GetSpawnPositions();
 		SpawnPlayerPlanes();
 

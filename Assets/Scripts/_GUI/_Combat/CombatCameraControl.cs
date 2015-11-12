@@ -1,28 +1,52 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class CombatCameraControl : MonoBehaviour {
 
 	public Transform lookAtTarget;
 
-	public float zoomLevel = 10;
+	public float defaultZoomLevel;
+	public float zoomMin;
+	public float zoomMax;
 
-	public float xRot;
-	public float yRot;
+	public float xMin;
+	public float xMax;
+
+	float zoomLevel;
+
+	float xRot;
+	float yRot;
 
 	private float touchDistance;
 
-	public LineRenderer line;
-
 	// Use this for initialization
-	void Start () {
-
+	void Awake () {
+		zoomLevel = defaultZoomLevel;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 		lookAtTarget = CombatSelectionHandler.selectedObject.transform;
+
+		bool touchingInsideCameraMoveArea = true;
+
+		foreach(Touch t in Input.touches)
+		{
+			if(t.phase != TouchPhase.Ended || t.phase != TouchPhase.Canceled)
+			{
+				if(EventSystem.current.IsPointerOverGameObject(t.fingerId))
+				{
+					touchingInsideCameraMoveArea = false;
+					break;
+				}
+			}
+		}
+
+		if(!touchingInsideCameraMoveArea)
+			return;
 
 		if(Input.touchCount == 2)
 		{
@@ -49,7 +73,7 @@ public class CombatCameraControl : MonoBehaviour {
 					yRot += Input.touches[i].deltaPosition.x;
 					xRot -= Input.touches[i].deltaPosition.y/2;
 
-					xRot = Mathf.Clamp(xRot,-90,90);
+					xRot = Mathf.Clamp(xRot,xMin,xMax);
 				}
 			}
 		}
@@ -58,7 +82,7 @@ public class CombatCameraControl : MonoBehaviour {
 			touchDistance = 0;
 		}
 
-		zoomLevel = Mathf.Clamp(zoomLevel,10,50);
+		zoomLevel = Mathf.Clamp(zoomLevel,zoomMin,zoomMax);
 		
 		transform.position = lookAtTarget.transform.position;
 

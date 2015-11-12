@@ -12046,14 +12046,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airSpeed: 0
   altitude: 0
-  stallSpeed: 0
-  maxSpeed: 0
-  accelerationRate: 0
-  decelerationRate: 0
-  climbSpeedLoss: 0
-  diveSpeedGain: 0
-  turnRate: 0
-  turnEfficiencyMultiplier: 0
+  stallSpeed: 10
+  maxSpeed: 30
+  accelerationRate: 10
+  decelerationRate: 10
+  climbSpeedLoss: 1
+  diveSpeedGain: 3
+  turnRate: 60
+  turnEfficiencyMultiplier: .25
 --- !u!114 &11411820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12141,7 +12141,35 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: turnEfficiencyMultiplier
-      value: .5
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stallSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: accelerationRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: decelerationRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: climbSpeedLoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: diveSpeedGain
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: turnRate
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

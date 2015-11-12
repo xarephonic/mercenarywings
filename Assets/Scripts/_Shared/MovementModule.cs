@@ -56,8 +56,6 @@ public class MovementModule : MonoBehaviour {
 		transform.Rotate(new Vector3(p/100.0f * turnRate * turnEfficiency * Constants.delta,y/100.0f * turnRate * turnEfficiency * Constants.delta, r/100.0f * turnRate * turnEfficiency * Constants.delta));
 		
 		transform.position += transform.forward*airSpeed*Constants.delta;
-
-
 	}
 
 	// Use this for initialization

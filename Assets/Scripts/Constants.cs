@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Constants : MonoBehaviour {
 
-	public static float delta = 0.02f;
+	public static float delta = (1.0f/60.0f);
 	public static int framesPerCombatRound = 60;
     public static float navigationConstant = 3.0f;
 

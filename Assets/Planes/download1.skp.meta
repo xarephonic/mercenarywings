@@ -1,0 +1,1147 @@
+fileFormatVersion: 2
+guid: 5154687f6d498fc43ba3ddb531f682b7
+timeCreated: 1447449408
+licenseType: Pro
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d0100002e0100002f010000300100003101000032010000330100003401000035010000360100003701000038010000390100003a0100003b0100003c0100003d0100003e0100003f010000400100004101000042010000430100004401000045010000460100004701000048010000490100004a0100004b0100004c0100004d0100004e0100004f0100005001000051010000
+  assetHash:
+    serializedVersion: 2
+    Hash: 5a7e7b1b7d0109de4deb1dd037c28ae6
+  longitude: 139.75
+  latitude: 35.667000000000002
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 129.15062, y: 44.4336319, z: 49.6737442}
+      lookAt: {x: -2855610, y: -718568.375, z: -453702.312}
+      up: {x: -.238196, y: .970479369, z: -.0378472619}
+      fov: 30
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes:
+    - camera:
+        position: {x: -142.570297, y: 10.6067104, z: .27178359}
+        lookAt: {x: 2957006.25, y: -364255.438, z: -11085.7666}
+        up: {x: .122255743, y: .992498517, z: -.000458323833}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 1"
+    - camera:
+        position: {x: -142.155487, y: 13.9694834, z: .427819818}
+        lookAt: {x: 2957006.5, y: -364252.062, z: -11085.6104}
+        up: {x: .122255743, y: .992498517, z: -.000458323833}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 2"
+    - camera:
+        position: {x: -141.531372, y: 19.0324059, z: .546457708}
+        lookAt: {x: 2957007.25, y: -364247.031, z: -11085.4922}
+        up: {x: .122255743, y: .992498517, z: -.000458323833}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 3"
+    - camera:
+        position: {x: -139.151093, y: 28.2593784, z: 1.01968169}
+        lookAt: {x: 2790313.5, y: -1044118.38, z: -25945.5137}
+        up: {x: .350426018, y: .936584771, z: -.00325837475}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 4"
+    - camera:
+        position: {x: -153.941727, y: 46.2402687, z: 8.09710121}
+        lookAt: {x: 2498494, y: -1561207, z: -443601.031}
+        up: {x: .515926778, y: .851721466, z: -.0915974751}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 5"
+    - camera:
+        position: {x: -158.476807, y: 58.7799034, z: 24.522953}
+        lookAt: {x: 2168268.25, y: -1712081.75, z: -1115342.38}
+        up: {x: .511000156, y: .818408906, z: -.262841582}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 6"
+    - camera:
+        position: {x: 153.633102, y: 193.380493, z: 177.52179}
+        lookAt: {x: -2048007.25, y: -1401642.5, z: -1648286.88}
+        up: {x: -.366522402, y: .882405102, z: -.294995904}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 11"
+    - camera:
+        position: {x: 174.200104, y: 113.415215, z: 54.4062653}
+        lookAt: {x: -2653435.5, y: -1093522.38, z: -799857.062}
+        up: {x: -.351431221, y: .930200875, z: -.105936401}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 12"
+    - camera:
+        position: {x: 146.683807, y: 86.2206116, z: -25.9955254}
+        lookAt: {x: -2836174.75, y: -775820.312, z: -480433.562}
+        up: {x: -.256756306, y: .965497255, z: -.0434886068}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 13"
+    - camera:
+        position: {x: 23.9894733, y: 60.1543427, z: -111.520996}
+        lookAt: {x: -2893869.5, y: -691842, z: -155654.703}
+        up: {x: -.231884584, y: .972663462, z: -.0124635091}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 14"
+    - camera:
+        position: {x: -40.4164581, y: 58.5205498, z: -162.097961}
+        lookAt: {x: -2884225.75, y: -742190.875, z: 89736.9766}
+        up: {x: -.248996153, y: .968473375, z: .00776112545}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 15"
+    - camera:
+        position: {x: -124.458199, y: 60.0370216, z: -314.066101}
+        lookAt: {x: -1738134.75, y: -677100.062, z: 2323113.75}
+        up: {x: -.136134192, y: .973831475, z: .181988537}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 16"
+    - camera:
+        position: {x: -274.250732, y: 7.02154016, z: -367.322876}
+        lookAt: {x: 469346.844, y: 20181.6758, z: 2941841.25}
+        up: {x: -.00106726191, y: .999977112, z: -.00668646861}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 19"
+    - camera:
+        position: {x: -397.890472, y: 22.3177433, z: -307.717255}
+        lookAt: {x: 2003022, y: -225863.453, z: 2193507.75}
+        up: {x: .0511234105, y: .997122109, z: .0559819415}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 20"
+    - camera:
+        position: {x: -493.971069, y: 68.3656158, z: -210.186951}
+        lookAt: {x: 2663547.25, y: -665450.938, z: 1156297.5}
+        up: {x: .204890743, y: .974735022, z: .088946715}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 21"
+    - camera:
+        position: {x: -495.762512, y: 111.335526, z: -34.1369095}
+        lookAt: {x: 2681843, y: -1110967, z: -669440.188}
+        up: {x: .361808449, y: .927869499, z: -.0902931318}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 22"
+    - camera:
+        position: {x: -373.950745, y: 131.796097, z: 138.416382}
+        lookAt: {x: 1890123.88, y: -1237988.62, z: -1941669.25}
+        up: {x: .2898736, y: .909573317, z: -.297741055}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 23"
+    - camera:
+        position: {x: -236.627045, y: 104.276161, z: 206.108887}
+        lookAt: {x: 1209683, y: -958072.625, z: -2548427.5}
+        up: {x: .137916014, y: .946879864, z: -.290513009}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 25"
+    - camera:
+        position: {x: -80.3798141, y: 57.3802071, z: 204.664047}
+        lookAt: {x: 66176.3438, y: -452042.938, z: -2944070.75}
+        up: {x: .00341373682, y: .988421082, z: -.151697531}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 26"
+    - camera:
+        position: {x: -45.9958076, y: 117.054115, z: 133.286774}
+        lookAt: {x: -502662.125, y: -1664444.88, z: -2419402.25}
+        up: {x: -.113627657, y: .829391539, z: -.546990335}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 27"
+    - camera:
+        position: {x: 3.59158158, y: 127.175644, z: 54.5889015}
+        lookAt: {x: -1481974.88, y: -2197457.5, z: -1360791.62}
+        up: {x: -.543265641, y: .675278068, z: -.498860836}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 28"
+    - camera:
+        position: {x: -.201993078, y: 107.247269, z: 15.1101551}
+        lookAt: {x: -1512104.5, y: -2481983.75, z: -655963.125}
+        up: {x: -.7642349, y: .553196967, z: -.331538975}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 29"
+    - camera:
+        position: {x: -5.58917904, y: 118.214996, z: -73.8524475}
+        lookAt: {x: -1409210.62, y: -2151695.25, z: 1503715.38}
+        up: {x: -.493831754, y: .691682994, z: .526977122}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 30"
+    - camera:
+        position: {x: -159.994766, y: 114.344521, z: -79.6600266}
+        lookAt: {x: 2047218.25, y: -2100260.5, z: 523570.5}
+        up: {x: .682953, y: .709269702, z: .174676299}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 44"
+    - camera:
+        position: {x: -303.991913, y: 63.3459702, z: -57.6167603}
+        lookAt: {x: 2561656.75, y: -1113680.12, z: -1036143.31}
+        up: {x: .34653461, y: .927509487, z: -.140142485}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 43"
+    - camera:
+        position: {x: -251.419907, y: 75.3380203, z: -48.9102745}
+        lookAt: {x: 390996.469, y: -1262935.88, z: -2670118}
+        up: {x: .0614578277, y: .905710161, z: -.419418633}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 31"
+    - camera:
+        position: {x: -269.078033, y: 71.8339615, z: -76.3484039}
+        lookAt: {x: 303692.656, y: -1558771.88, z: -2521019.75}
+        up: {x: .0626293421, y: .852218449, z: -.519423962}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 32"
+    - camera:
+        position: {x: -340.588409, y: 64.9965744, z: -110.532318}
+        lookAt: {x: 1469116, y: -1671134, z: -1981356}
+        up: {x: .33413443, y: .82788676, z: -.450508267}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 34"
+    - camera:
+        position: {x: -346.940796, y: 46.6839409, z: -144.207642}
+        lookAt: {x: 1943823.38, y: -1636133.75, z: -1555990.25}
+        up: {x: .428753197, y: .835728884, z: -.343115002}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 35"
+    - camera:
+        position: {x: -335.059021, y: 32.2347069, z: -169.738464}
+        lookAt: {x: 2022187.88, y: -2066341, z: -719227.5}
+        up: {x: .653456211, y: .720432162, z: -.232320115}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 36"
+    - camera:
+        position: {x: -324.798798, y: 29.2046394, z: -175.811188}
+        lookAt: {x: 1550453.5, y: -2540392.5, z: -137601.344}
+        up: {x: .84929949, y: .522518814, z: -.0752624944}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 37"
+    - camera:
+        position: {x: -319.074463, y: 24.4874973, z: -176.79921}
+        lookAt: {x: 1183432, y: -2734231.5, z: 10757.3564}
+        up: {x: .917644143, y: .39731282, z: .0084761614}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 38"
+    - camera:
+        position: {x: -316.109589, y: 17.8544903, z: -176.894592}
+        lookAt: {x: 569818.75, y: -2924445.5, z: -1772.89343}
+        up: {x: .981517673, y: .191351995, z: -.00274759717}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 39"
+    - camera:
+        position: {x: -321.902679, y: 13.0644846, z: -176.768738}
+        lookAt: {x: 2481953.5, y: -1647488.38, z: -40051.2227}
+        up: {x: .552870572, y: .833219886, z: -.00888113119}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 40"
+    - camera:
+        position: {x: -322.905609, y: 10.3770275, z: -176.768173}
+        lookAt: {x: 2901627, y: -674748.438, z: -30647.2871}
+        up: {x: .226453096, y: .97401917, z: -.00237776083}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 41"
+    - camera:
+        position: {x: -322.545471, y: 8.01020336, z: -176.797913}
+        lookAt: {x: 2959903.5, y: 333920.125, z: -55912.5195}
+        up: {x: -.112049222, y: .993700445, z: .00210968475}
+        fov: 30
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: "\u30B7\u30FC\u30F3 42"
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: anchor chain#1
+    100002: anchor chain#2
+    100004: capsule
+    100006: capsule 1
+    100008: capsule 2
+    100010: capsule 3
+    100012: capsule 4
+    100014: capsule 5
+    100016: capsule 6
+    100018: capsule 7
+    100020: capsule 8
+    100022: capsule 9
+    100024: chamfer
+    100026: chamfer 1
+    100028: CIWS#2
+    100030: CIWS#2 1
+    100032: //RootNode
+    100034: Group 10
+    100036: Group 105
+    100038: Group 109
+    100040: Group 111
+    100042: Group 116
+    100044: Group 122
+    100046: Group 124
+    100048: Group 126
+    100050: Group 13
+    100052: Group 130
+    100054: Group 132
+    100056: Group 140
+    100058: Group 142
+    100060: Group 144
+    100062: Group 15
+    100064: Group 150
+    100066: Group 151
+    100068: Group 162
+    100070: Group 164
+    100072: Group 17
+    100074: Group 19
+    100076: Group 2
+    100078: Group 21
+    100080: Group 25
+    100082: Group 29
+    100084: Group 306
+    100086: Group 308
+    100088: Group 310
+    100090: Group 312
+    100092: Group 316
+    100094: Group 318
+    100096: Group 320
+    100098: Group 322
+    100100: Group 324
+    100102: Group 33
+    100104: Group 332
+    100106: Group 37
+    100108: Group 39
+    100110: Group 4
+    100112: Group 41
+    100114: Group 43
+    100116: Group 45
+    100118: Group 47
+    100120: Group 49
+    100122: Group 51
+    100124: Group 53
+    100126: Group 57
+    100128: Group 60
+    100130: Group 62
+    100132: Group 64
+    100134: Group 70
+    100136: Group 72
+    100138: Group 74
+    100140: Group 76
+    100142: Group 78
+    100144: Group 8
+    100146: Group 80
+    100148: Group 82
+    100150: Group 84
+    100152: Group 86
+    100154: Group 94
+    100156: Group 96
+    100158: sphere
+    100160: sphere 1
+    100162: sphere 2
+    100164: sphere 3
+    100166: sphere 4
+    100168: sphere 5
+    100170: sphere 6
+    100172: "\u3042\u3057\u304C\u3089"
+    100174: "\u30A2\u30F3\u30AB\u30FC"
+    100176: "\u30A2\u30F3\u30AB\u30FC 1"
+    100178: "\u30A2\u30F3\u30AB\u30FC#1"
+    100180: "\u30A2\u30F3\u30AB\u30FC#1 1"
+    100182: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1"
+    100184: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 1"
+    100186: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 2"
+    100188: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 3"
+    100190: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 4"
+    100192: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 5"
+    100194: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3"
+    100196: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3 1"
+    100198: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7"
+    100200: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 1"
+    100202: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 10"
+    100204: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 11"
+    100206: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 12"
+    100208: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 13"
+    100210: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 14"
+    100212: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 15"
+    100214: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 16"
+    100216: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 17"
+    100218: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 18"
+    100220: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 19"
+    100222: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 2"
+    100224: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 20"
+    100226: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 21"
+    100228: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 22"
+    100230: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 23"
+    100232: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 24"
+    100234: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 25"
+    100236: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 26"
+    100238: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 27"
+    100240: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 28"
+    100242: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 29"
+    100244: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 3"
+    100246: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 30"
+    100248: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 31"
+    100250: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 32"
+    100252: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 33"
+    100254: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 34"
+    100256: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 35"
+    100258: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 36"
+    100260: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 37"
+    100262: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 38"
+    100264: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 39"
+    100266: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 4"
+    100268: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 40"
+    100270: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 41"
+    100272: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 42"
+    100274: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 43"
+    100276: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 44"
+    100278: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 45"
+    100280: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 46"
+    100282: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 47"
+    100284: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 48"
+    100286: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 49"
+    100288: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 5"
+    100290: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 50"
+    100292: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 51"
+    100294: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 52"
+    100296: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 53"
+    100298: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 54"
+    100300: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 55"
+    100302: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 56"
+    100304: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 57"
+    100306: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 58"
+    100308: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 59"
+    100310: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 6"
+    100312: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 60"
+    100314: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 61"
+    100316: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 62"
+    100318: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 63"
+    100320: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 64"
+    100322: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 65"
+    100324: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 66"
+    100326: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 67"
+    100328: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 7"
+    100330: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 8"
+    100332: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 9"
+    100334: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8"
+    100336: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 1"
+    100338: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 2"
+    100340: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9"
+    100342: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9 1"
+    100344: "\u30B9\u30AF\u30EA\u30E5\u30FC"
+    100346: "\u30B9\u30AF\u30EA\u30E5\u30FC 1"
+    400000: anchor chain#1
+    400002: anchor chain#2
+    400004: capsule
+    400006: capsule 1
+    400008: capsule 2
+    400010: capsule 3
+    400012: capsule 4
+    400014: capsule 5
+    400016: capsule 6
+    400018: capsule 7
+    400020: capsule 8
+    400022: capsule 9
+    400024: chamfer
+    400026: chamfer 1
+    400028: CIWS#2
+    400030: CIWS#2 1
+    400032: //RootNode
+    400034: Group 10
+    400036: Group 105
+    400038: Group 109
+    400040: Group 111
+    400042: Group 116
+    400044: Group 122
+    400046: Group 124
+    400048: Group 126
+    400050: Group 13
+    400052: Group 130
+    400054: Group 132
+    400056: Group 140
+    400058: Group 142
+    400060: Group 144
+    400062: Group 15
+    400064: Group 150
+    400066: Group 151
+    400068: Group 162
+    400070: Group 164
+    400072: Group 17
+    400074: Group 19
+    400076: Group 2
+    400078: Group 21
+    400080: Group 25
+    400082: Group 29
+    400084: Group 306
+    400086: Group 308
+    400088: Group 310
+    400090: Group 312
+    400092: Group 316
+    400094: Group 318
+    400096: Group 320
+    400098: Group 322
+    400100: Group 324
+    400102: Group 33
+    400104: Group 332
+    400106: Group 37
+    400108: Group 39
+    400110: Group 4
+    400112: Group 41
+    400114: Group 43
+    400116: Group 45
+    400118: Group 47
+    400120: Group 49
+    400122: Group 51
+    400124: Group 53
+    400126: Group 57
+    400128: Group 60
+    400130: Group 62
+    400132: Group 64
+    400134: Group 70
+    400136: Group 72
+    400138: Group 74
+    400140: Group 76
+    400142: Group 78
+    400144: Group 8
+    400146: Group 80
+    400148: Group 82
+    400150: Group 84
+    400152: Group 86
+    400154: Group 94
+    400156: Group 96
+    400158: sphere
+    400160: sphere 1
+    400162: sphere 2
+    400164: sphere 3
+    400166: sphere 4
+    400168: sphere 5
+    400170: sphere 6
+    400172: "\u3042\u3057\u304C\u3089"
+    400174: "\u30A2\u30F3\u30AB\u30FC"
+    400176: "\u30A2\u30F3\u30AB\u30FC 1"
+    400178: "\u30A2\u30F3\u30AB\u30FC#1"
+    400180: "\u30A2\u30F3\u30AB\u30FC#1 1"
+    400182: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1"
+    400184: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 1"
+    400186: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 2"
+    400188: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 3"
+    400190: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 4"
+    400192: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 5"
+    400194: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3"
+    400196: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3 1"
+    400198: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7"
+    400200: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 1"
+    400202: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 10"
+    400204: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 11"
+    400206: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 12"
+    400208: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 13"
+    400210: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 14"
+    400212: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 15"
+    400214: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 16"
+    400216: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 17"
+    400218: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 18"
+    400220: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 19"
+    400222: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 2"
+    400224: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 20"
+    400226: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 21"
+    400228: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 22"
+    400230: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 23"
+    400232: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 24"
+    400234: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 25"
+    400236: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 26"
+    400238: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 27"
+    400240: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 28"
+    400242: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 29"
+    400244: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 3"
+    400246: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 30"
+    400248: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 31"
+    400250: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 32"
+    400252: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 33"
+    400254: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 34"
+    400256: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 35"
+    400258: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 36"
+    400260: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 37"
+    400262: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 38"
+    400264: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 39"
+    400266: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 4"
+    400268: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 40"
+    400270: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 41"
+    400272: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 42"
+    400274: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 43"
+    400276: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 44"
+    400278: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 45"
+    400280: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 46"
+    400282: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 47"
+    400284: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 48"
+    400286: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 49"
+    400288: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 5"
+    400290: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 50"
+    400292: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 51"
+    400294: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 52"
+    400296: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 53"
+    400298: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 54"
+    400300: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 55"
+    400302: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 56"
+    400304: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 57"
+    400306: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 58"
+    400308: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 59"
+    400310: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 6"
+    400312: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 60"
+    400314: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 61"
+    400316: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 62"
+    400318: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 63"
+    400320: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 64"
+    400322: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 65"
+    400324: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 66"
+    400326: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 67"
+    400328: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 7"
+    400330: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 8"
+    400332: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 9"
+    400334: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8"
+    400336: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 1"
+    400338: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 2"
+    400340: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9"
+    400342: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9 1"
+    400344: "\u30B9\u30AF\u30EA\u30E5\u30FC"
+    400346: "\u30B9\u30AF\u30EA\u30E5\u30FC 1"
+    2300000: capsule
+    2300002: capsule 1
+    2300004: capsule 2
+    2300006: capsule 3
+    2300008: capsule 4
+    2300010: capsule 5
+    2300012: capsule 6
+    2300014: capsule 7
+    2300016: capsule 8
+    2300018: capsule 9
+    2300020: chamfer
+    2300022: chamfer 1
+    2300024: //RootNode
+    2300026: Group 105
+    2300028: Group 109
+    2300030: Group 111
+    2300032: Group 116
+    2300034: Group 122
+    2300036: Group 124
+    2300038: Group 126
+    2300040: Group 13
+    2300042: Group 130
+    2300044: Group 132
+    2300046: Group 140
+    2300048: Group 142
+    2300050: Group 144
+    2300052: Group 15
+    2300054: Group 162
+    2300056: Group 164
+    2300058: Group 17
+    2300060: Group 19
+    2300062: Group 2
+    2300064: Group 21
+    2300066: Group 25
+    2300068: Group 29
+    2300070: Group 306
+    2300072: Group 308
+    2300074: Group 310
+    2300076: Group 312
+    2300078: Group 316
+    2300080: Group 318
+    2300082: Group 320
+    2300084: Group 322
+    2300086: Group 324
+    2300088: Group 33
+    2300090: Group 332
+    2300092: Group 37
+    2300094: Group 39
+    2300096: Group 4
+    2300098: Group 41
+    2300100: Group 43
+    2300102: Group 45
+    2300104: Group 47
+    2300106: Group 49
+    2300108: Group 51
+    2300110: Group 53
+    2300112: Group 60
+    2300114: Group 62
+    2300116: Group 64
+    2300118: Group 70
+    2300120: Group 72
+    2300122: Group 74
+    2300124: Group 76
+    2300126: Group 78
+    2300128: Group 8
+    2300130: Group 80
+    2300132: Group 82
+    2300134: Group 84
+    2300136: Group 86
+    2300138: Group 94
+    2300140: Group 96
+    2300142: sphere
+    2300144: sphere 1
+    2300146: sphere 2
+    2300148: sphere 3
+    2300150: sphere 4
+    2300152: sphere 5
+    2300154: sphere 6
+    2300156: "\u3042\u3057\u304C\u3089"
+    2300158: "\u30A2\u30F3\u30AB\u30FC"
+    2300160: "\u30A2\u30F3\u30AB\u30FC 1"
+    2300162: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1"
+    2300164: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 1"
+    2300166: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 2"
+    2300168: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 3"
+    2300170: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 4"
+    2300172: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 5"
+    2300174: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3"
+    2300176: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3 1"
+    2300178: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7"
+    2300180: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 1"
+    2300182: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 10"
+    2300184: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 11"
+    2300186: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 12"
+    2300188: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 13"
+    2300190: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 14"
+    2300192: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 15"
+    2300194: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 16"
+    2300196: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 17"
+    2300198: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 18"
+    2300200: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 19"
+    2300202: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 2"
+    2300204: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 20"
+    2300206: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 21"
+    2300208: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 22"
+    2300210: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 23"
+    2300212: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 24"
+    2300214: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 25"
+    2300216: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 26"
+    2300218: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 27"
+    2300220: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 28"
+    2300222: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 29"
+    2300224: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 3"
+    2300226: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 30"
+    2300228: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 31"
+    2300230: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 32"
+    2300232: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 33"
+    2300234: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 34"
+    2300236: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 35"
+    2300238: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 36"
+    2300240: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 37"
+    2300242: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 38"
+    2300244: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 39"
+    2300246: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 4"
+    2300248: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 40"
+    2300250: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 41"
+    2300252: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 42"
+    2300254: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 43"
+    2300256: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 44"
+    2300258: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 45"
+    2300260: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 46"
+    2300262: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 47"
+    2300264: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 48"
+    2300266: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 49"
+    2300268: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 5"
+    2300270: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 50"
+    2300272: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 51"
+    2300274: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 52"
+    2300276: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 53"
+    2300278: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 54"
+    2300280: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 55"
+    2300282: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 56"
+    2300284: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 57"
+    2300286: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 58"
+    2300288: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 59"
+    2300290: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 6"
+    2300292: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 60"
+    2300294: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 61"
+    2300296: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 62"
+    2300298: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 63"
+    2300300: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 64"
+    2300302: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 65"
+    2300304: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 66"
+    2300306: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 67"
+    2300308: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 7"
+    2300310: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 8"
+    2300312: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 9"
+    2300314: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8"
+    2300316: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 1"
+    2300318: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 2"
+    2300320: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9"
+    2300322: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9 1"
+    2300324: "\u30B9\u30AF\u30EA\u30E5\u30FC"
+    2300326: "\u30B9\u30AF\u30EA\u30E5\u30FC 1"
+    3300000: capsule
+    3300002: capsule 1
+    3300004: capsule 2
+    3300006: capsule 3
+    3300008: capsule 4
+    3300010: capsule 5
+    3300012: capsule 6
+    3300014: capsule 7
+    3300016: capsule 8
+    3300018: capsule 9
+    3300020: chamfer
+    3300022: chamfer 1
+    3300024: //RootNode
+    3300026: Group 105
+    3300028: Group 109
+    3300030: Group 111
+    3300032: Group 116
+    3300034: Group 122
+    3300036: Group 124
+    3300038: Group 126
+    3300040: Group 13
+    3300042: Group 130
+    3300044: Group 132
+    3300046: Group 140
+    3300048: Group 142
+    3300050: Group 144
+    3300052: Group 15
+    3300054: Group 162
+    3300056: Group 164
+    3300058: Group 17
+    3300060: Group 19
+    3300062: Group 2
+    3300064: Group 21
+    3300066: Group 25
+    3300068: Group 29
+    3300070: Group 306
+    3300072: Group 308
+    3300074: Group 310
+    3300076: Group 312
+    3300078: Group 316
+    3300080: Group 318
+    3300082: Group 320
+    3300084: Group 322
+    3300086: Group 324
+    3300088: Group 33
+    3300090: Group 332
+    3300092: Group 37
+    3300094: Group 39
+    3300096: Group 4
+    3300098: Group 41
+    3300100: Group 43
+    3300102: Group 45
+    3300104: Group 47
+    3300106: Group 49
+    3300108: Group 51
+    3300110: Group 53
+    3300112: Group 60
+    3300114: Group 62
+    3300116: Group 64
+    3300118: Group 70
+    3300120: Group 72
+    3300122: Group 74
+    3300124: Group 76
+    3300126: Group 78
+    3300128: Group 8
+    3300130: Group 80
+    3300132: Group 82
+    3300134: Group 84
+    3300136: Group 86
+    3300138: Group 94
+    3300140: Group 96
+    3300142: sphere
+    3300144: sphere 1
+    3300146: sphere 2
+    3300148: sphere 3
+    3300150: sphere 4
+    3300152: sphere 5
+    3300154: sphere 6
+    3300156: "\u3042\u3057\u304C\u3089"
+    3300158: "\u30A2\u30F3\u30AB\u30FC"
+    3300160: "\u30A2\u30F3\u30AB\u30FC 1"
+    3300162: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1"
+    3300164: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 1"
+    3300166: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 2"
+    3300168: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 3"
+    3300170: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 4"
+    3300172: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1 5"
+    3300174: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3"
+    3300176: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3 1"
+    3300178: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7"
+    3300180: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 1"
+    3300182: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 10"
+    3300184: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 11"
+    3300186: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 12"
+    3300188: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 13"
+    3300190: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 14"
+    3300192: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 15"
+    3300194: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 16"
+    3300196: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 17"
+    3300198: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 18"
+    3300200: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 19"
+    3300202: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 2"
+    3300204: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 20"
+    3300206: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 21"
+    3300208: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 22"
+    3300210: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 23"
+    3300212: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 24"
+    3300214: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 25"
+    3300216: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 26"
+    3300218: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 27"
+    3300220: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 28"
+    3300222: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 29"
+    3300224: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 3"
+    3300226: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 30"
+    3300228: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 31"
+    3300230: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 32"
+    3300232: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 33"
+    3300234: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 34"
+    3300236: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 35"
+    3300238: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 36"
+    3300240: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 37"
+    3300242: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 38"
+    3300244: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 39"
+    3300246: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 4"
+    3300248: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 40"
+    3300250: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 41"
+    3300252: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 42"
+    3300254: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 43"
+    3300256: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 44"
+    3300258: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 45"
+    3300260: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 46"
+    3300262: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 47"
+    3300264: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 48"
+    3300266: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 49"
+    3300268: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 5"
+    3300270: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 50"
+    3300272: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 51"
+    3300274: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 52"
+    3300276: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 53"
+    3300278: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 54"
+    3300280: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 55"
+    3300282: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 56"
+    3300284: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 57"
+    3300286: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 58"
+    3300288: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 59"
+    3300290: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 6"
+    3300292: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 60"
+    3300294: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 61"
+    3300296: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 62"
+    3300298: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 63"
+    3300300: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 64"
+    3300302: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 65"
+    3300304: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 66"
+    3300306: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 67"
+    3300308: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 7"
+    3300310: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 8"
+    3300312: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7 9"
+    3300314: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8"
+    3300316: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 1"
+    3300318: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8 2"
+    3300320: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9"
+    3300322: "\u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9 1"
+    3300324: "\u30B9\u30AF\u30EA\u30E5\u30FC"
+    3300326: "\u30B9\u30AF\u30EA\u30E5\u30FC 1"
+    4300000: Mesh download1
+    4300002: Mesh Group 2
+    4300004: Mesh Group 4
+    4300006: "Mesh \u3042\u3057\u304C\u3089"
+    4300008: Mesh Group 8
+    4300010: Mesh sphere
+    4300012: Mesh Group 13
+    4300014: Mesh Group 15
+    4300016: Mesh Group 17
+    4300018: Mesh Group 19
+    4300020: Mesh Group 21
+    4300022: Mesh sphere
+    4300024: Mesh Group 25
+    4300026: Mesh capsule
+    4300028: Mesh Group 29
+    4300030: Mesh Group 33
+    4300032: Mesh Group 37
+    4300034: Mesh Group 39
+    4300036: Mesh Group 41
+    4300038: Mesh Group 53
+    4300040: Mesh capsule
+    4300042: Mesh Group 60
+    4300044: Mesh Group 62
+    4300046: Mesh capsule
+    4300048: Mesh Group 70
+    4300050: Mesh Group 72
+    4300052: Mesh Group 74
+    4300054: Mesh Group 78
+    4300056: Mesh Group 80
+    4300058: Mesh Group 82
+    4300060: Mesh Group 84
+    4300062: Mesh Group 86
+    4300064: "Mesh \u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#8"
+    4300066: Mesh sphere
+    4300068: "Mesh \u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#9"
+    4300070: Mesh Group 94
+    4300072: "Mesh \u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#3"
+    4300074: Mesh Group 105
+    4300076: Mesh Group 122
+    4300078: Mesh Group 124
+    4300080: Mesh Group 126
+    4300082: Mesh sphere
+    4300084: Mesh Group 130
+    4300086: Mesh Group 132
+    4300088: "Mesh \u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#1"
+    4300090: Mesh Group 140
+    4300092: Mesh capsule
+    4300094: Mesh capsule
+    4300096: Mesh chamfer
+    4300098: "Mesh \u30A2\u30F3\u30AB\u30FC"
+    4300100: Mesh Group 162
+    4300102: Mesh Group 164
+    4300104: "Mesh \u30B3\u30F3\u30DD\u30FC\u30CD\u30F3\u30C8#7"
+    4300106: Mesh Group 308
+    4300108: Mesh Group 332
+    4300110: "Mesh \u30B9\u30AF\u30EA\u30E5\u30FC"
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0253999997
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

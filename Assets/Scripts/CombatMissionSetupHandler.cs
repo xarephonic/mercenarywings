@@ -36,7 +36,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 			
 			GameObject x = Instantiate(aircraftToBeSpawned,spawnPositions[i],Quaternion.identity) as GameObject;
 
-			x.GetComponent<MovementModule>().airSpeed = 20;
+			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
 
 			sceneAssetsKeeper.instantiatedAssets.Add(x);
 			sceneAssetsKeeper.playerAssets.Add(x);

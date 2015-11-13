@@ -9132,12 +9132,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airSpeed: 0
   altitude: 0
-  stallSpeed: 10
-  maxSpeed: 30
-  accelerationRate: 10
-  decelerationRate: 5
-  climbSpeedLoss: 1
-  diveSpeedGain: 3
+  stallSpeed: 220
+  maxSpeed: 1500
+  accelerationRate: 100
+  decelerationRate: 50
+  climbSpeedLoss: 10
+  diveSpeedGain: 30
   turnRate: 60
   turnEfficiencyMultiplier: .25
 --- !u!114 &11427434
@@ -10336,27 +10336,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: stallSpeed
-      value: 10
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxSpeed
-      value: 30
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: accelerationRate
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: decelerationRate
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: climbSpeedLoss
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: diveSpeedGain
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: turnRate

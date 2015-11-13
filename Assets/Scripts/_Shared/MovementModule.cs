@@ -20,6 +20,13 @@ public class MovementModule : MonoBehaviour {
 
 	public List<Dictionary<string,float>> commands = new List<Dictionary<string, float>>();
 
+	public float GetOptimalSpeed()
+	{
+		float ret = (stallSpeed+maxSpeed)/2;
+
+		return ret;
+	}
+
 	public void SetCommandsForThisTurn(float speed,float yaw,float pitch,float roll)
 	{
 		Dictionary<string,float> commandsThisTurn = new Dictionary<string, float>();
@@ -55,7 +62,7 @@ public class MovementModule : MonoBehaviour {
 
 		transform.Rotate(new Vector3(p/100.0f * turnRate * turnEfficiency * Constants.delta,y/100.0f * turnRate * turnEfficiency * Constants.delta, r/100.0f * turnRate * turnEfficiency * Constants.delta));
 		
-		transform.position += transform.forward*airSpeed*Constants.delta;
+		transform.position += transform.forward*airSpeed*1000.0f/3600.0f*Constants.delta;
 	}
 
 	// Use this for initialization

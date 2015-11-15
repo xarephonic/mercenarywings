@@ -7,6 +7,8 @@ public class MissileNavigator : MonoBehaviour {
 
 	public MovementModule movementModule;
 
+	public LineRenderer line;
+
 
 	public void FindInterceptSolution()
 	{
@@ -20,9 +22,27 @@ public class MissileNavigator : MonoBehaviour {
 
 		Vector3 relativeInterceptPoint = transform.InverseTransformPoint(interceptionPoint);
 
+		Debug.Log("target distance: "+distanceToTarget);
+
 		relativeInterceptPoint.Normalize();
 
-		movementModule.SetCommandsForThisTurn(100,Mathf.Clamp(relativeInterceptPoint.x * Constants.navigationConstant * 100,-100,100),Mathf.Clamp(relativeInterceptPoint.y * Constants.navigationConstant * -100,-100,100),0);
+		float angleBetweenMyHeadingAndTargetPoint = Vector3.Angle(transform.forward,relativeInterceptPoint);
+
+		Debug.Log("intercept angle: "+angleBetweenMyHeadingAndTargetPoint);
+
+		float speed = 100.0f;
+
+		if(angleBetweenMyHeadingAndTargetPoint > (framesToReachTarget * movementModule.yawRate * Constants.delta))
+		{
+			Debug.Log("slowing down to turn");
+
+			speed = -100.0f;
+		}
+
+		Debug.Log("relative intercept point: "+relativeInterceptPoint);
+		Debug.Log("my heading: "+transform.forward);
+
+		movementModule.SetCommandsForThisTurn(speed,Mathf.Clamp(relativeInterceptPoint.x * Constants.navigationConstant * 100,-100,100),Mathf.Clamp(relativeInterceptPoint.y * Constants.navigationConstant * -100,-100,100 ),0);
 
         movementModule.ExecuteMovement();
 	}

@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11442064}
   - 114: {fileID: 11402514}
   - 114: {fileID: 11430966}
+  - 120: {fileID: 12048180}
   m_Layer: 0
   m_Name: AIM132 Missile
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.9430218, y: 3.26890779, z: 4.01961374}
+  m_LocalPosition: {x: 68.3740082, y: 176.156952, z: 3460.76172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452192}
@@ -138,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   movementModule: {fileID: 0}
+  line: {fileID: 12048180}
 --- !u!114 &11430966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,13 +167,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airSpeed: 0
   altitude: 0
-  stallSpeed: 10
-  maxSpeed: 100
-  accelerationRate: 30
-  decelerationRate: 10
+  stallSpeed: 200
+  maxSpeed: 3000
+  accelerationRate: 250
+  decelerationRate: 100
   climbSpeedLoss: 1
   diveSpeedGain: 3
-  turnRate: 30
+  yawRate: 30
+  pitchRate: 30
+  rollRate: 0
   turnEfficiencyMultiplier: .25
 --- !u!114 &11493212
 MonoBehaviour:
@@ -193,13 +197,78 @@ MonoBehaviour:
   trackProgress: 0
   sensorStrength: 0
   baseLockTimeConstant: 0
+--- !u!120 &12048180
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101812}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    startWidth: 1
+    endWidth: 1
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 4294967295
+  m_UseWorldSpace: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: stallSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSpeed
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: accelerationRate
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: decelerationRate
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: yawRate
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchRate
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rollRate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101812}

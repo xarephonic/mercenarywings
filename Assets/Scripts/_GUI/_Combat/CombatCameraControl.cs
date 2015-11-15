@@ -14,6 +14,9 @@ public class CombatCameraControl : MonoBehaviour {
 	public float xMin;
 	public float xMax;
 
+	public float defaultX;
+	public float defaultY;
+
 	float zoomLevel;
 
 	float xRot;
@@ -24,6 +27,9 @@ public class CombatCameraControl : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		zoomLevel = defaultZoomLevel;
+
+		xRot = defaultX;
+		yRot = defaultY;
 	}
 	
 	// Update is called once per frame
@@ -60,7 +66,7 @@ public class CombatCameraControl : MonoBehaviour {
 
 				float diff = distance - touchDistance;
 
-				zoomLevel += diff*Time.deltaTime;
+				zoomLevel -= diff*Time.deltaTime;
 
 				touchDistance = distance;
 			}

@@ -2340,6 +2340,7 @@ GameObject:
   - 114: {fileID: 11478806}
   - 114: {fileID: 11427434}
   - 114: {fileID: 11499508}
+  - 114: {fileID: 11434688}
   m_Layer: 0
   m_Name: EuroFighter
   m_TagString: Untagged
@@ -9138,7 +9139,9 @@ MonoBehaviour:
   decelerationRate: 50
   climbSpeedLoss: 10
   diveSpeedGain: 30
-  turnRate: 60
+  yawRate: 10
+  pitchRate: 30
+  rollRate: 30
   turnEfficiencyMultiplier: .25
 --- !u!114 &11427434
 MonoBehaviour:
@@ -9156,6 +9159,19 @@ MonoBehaviour:
   chaffCount: 0
   radarEcmStrength: 4
   infraredEcmStrength: 4
+--- !u!114 &11434688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b921a2d1daacb4f9c1d0d3505e630b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headingRenderer: {fileID: 0}
+  x: 0
 --- !u!114 &11449556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10381,6 +10397,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: yawRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchRate
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rollRate
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -12052,7 +12052,9 @@ MonoBehaviour:
   decelerationRate: 50
   climbSpeedLoss: 5
   diveSpeedGain: 30
-  turnRate: 70
+  yawRate: 10
+  pitchRate: 30
+  rollRate: 30
   turnEfficiencyMultiplier: .25
 --- !u!114 &11411820
 MonoBehaviour:
@@ -12170,6 +12172,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: turnRate
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: yawRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pitchRate
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rollRate
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

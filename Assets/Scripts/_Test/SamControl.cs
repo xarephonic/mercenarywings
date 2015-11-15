@@ -26,6 +26,10 @@ public class SamControl : MonoBehaviour {
 	{
 		if(myMissile != null)
 		{
+			myMissile.GetComponent<MissileNavigator>().target = target;
+
+			myMissile.GetComponent<MovementModule>().airSpeed = myMissile.GetComponent<MovementModule>().GetOptimalSpeed()/2.0f;
+
 			myMissile.transform.SetParent(null);
 
 			myMissile = null;
@@ -43,6 +47,20 @@ public class SamControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		foreach(GameObject asset in SceneAssetsKeeper.sceneAssetsKeeper.playerAssets)
+		{
+			if(Vector3.Distance(asset.transform.position,transform.position) < trackingModule.trackRange)
+			{
+				trackingModule.target = asset;
+				trackingModule.TrackTarget();
+				break;
+			}
+		}
+
+		if(trackingModule.locked)
+		{
+			FireMyMissile(trackingModule.target);
+		}
 	}
 }

@@ -24,7 +24,9 @@ public class MovementEstimator : MonoBehaviour {
 		movementModule.decelerationRate = selectedTargetMovementModule.decelerationRate;
 		movementModule.climbSpeedLoss = selectedTargetMovementModule.climbSpeedLoss;
 		movementModule.diveSpeedGain = selectedTargetMovementModule.diveSpeedGain;
-		movementModule.turnRate = selectedTargetMovementModule.turnRate;
+		movementModule.yawRate = selectedTargetMovementModule.yawRate;
+		movementModule.rollRate = selectedTargetMovementModule.rollRate;
+		movementModule.pitchRate = selectedTargetMovementModule.pitchRate;
 		movementModule.turnEfficiencyMultiplier = selectedTargetMovementModule.turnEfficiencyMultiplier;
 
 		EstimateMovementForGivenFrames(m_playingFrames);

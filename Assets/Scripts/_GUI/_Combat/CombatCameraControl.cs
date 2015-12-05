@@ -24,12 +24,24 @@ public class CombatCameraControl : MonoBehaviour {
 
 	private float touchDistance;
 
+	private GameObject fakeObject;
+	private float lerpSpeed;
+
 	// Use this for initialization
 	void Awake () {
 		zoomLevel = defaultZoomLevel;
 
 		xRot = defaultX;
 		yRot = defaultY;
+	}
+
+	void Start()
+	{
+		lerpSpeed = 0.3f;
+
+		fakeObject = new GameObject();
+		fakeObject.transform.position = transform.position;
+		fakeObject.name = "CameraTargetPosition";
 	}
 	
 	// Update is called once per frame
@@ -38,6 +50,11 @@ public class CombatCameraControl : MonoBehaviour {
 		lookAtTarget = CombatSelectionHandler.selectedObject.transform;
 
 		bool touchingInsideCameraMoveArea = true;
+
+		if(Input.touchCount == 0)
+		{
+			touchingInsideCameraMoveArea = false;
+		}
 
 		foreach(Touch t in Input.touches)
 		{
@@ -52,7 +69,13 @@ public class CombatCameraControl : MonoBehaviour {
 		}
 
 		if(!touchingInsideCameraMoveArea)
-			return;
+		{
+			lerpSpeed = 0.3f;
+		}
+		else
+		{
+			lerpSpeed = 1.0f;
+		}
 
 		if(Input.touchCount == 2)
 		{
@@ -90,11 +113,15 @@ public class CombatCameraControl : MonoBehaviour {
 
 		zoomLevel = Mathf.Clamp(zoomLevel,zoomMin,zoomMax);
 		
-		transform.position = lookAtTarget.transform.position;
+		fakeObject.transform.position = lookAtTarget.transform.position;
+
+		fakeObject.transform.eulerAngles = new Vector3(xRot,yRot,0);
+
+		fakeObject.transform.position -= fakeObject.transform.forward*zoomLevel;
+
+		transform.position = Vector3.Lerp(transform.position,fakeObject.transform.position,lerpSpeed);
 
 		transform.eulerAngles = new Vector3(xRot,yRot,0);
-
-		transform.position -= transform.forward*zoomLevel;
 
 
 

@@ -7,44 +7,23 @@ public class MissileNavigator : MonoBehaviour {
 
 	public MovementModule movementModule;
 
-	public LineRenderer line;
-
-
 	public void FindInterceptSolution()
 	{
-		float distanceToTarget = Vector3.Distance(target.transform.position,transform.position);
 
-		float myCurrentAirSpeed = movementModule.airSpeed;
+		Vector3 directionToTarget = target.transform.position - transform.position;
 
-		float framesToReachTarget = distanceToTarget / (myCurrentAirSpeed * Constants.delta);
+		Vector3 relativeDirectionToTarget = transform.InverseTransformDirection(directionToTarget);
 
-		Vector3 interceptionPoint = target.transform.position + target.GetComponent<MovementModule>().airSpeed * Constants.delta * framesToReachTarget * target.transform.forward;
+		relativeDirectionToTarget.Normalize();
 
-		Vector3 relativeInterceptPoint = transform.InverseTransformPoint(interceptionPoint);
+		Debug.Log(Vector3.Distance(target.transform.position,transform.position));
 
-		Debug.Log("target distance: "+distanceToTarget);
+		movementModule.SetCommandsForThisTurn(100,(relativeDirectionToTarget.x < 0) ? -100:100 , (relativeDirectionToTarget.y < 0) ? 100:-100 , 0);
 
-		relativeInterceptPoint.Normalize();
+		movementModule.ExecuteMovement();
 
-		float angleBetweenMyHeadingAndTargetPoint = Vector3.Angle(transform.forward,relativeInterceptPoint);
 
-		Debug.Log("intercept angle: "+angleBetweenMyHeadingAndTargetPoint);
 
-		float speed = 100.0f;
-
-		if(angleBetweenMyHeadingAndTargetPoint > (framesToReachTarget * movementModule.yawRate * Constants.delta))
-		{
-			Debug.Log("slowing down to turn");
-
-			speed = -100.0f;
-		}
-
-		Debug.Log("relative intercept point: "+relativeInterceptPoint);
-		Debug.Log("my heading: "+transform.forward);
-
-		movementModule.SetCommandsForThisTurn(speed,Mathf.Clamp(relativeInterceptPoint.x * Constants.navigationConstant * 100,-100,100),Mathf.Clamp(relativeInterceptPoint.y * Constants.navigationConstant * -100,-100,100 ),0);
-
-        movementModule.ExecuteMovement();
 	}
 
 	// Use this for initialization

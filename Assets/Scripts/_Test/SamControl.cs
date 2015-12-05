@@ -26,9 +26,11 @@ public class SamControl : MonoBehaviour {
 	{
 		if(myMissile != null)
 		{
+			myMissile.GetComponent<ProximityModule>().armed = true;
+
 			myMissile.GetComponent<MissileNavigator>().target = target;
 
-			myMissile.GetComponent<MovementModule>().airSpeed = myMissile.GetComponent<MovementModule>().GetOptimalSpeed()/2.0f;
+			myMissile.GetComponent<MovementModule>().airSpeed = myMissile.GetComponent<MovementModule>().GetOptimalSpeed();
 
 			myMissile.transform.SetParent(null);
 

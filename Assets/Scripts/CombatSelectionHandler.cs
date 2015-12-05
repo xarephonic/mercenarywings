@@ -12,6 +12,26 @@ public class CombatSelectionHandler : MonoBehaviour {
 
 	public UnityEvent OnSelectedObjectChanged;
 
+	public void ChangePlaneIndexBy(int change)
+	{
+		int currentIndex = sceneAssetsKeeper.playerAssets.FindIndex(delegate(GameObject item) {
+			return item == selectedObject;
+		});
+
+		currentIndex += change;
+
+		if(currentIndex > sceneAssetsKeeper.playerAssets.Count-1)
+		{
+			currentIndex = 0;
+		}
+		else if(currentIndex < 0)
+		{
+			currentIndex = sceneAssetsKeeper.playerAssets.Count-1;
+		}
+
+		selectedObject = sceneAssetsKeeper.playerAssets[currentIndex];
+	}
+
 	public void SelectRandomOtherObject(GameObject objectNotToChoose)
 	{
 		int rand = Random.Range(0,sceneAssetsKeeper.playerAssets.Count);

@@ -57,7 +57,7 @@ public class MovementModule : MonoBehaviour {
 		
 		turnEfficiency = 1 - turnEfficiency;
 
-		Debug.Log(gameObject.name + "turneff: "+turnEfficiency);
+		//Debug.Log(gameObject.name + "turneff: "+turnEfficiency);
 
 		airSpeed += (transform.forward.y >= 0) ? climbSpeedLoss*-1*transform.forward.y*Constants.delta : diveSpeedGain*-1*transform.forward.y*Constants.delta;
 		
@@ -68,15 +68,5 @@ public class MovementModule : MonoBehaviour {
 		transform.Rotate(new Vector3(p/100.0f * pitchRate * turnEfficiency * Constants.delta,y/100.0f * yawRate * turnEfficiency * Constants.delta, r/100.0f * rollRate * turnEfficiency * Constants.delta));
 		
 		transform.position += transform.forward*airSpeed/3.6f*Constants.delta;
-	}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

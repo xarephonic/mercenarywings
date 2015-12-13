@@ -20,6 +20,11 @@ public class JoystickControl : MonoBehaviour {
 		stickRect.anchoredPosition = new Vector2(Mathf.Clamp(stickRect.anchoredPosition.x,-1*rollLimit,rollLimit),Mathf.Clamp(stickRect.anchoredPosition.y,-1*pitchLimit,pitchLimit));
 	}
 
+	public void SetJoystickPositionAccordingToValues(float p, float r){
+
+		stickRect.anchoredPosition = new Vector2(r / 100 * rollLimit, p / 100 * pitchLimit);
+	}
+
 	// Use this for initialization
 	void Start () {
 

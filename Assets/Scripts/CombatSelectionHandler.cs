@@ -32,20 +32,6 @@ public class CombatSelectionHandler : MonoBehaviour {
 		selectedObject = sceneAssetsKeeper.playerAssets[currentIndex];
 	}
 
-	public void SelectRandomOtherObject(GameObject objectNotToChoose)
-	{
-		int rand = Random.Range(0,sceneAssetsKeeper.playerAssets.Count);
-
-		if(sceneAssetsKeeper.playerAssets[rand] != objectNotToChoose)
-		{
-			selectedObject = sceneAssetsKeeper.playerAssets[rand];
-		}
-		else
-		{
-			SelectRandomOtherObject(objectNotToChoose);
-		}
-	}
-
 	// Use this for initialization
 	void Start () {
 

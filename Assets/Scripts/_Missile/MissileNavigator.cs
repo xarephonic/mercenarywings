@@ -22,8 +22,6 @@ public class MissileNavigator : MonoBehaviour {
 
 		movementModule.ExecuteMovement();
 
-
-
 	}
 
 	// Use this for initialization
@@ -34,7 +32,20 @@ public class MissileNavigator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(target != null)
-		FindInterceptSolution();
+		if(!target)
+		{
+			if(movementModule.enabled)
+				movementModule.enabled = false;
+
+			return;
+		}
+		else{
+			movementModule.enabled = true;
+		}
+
+
+		if(SceneStateManager.currentState == SceneStateManager.CombatSceneState.MOVEMENT){
+			FindInterceptSolution();
+		}
 	}
 }

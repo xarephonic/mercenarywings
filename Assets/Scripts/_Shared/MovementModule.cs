@@ -42,6 +42,24 @@ public class MovementModule : MonoBehaviour {
 		commands.Add(commandsThisTurn);
 	}
 
+	public void SetCommandsForThisTurn(float speed,float yaw,float pitch,float roll,int turnNumber)
+	{
+		Dictionary<string,float> commandsThisTurn = new Dictionary<string, float>();
+		
+		commandsThisTurn.Add("speed",speed);
+		commandsThisTurn.Add("yaw",yaw);
+		commandsThisTurn.Add("pitch",pitch);
+		commandsThisTurn.Add("roll",roll);
+
+		if(commands.Count < turnNumber)
+		{
+			commands.Add(commandsThisTurn);
+		}else {
+		commands[turnNumber-1]= commandsThisTurn;
+		}
+
+	}
+
 	public void ExecuteMovement()
 	{
 		float s = commands[commands.Count-1]["speed"];
@@ -68,5 +86,11 @@ public class MovementModule : MonoBehaviour {
 		transform.Rotate(new Vector3(p/100.0f * pitchRate * turnEfficiency * Constants.delta,y/100.0f * yawRate * turnEfficiency * Constants.delta, r/100.0f * rollRate * turnEfficiency * Constants.delta));
 		
 		transform.position += transform.forward*airSpeed/3.6f*Constants.delta;
+	}
+
+	void Update(){
+
+		if(SceneStateManager.currentState == SceneStateManager.CombatSceneState.MOVEMENT)
+			ExecuteMovement();
 	}
 }

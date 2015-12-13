@@ -15,7 +15,36 @@ public class SliderControl : MonoBehaviour {
 
 	public float[] currentControlValues = new float[4];
 	public float[] oldControlValues = new float[4];
+
 	public UnityEvent OnAircraftControlsChanged;
+
+	public void HandleSelectedAircraftChange(){
+
+		MovementModule mov = CombatSelectionHandler.selectedObject.GetComponent<MovementModule>();
+
+		if(mov.commands.Count == TurnManager.currentTurn){
+			SetControlsPosition(mov.commands[TurnManager.currentTurn-1]["speed"],
+			                    mov.commands[TurnManager.currentTurn-1]["yaw"],
+			                    mov.commands[TurnManager.currentTurn-1]["pitch"],
+			                    mov.commands[TurnManager.currentTurn-1]["roll"]);
+		}
+		else
+		{
+			SetControlsPosition(0,0,0,0);
+		}
+	}
+
+	public void SetControlsPosition(float speed, float yaw,float pitch,float roll){
+		speedSlider.value = speed;
+		yawSlider.value = yaw;
+
+		joystick.SetJoystickPositionAccordingToValues(pitch,roll);
+	}
+
+	public void Commit(){
+		CombatSelectionHandler.selectedObject.GetComponent<MovementModule>().SetCommandsForThisTurn(speedSlider.value,yawSlider.value,joystick.pitch,joystick.roll,TurnManager.currentTurn);
+
+	}
 
 	// Use this for initialization
 	void Start () {

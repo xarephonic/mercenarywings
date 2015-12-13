@@ -27,6 +27,52 @@ public class CombatCameraControl : MonoBehaviour {
 	private GameObject fakeObject;
 	private float lerpSpeed;
 
+	public void MoveFakeObjectToNewPlane(){
+		fakeObject.transform.position = lookAtTarget.transform.position;
+		
+		fakeObject.transform.eulerAngles = new Vector3(xRot,yRot,0);
+		
+		fakeObject.transform.position -= fakeObject.transform.forward*zoomLevel;
+	}
+
+	public void HandleTouchCameraControl(){
+		if(Input.touchCount == 2)
+		{
+			if(touchDistance == 0)
+			{
+				touchDistance = Vector2.Distance(Input.touches[0].position,Input.touches[1].position);
+			}
+			else
+			{
+				float distance = Vector2.Distance(Input.touches[0].position,Input.touches[1].position);
+				
+				float diff = distance - touchDistance;
+				
+				zoomLevel -= diff*Time.deltaTime;
+				
+				touchDistance = distance;
+			}
+		}
+		else if(Input.touchCount > 0)
+		{
+			for (int i = 0; i < Input.touchCount; i++) {
+				if(Input.touches[i].phase == TouchPhase.Moved)
+				{	
+					yRot += Input.touches[i].deltaPosition.x;
+					xRot -= Input.touches[i].deltaPosition.y/2;
+					
+					xRot = Mathf.Clamp(xRot,xMin,xMax);
+				}
+			}
+		}
+		else
+		{
+			touchDistance = 0;
+		}
+		
+		zoomLevel = Mathf.Clamp(zoomLevel,zoomMin,zoomMax);
+	}
+
 	// Use this for initialization
 	void Awake () {
 		zoomLevel = defaultZoomLevel;
@@ -77,46 +123,15 @@ public class CombatCameraControl : MonoBehaviour {
 			lerpSpeed = 1.0f;
 		}
 
-		if(Input.touchCount == 2)
+		if(touchingInsideCameraMoveArea)
 		{
-			if(touchDistance == 0)
-			{
-				touchDistance = Vector2.Distance(Input.touches[0].position,Input.touches[1].position);
-			}
-			else
-			{
-				float distance = Vector2.Distance(Input.touches[0].position,Input.touches[1].position);
-
-				float diff = distance - touchDistance;
-
-				zoomLevel -= diff*Time.deltaTime;
-
-				touchDistance = distance;
-			}
-		}
-		else if(Input.touchCount > 0)
-		{
-			for (int i = 0; i < Input.touchCount; i++) {
-				if(Input.touches[i].phase == TouchPhase.Moved)
-				{	
-					yRot += Input.touches[i].deltaPosition.x;
-					xRot -= Input.touches[i].deltaPosition.y/2;
-
-					xRot = Mathf.Clamp(xRot,xMin,xMax);
-				}
-			}
-		}
-		else
-		{
-			touchDistance = 0;
+			HandleTouchCameraControl();
 		}
 
-		zoomLevel = Mathf.Clamp(zoomLevel,zoomMin,zoomMax);
-		
 		fakeObject.transform.position = lookAtTarget.transform.position;
-
+		
 		fakeObject.transform.eulerAngles = new Vector3(xRot,yRot,0);
-
+		
 		fakeObject.transform.position -= fakeObject.transform.forward*zoomLevel;
 
 		transform.position = Vector3.Lerp(transform.position,fakeObject.transform.position,lerpSpeed);

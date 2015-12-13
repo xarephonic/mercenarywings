@@ -44,6 +44,14 @@ public class SliderControl : MonoBehaviour {
 	public void Commit(){
 		CombatSelectionHandler.selectedObject.GetComponent<MovementModule>().SetCommandsForThisTurn(speedSlider.value,yawSlider.value,joystick.pitch,joystick.roll,TurnManager.currentTurn);
 
+
+	}
+
+	public void SetSlidersInteractable(bool b){
+		speedSlider.interactable = b;
+		yawSlider.interactable = b;
+
+		joystick.interactable = b;
 	}
 
 	// Use this for initialization

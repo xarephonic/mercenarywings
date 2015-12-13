@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class SceneStateManager : MonoBehaviour {
 	
 	private int playedFrames;
+
+	public UnityEvent OnPlayFramesCompleted;
 
 	public enum  CombatSceneState{
 		COMMAND,
@@ -18,6 +21,10 @@ public class SceneStateManager : MonoBehaviour {
 
 		switch(newState){
 		case CombatSceneState.COMMAND:
+
+			if(currentState == CombatSceneState.MOVEMENT)
+				OnPlayFramesCompleted.Invoke();
+
 			currentState = newState;
 			break;
 		case CombatSceneState.MOVEMENT:

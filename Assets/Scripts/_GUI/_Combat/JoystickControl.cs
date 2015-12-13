@@ -4,6 +4,8 @@ using System.Collections;
 
 public class JoystickControl : MonoBehaviour {
 
+	public bool interactable;
+
 	public float roll;
 	public float pitch;
 	
@@ -15,6 +17,9 @@ public class JoystickControl : MonoBehaviour {
 
 	public void ChangeJoystickPosition()
 	{
+		if(!interactable)
+			return;
+
 		stickRect.transform.position = Input.mousePosition;
 
 		stickRect.anchoredPosition = new Vector2(Mathf.Clamp(stickRect.anchoredPosition.x,-1*rollLimit,rollLimit),Mathf.Clamp(stickRect.anchoredPosition.y,-1*pitchLimit,pitchLimit));
@@ -27,6 +32,8 @@ public class JoystickControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		interactable = true;
 
 		myRect = GetComponent<RectTransform>();
 		stickRect = transform.GetChild(0).GetComponent<RectTransform>();

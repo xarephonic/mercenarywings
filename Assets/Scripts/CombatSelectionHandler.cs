@@ -32,6 +32,16 @@ public class CombatSelectionHandler : MonoBehaviour {
 		selectedObject = sceneAssetsKeeper.playerAssets[currentIndex];
 	}
 
+	public void SwitchToNextPlaneWithoutCommands(){
+
+		foreach(GameObject playerAsset in sceneAssetsKeeper.playerAssets){
+			if(playerAsset.GetComponent<MovementModule>().commands.Count != TurnManager.currentTurn){
+				selectedObject = playerAsset;
+				break;
+			}
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 

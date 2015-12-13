@@ -288,6 +288,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc0cf009ef3b49228b9f3e00eaedbe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPlayFramesCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 30426829}
+        m_MethodName: SetSlidersInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &54246323
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +444,17 @@ MonoBehaviour:
       - m_Target: {fileID: 330363578}
         m_MethodName: EndTurn
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 30426829}
+        m_MethodName: SetSlidersInteractable
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4023,6 +4050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdaeb69a391aa41bda66e2ec320a9e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: 0
   roll: 0
   pitch: 0
   rollLimit: 0
@@ -5117,6 +5145,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 330363578}
         m_MethodName: CheckForEndTurnAvailability
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 146837333}
+        m_MethodName: SwitchToNextPlaneWithoutCommands
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

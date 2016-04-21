@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+CRC: 641246307
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f28380635daf5cf27cc84edfe3e1b8d2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ce11d4bf390cd4ec381fe10cda8534a0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6f2c1214a960745559fd63763801602e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 422dc06663d3e4ec490829bec355694c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4d2eb1c9cf7874a2c90dda4463fb9e5e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d1a69fac8699f4b6c8108a46aea93800, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1c36b84dd7fd24d158677444f9f2f7fb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cb5a21eff6a67469181955ca4dbd9d6c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/CombatPlanes/F22.prefab
+Dependencies: []

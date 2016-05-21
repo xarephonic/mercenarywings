@@ -52,6 +52,6 @@ public class AssetKeeper : MonoBehaviour {
 
     void Start()
     {
-        RetrieveAllPlaneData();
+        //RetrieveAllPlaneData();
     }
 }

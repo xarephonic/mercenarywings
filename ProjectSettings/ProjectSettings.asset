@@ -158,7 +158,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/mercenarywings/bfmercenarywings.keystore
+  AndroidKeystoreName: G:/UnityTestProjects/mercenarywings/bfmercenarywings.keystore
   AndroidKeyaliasName: bfmercenarywings
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

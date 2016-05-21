@@ -11,6 +11,15 @@ public class TrackingModule : MonoBehaviour {
 
 	public GameObject target;
 
+    public void SetTarget(GameObject newTarget)
+    {
+        if (newTarget == target)
+            return;
+
+        trackProgress = 0;
+        target = newTarget;
+    }
+
 	public Vector3 lastTrackedPosition;
 
 	public TrackingType trackType;
@@ -32,9 +41,10 @@ public class TrackingModule : MonoBehaviour {
 
 		float targetEcmStrength = (trackType == TrackingType.radar) ? targetEcmModule.radarEcmStrength : targetEcmModule.infraredEcmStrength;
 
-		float lockTime = (baseLockTimeConstant + ((sensorStrength - targetEcmStrength)*0.05f));
+		float lockTime = (baseLockTimeConstant + ((targetEcmStrength - sensorStrength)*0.05f));
 
 		trackProgress += Constants.delta;
+        trackProgress = Mathf.Clamp(trackProgress, 0, lockTime);
 
 		locked = (trackProgress >= lockTime) ? true : false;
 	}
@@ -77,6 +87,9 @@ public class TrackingModule : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (target)
+        {
+            TrackTarget();
+        }
 	}
 }

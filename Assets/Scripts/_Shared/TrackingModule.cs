@@ -17,6 +17,8 @@ public class TrackingModule : MonoBehaviour {
             return;
 
         trackProgress = 0;
+		trackProgressPercentage = 0;
+		locked = false;
         target = newTarget;
     }
 
@@ -29,6 +31,7 @@ public class TrackingModule : MonoBehaviour {
 
 	public bool locked;
 	public float trackProgress;
+	public float trackProgressPercentage;
 
 	public float sensorStrength;
 
@@ -45,6 +48,8 @@ public class TrackingModule : MonoBehaviour {
 
 		trackProgress += Constants.delta;
         trackProgress = Mathf.Clamp(trackProgress, 0, lockTime);
+
+		trackProgressPercentage = trackProgress / lockTime;
 
 		locked = (trackProgress >= lockTime) ? true : false;
 	}
@@ -87,7 +92,9 @@ public class TrackingModule : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (target)
+
+		//TODO make this work only when the game is in play state (stop tracking in planning state)
+		if (target && SceneStateManager.currentState == SceneStateManager.CombatSceneState.MOVEMENT)
         {
             TrackTarget();
         }

@@ -86,7 +86,7 @@ public class CombatCameraControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		lookAtTarget = CombatSelectionHandler.selectedObject.transform;
+		lookAtTarget = PlayerPlaneSelectionHandler.selectedPlane.transform;
 
 		Vector3 targetCameraPosition = Vector3.forward*targetZoom;
 

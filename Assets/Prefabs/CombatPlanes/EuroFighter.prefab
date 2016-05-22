@@ -477,6 +477,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &124128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 456062}
+  - 65: {fileID: 6596006}
+  m_Layer: 0
+  m_Name: SelectionCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &124452
 GameObject:
   m_ObjectHideFlags: 1
@@ -2332,7 +2348,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412004}
-  - 65: {fileID: 6546988}
   - 114: {fileID: 11449556}
   - 114: {fileID: 11469850}
   - 114: {fileID: 11407080}
@@ -3071,12 +3086,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178908}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -28.375868, y: 7.129, z: -1.2968173}
+  m_LocalPosition: {x: 444.34003, y: 158.02814, z: -210.85626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441148}
   - {fileID: 490800}
   - {fileID: 416224}
+  - {fileID: 456062}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &413362
@@ -3997,6 +4013,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443608}
   m_RootOrder: 6
+--- !u!4 &456062
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 412004}
+  m_RootOrder: 3
 --- !u!4 &456360
 Transform:
   m_ObjectHideFlags: 1
@@ -9372,18 +9400,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108460}
   m_Mesh: {fileID: 4300094, guid: f61bfdd922a2f894faf1e319c7e818a5, type: 3}
---- !u!65 &6546988
+--- !u!65 &6596006
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178908}
+  m_GameObject: {fileID: 124128}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.908223, y: 5.4132767, z: 15.657734}
-  m_Center: {x: -0.055877686, y: 1.2632446, z: 0.046157837}
+  m_Size: {x: 10.838481, y: 5.3889217, z: 15.57506}
+  m_Center: {x: -0.073181145, y: 1.3349762, z: 0.02755738}
 --- !u!114 &11407080
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -42,7 +42,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 			sceneAssetsKeeper.playerAssets.Add(x);
 		}
 
-		CombatSelectionHandler.selectedObject = sceneAssetsKeeper.playerAssets[0];
+		PlayerPlaneSelectionHandler.selectedPlane = sceneAssetsKeeper.playerAssets[0];
 	}
 
 	// Use this for initialization

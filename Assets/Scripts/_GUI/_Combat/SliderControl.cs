@@ -20,7 +20,7 @@ public class SliderControl : MonoBehaviour {
 
 	public void HandleSelectedAircraftChange(){
 
-		MovementModule mov = CombatSelectionHandler.selectedObject.GetComponent<MovementModule>();
+		MovementModule mov = PlayerPlaneSelectionHandler.selectedPlane.GetComponent<MovementModule>();
 
 		if(mov.commands.Count == TurnManager.currentTurn){
 			SetControlsPosition(mov.commands[TurnManager.currentTurn-1]["speed"],
@@ -42,7 +42,7 @@ public class SliderControl : MonoBehaviour {
 	}
 
 	public void Commit(){
-		CombatSelectionHandler.selectedObject.GetComponent<MovementModule>().SetCommandsForThisTurn(speedSlider.value,yawSlider.value,joystick.pitch,joystick.roll,TurnManager.currentTurn);
+		PlayerPlaneSelectionHandler.selectedPlane.GetComponent<MovementModule>().SetCommandsForThisTurn(speedSlider.value,yawSlider.value,joystick.pitch,joystick.roll,TurnManager.currentTurn);
 
 
 	}

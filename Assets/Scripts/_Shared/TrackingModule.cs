@@ -16,11 +16,15 @@ public class TrackingModule : MonoBehaviour {
         if (newTarget == target)
             return;
 
-        trackProgress = 0;
-		trackProgressPercentage = 0;
-		locked = false;
+		ResetLock();
         target = newTarget;
     }
+
+	public void ResetLock(){
+		trackProgress = 0;
+		trackProgressPercentage = 0;
+		locked = false;
+	}
 
 	public Vector3 lastTrackedPosition;
 
@@ -72,8 +76,7 @@ public class TrackingModule : MonoBehaviour {
 		}
 		else
 		{
-			locked = false;
-			trackProgress = 0;
+			ResetLock();
 		}
 	}
 

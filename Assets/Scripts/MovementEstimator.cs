@@ -14,7 +14,7 @@ public class MovementEstimator : MonoBehaviour {
 	{
 		//this is very ugly. you may want to find a fix to this. be careful not to shallow copy!!!
 
-		MovementModule selectedTargetMovementModule = CombatSelectionHandler.selectedObject.GetComponent<MovementModule>();
+		MovementModule selectedTargetMovementModule = PlayerPlaneSelectionHandler.selectedPlane.GetComponent<MovementModule>();
 
 		movementModule.airSpeed = selectedTargetMovementModule.airSpeed;
 		movementModule.altitude = selectedTargetMovementModule.altitude;
@@ -34,8 +34,8 @@ public class MovementEstimator : MonoBehaviour {
 
 	public void EstimateMovementForGivenFrames(int amountOfFramesToBeEstimated)
 	{
-		transform.position = CombatSelectionHandler.selectedObject.transform.position;
-		transform.eulerAngles = CombatSelectionHandler.selectedObject.transform.eulerAngles;
+		transform.position = PlayerPlaneSelectionHandler.selectedPlane.transform.position;
+		transform.eulerAngles = PlayerPlaneSelectionHandler.selectedPlane.transform.eulerAngles;
 
 		movementModule.SetCommandsForThisTurn(sliderControl.speedSlider.value,sliderControl.yawSlider.value,sliderControl.joystick.pitch,sliderControl.joystick.roll);
 

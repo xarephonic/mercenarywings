@@ -5,17 +5,33 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 	public GameObject[] aircraftAssets;
 	public GameObject playerSpawnPositionsRoot;
+	public GameObject opponentSpawnPositionsRoot;
 	public SceneAssetsKeeper sceneAssetsKeeper;
 
-	public Vector3[] spawnPositions;
+	public Vector3[] playerSpawnPositions;
+	public Vector3[] opponentSpawnPositions;
 
-	void GetSpawnPositions()
+	//TODO replace this with a system to select appropriate enemy planes
+	public GameObject opponentPlanePrefab;
+
+	public delegate void MissionSpawnAction();
+	public static event MissionSpawnAction OnMissionAssetsSpawned;
+
+	void GetPlayerSpawnPositions()
 	{
-		spawnPositions = new Vector3[playerSpawnPositionsRoot.transform.childCount];
+		playerSpawnPositions = new Vector3[playerSpawnPositionsRoot.transform.childCount];
 
-		for (int i = 0; i < spawnPositions.Length; i++) 
+		for (int i = 0; i < playerSpawnPositions.Length; i++) 
 		{
-			spawnPositions[i] = playerSpawnPositionsRoot.transform.GetChild(i).transform.position;
+			playerSpawnPositions[i] = playerSpawnPositionsRoot.transform.GetChild(i).transform.position;
+		}
+	}
+
+	void GetOpponentSpawnPositions(){
+		opponentSpawnPositions = new Vector3[opponentSpawnPositionsRoot.transform.childCount];
+
+		for (int i = 0; i < opponentSpawnPositions.Length; i++) {
+			opponentSpawnPositions[i] = opponentSpawnPositionsRoot.transform.GetChild(i).transform.position;
 		}
 	}
 
@@ -34,7 +50,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 				}
 			}
 			
-			GameObject x = Instantiate(aircraftToBeSpawned,spawnPositions[i],Quaternion.identity) as GameObject;
+			GameObject x = Instantiate(aircraftToBeSpawned,playerSpawnPositions[i],Quaternion.identity) as GameObject;
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
 
@@ -43,6 +59,20 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 		}
 
 		PlayerPlaneSelectionHandler.selectedPlane = sceneAssetsKeeper.playerAssets[0];
+
+
+
+	}
+
+	void SpawnEnemyPlanes(){
+		for (int i = 0; i < Random.Range(1,3); i++) {
+			GameObject x = Instantiate(opponentPlanePrefab,opponentSpawnPositions[i],Quaternion.identity) as GameObject;
+
+			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
+
+			sceneAssetsKeeper.instantiatedAssets.Add(x);
+			sceneAssetsKeeper.opponentAssets.Add(x);
+		}
 	}
 
 	// Use this for initialization
@@ -50,9 +80,13 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 		sceneAssetsKeeper = GetComponent<SceneAssetsKeeper>();
 
-		GetSpawnPositions();
+		GetPlayerSpawnPositions();
 		SpawnPlayerPlanes();
 
+		GetOpponentSpawnPositions();
+		SpawnEnemyPlanes();
+
+		OnMissionAssetsSpawned();
 	}
 	
 	// Update is called once per frame

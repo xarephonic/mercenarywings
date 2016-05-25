@@ -10,7 +10,9 @@ public class MissionLoader : MonoBehaviour {
 	IEnumerator UpdateProgressBar(AsyncOperation aop)
 	{
 		if(!aop.isDone)
-		loadingBar.fillAmount = aop.progress;
+			loadingBar.fillAmount = aop.progress;
+		else
+			yield break;
 
 		yield return new WaitForSeconds(0.01f);
 

@@ -50,7 +50,7 @@ public class SamControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		foreach(GameObject asset in SceneAssetsKeeper.sceneAssetsKeeper.playerAssets)
+		foreach(GameObject asset in SceneAssetsKeeper.instance.playerAssets)
 		{
 			if(Vector3.Distance(asset.transform.position,transform.position) < trackingModule.trackRange)
 			{

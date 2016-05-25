@@ -78,9 +78,11 @@ public class CombatCameraControl : MonoBehaviour {
 
 	void Start()
 	{
+		/*
 		cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube.name = "TestyTheCube";
 		cube.GetComponent<MeshRenderer>().enabled = false;
+		*/
 	}
 	
 	// Update is called once per frame
@@ -94,7 +96,7 @@ public class CombatCameraControl : MonoBehaviour {
 
 		targetCameraPosition += lookAtTarget.position;
 
-		cube.transform.position = targetCameraPosition;
+		//cube.transform.position = targetCameraPosition;
 
 		if(Vector3.Distance(Camera.main.transform.position,targetCameraPosition) > 1)
 		Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,targetCameraPosition,moveSpeed);

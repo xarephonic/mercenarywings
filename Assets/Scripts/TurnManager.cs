@@ -20,7 +20,7 @@ public class TurnManager : MonoBehaviour {
 
 	public void CheckForEndTurnAvailability(){
 
-		bool allAssetsRecievedOrders = SceneAssetsKeeper.sceneAssetsKeeper.playerAssets.TrueForAll(delegate(GameObject playerAsset) {
+		bool allAssetsRecievedOrders = SceneAssetsKeeper.instance.playerAssets.TrueForAll(delegate(GameObject playerAsset) {
 			return playerAsset.GetComponent<MovementModule>().commands.Count == TurnManager.currentTurn;
 		});
 

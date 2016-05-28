@@ -39,12 +39,21 @@ public class MovementEstimator : MonoBehaviour {
 
 		movementModule.SetCommandsForThisTurn(sliderControl.speedSlider.value,sliderControl.yawSlider.value,sliderControl.joystick.pitch,sliderControl.joystick.roll);
 
+		float previousAirSpeed = movementModule.airSpeed;
+
 		for (int i = 0; i < amountOfFramesToBeEstimated; i++) {
 
 			estimationLine.SetPosition(i,transform.position);
 
 			movementModule.ExecuteMovement();
 		}
+
+		float currentAirSpeed = movementModule.airSpeed;
+
+		Color prevColor = Color.Lerp(Color.red,Color.green,previousAirSpeed / movementModule.maxSpeed);
+		Color curColor = Color.Lerp(Color.red,Color.green,currentAirSpeed / movementModule.maxSpeed);
+
+		estimationLine.SetColors(prevColor,curColor);
 	}
 
 	// Use this for initialization

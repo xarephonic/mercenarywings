@@ -22,9 +22,17 @@ public class TargetingUI : MonoBehaviour {
 		for (int i = 0; i < SceneAssetsKeeper.instance.opponentAssets.Count; i++) {
 			GameObject target = SceneAssetsKeeper.instance.opponentAssets[i];
 
-			Vector2 screenPos = Camera.main.WorldToScreenPoint(target.transform.position);
+			Vector3 screenPos = Camera.main.WorldToScreenPoint(target.transform.position);
 
-			screenPos = new Vector2(screenPos.x / canvas.transform.localScale.x , screenPos.y / canvas.transform.localScale.y);
+			if(screenPos.z > 0)
+			{
+				screenPos = new Vector3(screenPos.x / canvas.transform.localScale.x , screenPos.y / canvas.transform.localScale.y,0);
+			}
+			else
+			{
+				targetIndicatorPool[i].SetActive(false);
+				return;
+			}
 
 			targetIndicatorPool[i].GetComponent<RectTransform>().anchoredPosition = screenPos;
 

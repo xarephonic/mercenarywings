@@ -83,7 +83,7 @@ public class MovementModule : MonoBehaviour {
 		
 		airSpeed = Mathf.Clamp(airSpeed,0,maxSpeed);
 
-		transform.Rotate(new Vector3(p/100.0f * pitchRate * turnEfficiency * Constants.delta,y/100.0f * yawRate * turnEfficiency * Constants.delta, r/100.0f * rollRate * turnEfficiency * Constants.delta));
+		transform.Rotate(new Vector3(p/100.0f * pitchRate * turnEfficiency * Constants.delta,r/100.0f * yawRate * turnEfficiency * Constants.delta, r/100.0f * -rollRate * turnEfficiency * Constants.delta));
 		
 		transform.position += transform.forward*airSpeed/3.6f*Constants.delta;
 	}

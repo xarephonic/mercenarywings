@@ -25,7 +25,7 @@ public class CombatCameraControl : MonoBehaviour {
 
 	public float defaultZoom;
 	public float zoomMin = 40.0f;
-	public float zoomMax = 180.0f;
+	public float zoomMax = 1800.0f;
 	public float zoomSpeed;
 
 	public float targetZoom;
@@ -34,13 +34,17 @@ public class CombatCameraControl : MonoBehaviour {
 
 	private GameObject cube;
 
-
 	public void HandleTouchCameraControl(){
+
 		if (Input.touchCount == 2)
 		{
 			// Store both touches.
 			Touch touchZero = Input.GetTouch(0);
 			Touch touchOne = Input.GetTouch(1);
+
+			if(EventSystem.current.IsPointerOverGameObject(touchZero.fingerId) || EventSystem.current.IsPointerOverGameObject(touchOne.fingerId)){
+				return;
+			}
 
 			// Find the position in the previous frame of each touch.
 			Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
@@ -59,6 +63,10 @@ public class CombatCameraControl : MonoBehaviour {
 		}
 		else if(Input.touchCount == 1)
 		{
+			if(EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)){
+				return;
+			}
+
 			if(rotateMode){
 				Vector2 movement = Input.touches[0].deltaPosition;
 
@@ -87,6 +95,8 @@ public class CombatCameraControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		HandleTouchCameraControl();
 	
 		lookAtTarget = PlayerPlaneSelectionHandler.selectedPlane.transform;
 

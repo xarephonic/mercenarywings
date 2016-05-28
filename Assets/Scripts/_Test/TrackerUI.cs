@@ -19,7 +19,9 @@ public class TrackerUI : MonoBehaviour {
 		crossHairImage.rectTransform.pivot = new Vector2(0.5f,0.5f);
 		crossHairImage.rectTransform.anchorMax = Vector2.zero;
 		crossHairImage.rectTransform.anchorMin = Vector2.zero;
+		crossHairImage.rectTransform.sizeDelta = new Vector2(64,64);
 
+		crossHairImage.raycastTarget = false;
 		crossHairImage.sprite = trackingCrosshair;
 		crossHairImage.color = Color.black;
 		crossHairImage.type = Image.Type.Filled;
@@ -39,7 +41,7 @@ public class TrackerUI : MonoBehaviour {
 		myTargetingLine.useWorldSpace = true;
 		myTargetingLine.SetVertexCount(2);
 		myTargetingLine.SetPositions(new Vector3[]{Vector3.zero,Vector3.zero});
-		myTargetingLine.SetWidth(0.05f,0.05f);
+		myTargetingLine.SetWidth(0.5f,0.5f);
 		myTargetingLine.SetColors(Color.red,Color.red);
 		myTargetingLine.enabled = false;
 
@@ -51,17 +53,27 @@ public class TrackerUI : MonoBehaviour {
 
         if (myTrackingModule.target)
         {
-			Vector2 screenCoords = Camera.main.WorldToScreenPoint(myTrackingModule.target.transform.position);
+			Vector3 screenCoords = Camera.main.WorldToScreenPoint(myTrackingModule.target.transform.position);
+
+			if(screenCoords.z < 0)
+			{
+				myTrackingCrosshair.enabled = false;
+				return;
+			}
+
+			myTrackingCrosshair.enabled = true;
 
 			myTrackingCrosshair.rectTransform.anchoredPosition = new Vector2( screenCoords.x / myTrackingCrosshair.transform.parent.localScale.x,screenCoords.y / myTrackingCrosshair.transform.parent.localScale.y);
 
 			myTrackingCrosshair.GetComponent<Image>().fillAmount = myTrackingModule.trackProgressPercentage;
+
 
 			if(myTrackingModule.locked)
 				myTrackingCrosshair.color = Color.red;
 			else{
 				myTrackingCrosshair.color = Color.black;
 			}
+
 
 			myTargetingLine.enabled = true;
 

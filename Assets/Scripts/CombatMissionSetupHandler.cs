@@ -65,7 +65,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 	}
 
 	void SpawnEnemyPlanes(){
-		for (int i = 0; i < Random.Range(1,3); i++) {
+		for (int i = 0; i < Random.Range(3,6); i++) {
 			GameObject x = Instantiate(opponentPlanePrefab,opponentSpawnPositions[i],Quaternion.identity) as GameObject;
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();

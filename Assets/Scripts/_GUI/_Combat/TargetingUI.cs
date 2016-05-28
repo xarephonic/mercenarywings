@@ -63,6 +63,8 @@ public class TargetingUI : MonoBehaviour {
 
 			targetIndicator.SetActive(false);
 
+			targetIndicator.GetComponent<Image>().color = Color.green;
+
 			targetIndicatorPool.Add(targetIndicator);
 
 			BindIndicatorToTarget(targetIndicator.GetComponent<Button>(),target);

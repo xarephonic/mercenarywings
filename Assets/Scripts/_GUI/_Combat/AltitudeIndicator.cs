@@ -31,11 +31,12 @@ public class AltitudeIndicator : MonoBehaviour {
 		if(Physics.Raycast(downRay,out hit)){
 			altitudeIndicator.SetPosition(0,transform.position);
 			altitudeIndicator.SetPosition(1,hit.point);
-			hitIndicator.transform.position = hit.point;
+			hitIndicator.transform.position = hit.point +new Vector3(0,1,0);
+			hitIndicator.transform.eulerAngles = hit.normal - new Vector3(90,0,0);
 		}else{
 			altitudeIndicator.SetPosition(0,transform.position);
 			altitudeIndicator.SetPosition(1,new Vector3(transform.position.x,0,transform.position.z));
-			hitIndicator.transform.position = new Vector3(transform.position.x,0,transform.position.z);
+			hitIndicator.transform.position = new Vector3(transform.position.x,1,transform.position.z);
 		}
 
 

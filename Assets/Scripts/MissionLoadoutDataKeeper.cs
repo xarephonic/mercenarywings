@@ -11,6 +11,7 @@ public class MissionLoadoutDataKeeper : MonoBehaviour {
 	public void AddPlaneToMissionLoadout(int planeId)
 	{
 		planesToTakeIntoMission.Add(planeId);
+		planesToTakeIntoMission.Add(planeId);
 	}
 
 	public void RemovePlaneFromMissionLoadout(int planeId)

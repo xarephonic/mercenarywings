@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 426496}
   - 120: {fileID: 12055734}
   - 114: {fileID: 11490444}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AltitudeLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 465194}
   - 33: {fileID: 3361172}
   - 23: {fileID: 2378932}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   altitudeIndicator: {fileID: 12055734}
-  hitIndicator: {fileID: 0}
+  hitIndicator: {fileID: 139100}
   show: 1
 --- !u!120 &12055734
 LineRenderer:

@@ -7,6 +7,7 @@ public class MovementEstimator : MonoBehaviour {
 
 	public MovementModule movementModule;
 	public LineRenderer estimationLine;
+	public GameObject fakePlaneMesh;
 
 	private int m_playingFrames;
 
@@ -34,6 +35,8 @@ public class MovementEstimator : MonoBehaviour {
 
 	public void EstimateMovementForGivenFrames(int amountOfFramesToBeEstimated)
 	{
+
+
 		transform.position = PlayerPlaneSelectionHandler.selectedPlane.transform.position;
 		transform.eulerAngles = PlayerPlaneSelectionHandler.selectedPlane.transform.eulerAngles;
 
@@ -63,10 +66,17 @@ public class MovementEstimator : MonoBehaviour {
 		movementModule = GetComponent<MovementModule>();
 
 		estimationLine.SetVertexCount(m_playingFrames);
+
+		fakePlaneMesh = transform.GetChild(0).gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(SceneStateManager.currentState == SceneStateManager.CombatSceneState.MOVEMENT){
+			fakePlaneMesh.SetActive(false);
+			return;
+		}
 
+		fakePlaneMesh.SetActive(true);
 	}
 }

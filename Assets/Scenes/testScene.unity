@@ -165,9 +165,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 195074539}
-  m_LocalRotation: {x: 0.000000058207654, y: -0.000000076368444, z: 0.00000001862645,
-    w: 1}
-  m_LocalPosition: {x: 0.4927647, y: 4.5399103, z: -1.6127529}
+  m_LocalRotation: {x: 0.000000056586387, y: -0.07761558, z: 0.000000023088084, w: 0.99698335}
+  m_LocalPosition: {x: 0.4927647, y: 4.5399103, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -184,7 +183,6 @@ GameObject:
   - 65: {fileID: 507913947}
   - 23: {fileID: 507913946}
   - 114: {fileID: 507913951}
-  - 114: {fileID: 507913950}
   m_Layer: 0
   m_Name: Target0
   m_TagString: Untagged
@@ -249,17 +247,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!114 &507913950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 507913945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ba0fd46d00ec2429b917b7243fe43d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &507913951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +360,7 @@ MonoBehaviour:
   locked: 0
   trackProgress: 0
   trackProgressPercentage: 0
-  sensorStrength: 0
+  sensorStrength: 5
   baseLockTimeConstant: 0.5
 --- !u!114 &565150946
 MonoBehaviour:
@@ -631,7 +618,6 @@ GameObject:
   - 65: {fileID: 1228254414}
   - 23: {fileID: 1228254413}
   - 114: {fileID: 1228254418}
-  - 114: {fileID: 1228254417}
   m_Layer: 0
   m_Name: Target1
   m_TagString: Untagged
@@ -696,17 +682,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!114 &1228254417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1228254412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ba0fd46d00ec2429b917b7243fe43d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1228254418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +785,6 @@ GameObject:
   - 65: {fileID: 2130684450}
   - 23: {fileID: 2130684449}
   - 114: {fileID: 2130684454}
-  - 114: {fileID: 2130684453}
   m_Layer: 0
   m_Name: Target2
   m_TagString: Untagged
@@ -875,17 +849,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!114 &2130684453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2130684448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ba0fd46d00ec2429b917b7243fe43d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2130684454
 MonoBehaviour:
   m_ObjectHideFlags: 0

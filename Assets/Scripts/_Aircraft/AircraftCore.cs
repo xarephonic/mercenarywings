@@ -4,6 +4,7 @@ using System.Collections;
 public class AircraftCore : MonoBehaviour {
 
 	public int aircraftId;
+	public string aircraftName;
 
 	public MovementModule movementModule;
 	public TrackingModule trackingModule;

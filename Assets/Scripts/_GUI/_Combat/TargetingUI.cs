@@ -35,6 +35,8 @@ public class TargetingUI : MonoBehaviour {
 			}
 
 			targetIndicatorPool[i].GetComponent<RectTransform>().anchoredPosition = screenPos;
+			targetIndicatorPool[i].transform.GetChild(0).GetComponent<Text>().text = target.GetComponent<AircraftCore>().aircraftName;
+			targetIndicatorPool[i].transform.GetChild(1).GetComponent<Text>().text = Vector3.Distance(PlayerPlaneSelectionHandler.selectedPlane.transform.position,target.transform.position).ToString(0+"m");
 
 			targetIndicatorPool[i].SetActive(true);
 		}

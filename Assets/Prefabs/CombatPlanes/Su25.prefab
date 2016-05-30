@@ -316,23 +316,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &170868
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 465364}
-  - 33: {fileID: 3393674}
-  - 23: {fileID: 2394586}
-  m_Layer: 0
-  m_Name: Gears
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &172408
 GameObject:
   m_ObjectHideFlags: 1
@@ -373,6 +356,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 476674}
+  - 205: {fileID: 20565846}
   m_Layer: 0
   m_Name: Su-25TM-Frogfoot_IN_FLIGHT
   m_TagString: Untagged
@@ -524,7 +508,7 @@ Transform:
   - {fileID: 465222}
   - {fileID: 468018}
   m_Father: {fileID: 435262}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!4 &413364
 Transform:
   m_ObjectHideFlags: 1
@@ -612,7 +596,6 @@ Transform:
   - {fileID: 423704}
   - {fileID: 413364}
   - {fileID: 494276}
-  - {fileID: 465364}
   - {fileID: 447660}
   - {fileID: 489884}
   - {fileID: 491658}
@@ -672,7 +655,7 @@ Transform:
   - {fileID: 438504}
   - {fileID: 447258}
   m_Father: {fileID: 435262}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &447698
 Transform:
   m_ObjectHideFlags: 1
@@ -708,7 +691,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435262}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!4 &460520
 Transform:
   m_ObjectHideFlags: 1
@@ -734,18 +717,6 @@ Transform:
   - {fileID: 488788}
   m_Father: {fileID: 405210}
   m_RootOrder: 0
---- !u!4 &465364
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170868}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.002752578, y: 1.6340324, z: 8.472658}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 435262}
-  m_RootOrder: 4
 --- !u!4 &468018
 Transform:
   m_ObjectHideFlags: 1
@@ -809,7 +780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435262}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!4 &478150
 Transform:
   m_ObjectHideFlags: 1
@@ -830,7 +801,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.81, y: 1.47, z: -5.02}
+  m_LocalPosition: {x: -3.4568586, y: 2.05, z: 6.9805527}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 439778}
@@ -862,7 +833,7 @@ Transform:
   m_Children:
   - {fileID: 404770}
   m_Father: {fileID: 435262}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!4 &491658
 Transform:
   m_ObjectHideFlags: 1
@@ -874,7 +845,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435262}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!4 &494276
 Transform:
   m_ObjectHideFlags: 1
@@ -1347,32 +1318,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &2394586
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170868}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 3ca5c1662c3d304419c889ed933168a5, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2398146
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1505,13 +1450,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162224}
   m_Mesh: {fileID: 4300010, guid: 57acec7eb7cc6e045b007cef3b5e95f3, type: 3}
---- !u!33 &3393674
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170868}
-  m_Mesh: {fileID: 4300030, guid: 57acec7eb7cc6e045b007cef3b5e95f3, type: 3}
 --- !u!33 &3394482
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1667,6 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aircraftId: 0
+  aircraftName: Su-25
   movementModule: {fileID: 0}
   trackingModule: {fileID: 0}
   loadoutModule: {fileID: 0}
@@ -1725,6 +1664,54 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 1
+--- !u!205 &20565846
+LODGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177184}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 4.7088013, y: 2.9030933, z: 10.113623}
+  m_Size: 15.750721
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2347128}
+    - renderer: {fileID: 2303522}
+    - renderer: {fileID: 2321410}
+    - renderer: {fileID: 2338528}
+    - renderer: {fileID: 2376614}
+    - renderer: {fileID: 2387230}
+    - renderer: {fileID: 2391566}
+    - renderer: {fileID: 2326568}
+    - renderer: {fileID: 2310882}
+    - renderer: {fileID: 2338668}
+    - renderer: {fileID: 2377230}
+    - renderer: {fileID: 2305432}
+    - renderer: {fileID: 2314402}
+    - renderer: {fileID: 2382822}
+    - renderer: {fileID: 2346234}
+    - renderer: {fileID: 2313482}
+    - renderer: {fileID: 2398146}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2338528}
+    - renderer: {fileID: 2376614}
+    - renderer: {fileID: 2387230}
+    - renderer: {fileID: 2391566}
+    - renderer: {fileID: 2326568}
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2391566}
+    - renderer: {fileID: 2326568}
+    - renderer: {fileID: 2338528}
+    - renderer: {fileID: 2376614}
+  m_Enabled: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

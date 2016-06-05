@@ -18,6 +18,8 @@ public class BottomBarControl : MonoBehaviour {
 
 			x.GetComponent<Button>().image.sprite = ps.planesArray[i].GetComponent<AircraftCore>().aircraftPicture;
 
+			x.transform.localScale = Vector3.one;
+
 			int indexToGoTo = i;
 
 			x.GetComponent<Button>().onClick.AddListener(() => ps.GoToIndex(indexToGoTo));

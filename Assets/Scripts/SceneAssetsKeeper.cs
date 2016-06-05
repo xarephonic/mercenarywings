@@ -12,6 +12,12 @@ public class SceneAssetsKeeper :MonoBehaviour {
 
 	public List<GameObject> opponentAssets = new List<GameObject>();
 
+	public GameObject GetAssetById(int id){
+		return instantiatedAssets.Find(delegate(GameObject obj) {
+			return obj.GetComponent<AssetIdentifier>().sceneAssetId == id;	
+		});
+	}
+
 	void Awake()
 	{
 		instance = this;

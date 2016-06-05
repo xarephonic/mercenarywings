@@ -17,6 +17,12 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 	public delegate void MissionSpawnAction();
 	public static event MissionSpawnAction OnMissionAssetsSpawned;
 
+	private int sceneAssetId;
+
+	public void SetAssetId(GameObject g){
+		g.AddComponent<AssetIdentifier>().sceneAssetId = sceneAssetId++;
+	}
+
 	void GetPlayerSpawnPositions()
 	{
 		playerSpawnPositions = new Vector3[playerSpawnPositionsRoot.transform.childCount];
@@ -54,14 +60,11 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
 
+			SetAssetId(x);
+
 			sceneAssetsKeeper.instantiatedAssets.Add(x);
 			sceneAssetsKeeper.playerAssets.Add(x);
 		}
-
-		PlayerPlaneSelectionHandler.selectedPlane = sceneAssetsKeeper.playerAssets[0];
-
-
-
 	}
 
 	void SpawnEnemyPlanes(){
@@ -69,6 +72,8 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 			GameObject x = Instantiate(opponentPlanePrefab,opponentSpawnPositions[i],Quaternion.identity) as GameObject;
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
+
+			SetAssetId(x);
 
 			sceneAssetsKeeper.instantiatedAssets.Add(x);
 			sceneAssetsKeeper.opponentAssets.Add(x);

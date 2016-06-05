@@ -8,9 +8,16 @@ public class PlayerPlaneSelectionHandler : MonoBehaviour {
 
 	public static GameObject selectedPlane;
 
+	public static void SetSelectedPlane(GameObject plane){
+		PlayerPlaneSelectionHandler.selectedPlane = plane;
+		OnSelectedPlaneChanged();
+	}
+
 	public GameObject previouslySelectedPlane;
 
-	public UnityEvent OnSelectedPlaneChanged;
+	public delegate void PlaneSelectionAction();
+
+	public static event PlaneSelectionAction OnSelectedPlaneChanged;
 
 	public void ChangePlaneIndexBy(int change)
 	{
@@ -36,7 +43,7 @@ public class PlayerPlaneSelectionHandler : MonoBehaviour {
 
 		foreach(GameObject playerAsset in sceneAssetsKeeper.playerAssets){
 			if(playerAsset.GetComponent<MovementModule>().commands.Count != TurnManager.currentTurn){
-				selectedPlane = playerAsset;
+				SetSelectedPlane(playerAsset);
 				break;
 			}
 		}
@@ -44,23 +51,11 @@ public class PlayerPlaneSelectionHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		CombatMissionSetupHandler.OnMissionAssetsSpawned += SwitchToNextPlaneWithoutCommands;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(previouslySelectedPlane == null)
-		{
-			previouslySelectedPlane = selectedPlane;
-
-			OnSelectedPlaneChanged.Invoke();
-		}
-		else if(previouslySelectedPlane != selectedPlane)
-		{
-			OnSelectedPlaneChanged.Invoke();
-
-			previouslySelectedPlane = selectedPlane;
-		}
+		
 	}
 }

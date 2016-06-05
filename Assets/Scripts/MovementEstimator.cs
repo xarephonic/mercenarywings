@@ -69,14 +69,22 @@ public class MovementEstimator : MonoBehaviour {
 
 		fakePlaneMesh = transform.GetChild(0).gameObject;
 	}
+
+	void Start () {
+		PlayerPlaneSelectionHandler.OnSelectedPlaneChanged += ImitateMovementModule;
+	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(SceneStateManager.currentState == SceneStateManager.CombatSceneState.MOVEMENT){
-			fakePlaneMesh.SetActive(false);
+			for (int i = 0; i < transform.childCount; i++) {
+				transform.GetChild(i).gameObject.SetActive(false);
+			}
 			return;
 		}
 
-		fakePlaneMesh.SetActive(true);
+		for (int i = 0; i < transform.childCount; i++) {
+			transform.GetChild(i).gameObject.SetActive(true);
+		}
 	}
 }

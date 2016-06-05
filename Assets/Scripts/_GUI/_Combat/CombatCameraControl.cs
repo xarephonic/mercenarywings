@@ -86,11 +86,11 @@ public class CombatCameraControl : MonoBehaviour {
 
 	void Start()
 	{
-		/*
+		
 		cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube.name = "TestyTheCube";
 		cube.GetComponent<MeshRenderer>().enabled = false;
-		*/
+
 	}
 	
 	// Update is called once per frame
@@ -100,18 +100,23 @@ public class CombatCameraControl : MonoBehaviour {
 	
 		lookAtTarget = PlayerPlaneSelectionHandler.selectedPlane.transform;
 
-		Vector3 targetCameraPosition = Vector3.forward*targetZoom;
+		Vector3 targetCameraPosition = Vector3.zero;
 
-		targetCameraPosition = Quaternion.Euler(targetRotation.x,targetRotation.y,0) * targetCameraPosition;
+		targetCameraPosition = Vector3.forward*targetZoom;
+
+		targetCameraPosition = Quaternion.Euler(targetRotation.x, targetRotation.y,0) * targetCameraPosition;
 
 		targetCameraPosition += lookAtTarget.position;
 
-		//cube.transform.position = targetCameraPosition;
+		cube.transform.position = targetCameraPosition;
+
 
 		if(Vector3.Distance(Camera.main.transform.position,targetCameraPosition) > 1)
 		Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,targetCameraPosition,moveSpeed);
 
-		Camera.main.transform.eulerAngles = new Vector3(targetRotation.x*-1,targetRotation.y+180,0);
+		Camera.main.transform.eulerAngles = new Vector3(targetRotation.x*-1 , targetRotation.y+180 ,0);
+
+		cube.transform.eulerAngles = Camera.main.transform.eulerAngles;
 
 		//Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView,targetZoom,zoomSpeed);
 	}

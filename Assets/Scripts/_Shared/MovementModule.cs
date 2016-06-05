@@ -21,6 +21,13 @@ public class MovementModule : MonoBehaviour {
 	
 	public float turnEfficiencyMultiplier;
 
+	public bool hasCommands(){
+		if(commands.Count == TurnManager.currentTurn)
+			return true;
+		else
+			return false;
+	}
+
 	public List<Dictionary<string,float>> commands = new List<Dictionary<string, float>>();
 
 	public float GetOptimalSpeed()

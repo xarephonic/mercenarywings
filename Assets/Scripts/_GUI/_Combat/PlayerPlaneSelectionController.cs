@@ -41,15 +41,15 @@ public class PlayerPlaneSelectionController : MonoBehaviour {
 	IEnumerator timeout(){
 		yield return new WaitForEndOfFrame();
 
-		SetHighlightPosition();
+		SetHighlightPosition(PlayerPlaneSelectionHandler.selectedPlane);
 	}
 
-	void SetHighlightPosition(){
+	void SetHighlightPosition(GameObject plane){
 		if(planeButtons.Count <= 0)
 			return;
 
 		Vector3 pos = planeButtons.Find(delegate(GameObject obj) {
-			return obj.name == PlayerPlaneSelectionHandler.selectedPlane.GetComponent<AssetIdentifier>().sceneAssetId.ToString();	
+			return obj.name == plane.GetComponent<AssetIdentifier>().sceneAssetId.ToString();	
 		}).transform.position;
 
 		highlight.transform.position = pos;

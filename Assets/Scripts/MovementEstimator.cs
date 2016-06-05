@@ -11,11 +11,11 @@ public class MovementEstimator : MonoBehaviour {
 
 	private int m_playingFrames;
 
-	public void ImitateMovementModule()
+	public void ImitateMovementModule(GameObject plane)
 	{
 		//this is very ugly. you may want to find a fix to this. be careful not to shallow copy!!!
 
-		MovementModule selectedTargetMovementModule = PlayerPlaneSelectionHandler.selectedPlane.GetComponent<MovementModule>();
+		MovementModule selectedTargetMovementModule = plane.GetComponent<MovementModule>();
 
 		movementModule.airSpeed = selectedTargetMovementModule.airSpeed;
 		movementModule.altitude = selectedTargetMovementModule.altitude;
@@ -71,6 +71,10 @@ public class MovementEstimator : MonoBehaviour {
 	}
 
 	void Start () {
+		sliderControl.OnAircraftControlsChanged.AddListener(delegate {
+			ImitateMovementModule(PlayerPlaneSelectionHandler.selectedPlane);	
+		});
+
 		PlayerPlaneSelectionHandler.OnSelectedPlaneChanged += ImitateMovementModule;
 	}
 	

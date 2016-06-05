@@ -63,6 +63,8 @@ public class TargetingUI : MonoBehaviour {
 
 			targetIndicator.transform.SetParent(canvas.transform);
 
+			targetIndicator.transform.SetAsFirstSibling();
+
 			targetIndicator.SetActive(false);
 
 			targetIndicator.GetComponent<Image>().color = Color.green;
@@ -78,6 +80,8 @@ public class TargetingUI : MonoBehaviour {
 	void Start () {
 
 		CombatMissionSetupHandler.OnMissionAssetsSpawned += CreateTargetIndicators;
+
+		ToggleShow();
 	}
 	
 	// Update is called once per frame

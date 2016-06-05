@@ -10,12 +10,12 @@ public class PlayerPlaneSelectionHandler : MonoBehaviour {
 
 	public static void SetSelectedPlane(GameObject plane){
 		PlayerPlaneSelectionHandler.selectedPlane = plane;
-		OnSelectedPlaneChanged();
+		OnSelectedPlaneChanged(plane);
 	}
 
 	public GameObject previouslySelectedPlane;
 
-	public delegate void PlaneSelectionAction();
+	public delegate void PlaneSelectionAction(GameObject newSelectedPlane);
 
 	public static event PlaneSelectionAction OnSelectedPlaneChanged;
 

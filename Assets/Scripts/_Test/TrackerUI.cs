@@ -32,6 +32,7 @@ public class TrackerUI : MonoBehaviour {
 		Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
 		crossHairImage.transform.SetParent(canvas.transform);
+		crossHairImage.transform.SetAsFirstSibling();
 		crossHairImage.transform.localScale = Vector3.one;
 
 		myTrackingCrosshair = crossHairImage;

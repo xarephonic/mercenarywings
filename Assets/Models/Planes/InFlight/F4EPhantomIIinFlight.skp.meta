@@ -1,0 +1,862 @@
+fileFormatVersion: 2
+guid: 71f13cf8e6f80ec418bb508ae3977bba
+timeCreated: 1467915574
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d010000
+  assetHash:
+    serializedVersion: 2
+    Hash: a149dc6e7e42d16790a7ef9b48d97b31
+  longitude: -105.242139
+  latitude: 40.018309
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 34.945465, y: 25.127028, z: 12.142478}
+      lookAt: {x: 19.86461, y: 17.9438, z: 15.404882}
+      up: {x: -0.412509, y: 0.9065722, z: 0.089237064}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes:
+    - camera:
+        position: {x: -6.570485, y: 16.354757, z: 16.141653}
+        lookAt: {x: 7.8202157, y: 8.843251, z: 11.027044}
+        up: {x: 0.41585487, y: 0.8973406, z: -0.14779924}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: 1
+    - camera:
+        position: {x: -7.4955897, y: 11.418048, z: 10.888648}
+        lookAt: {x: 7.843868, y: 10.480447, z: 10.338882}
+        up: {x: 0.06093148, y: 0.99813956, z: -0.002183781}
+        fov: 35
+        aspectRatio: 0
+        orthoSize: 1
+        isPerspective: 1
+      name: 2
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DrawCal129
+    100002: DrawCal146
+    100004: DrawCal215
+    100006: DrawCal216
+    100008: DrawCal219
+    100010: DrawCal220
+    100012: DrawCal223
+    100014: DrawCal224
+    100016: DrawCal225
+    100018: DrawCal226
+    100020: DrawCal230
+    100022: DrawCal231
+    100024: DrawCal568
+    100026: DrawCal569
+    100028: DrawCal570
+    100030: DrawCal571
+    100032: DrawCal659
+    100034: DrawCal666
+    100036: DrawCal679
+    100038: DrawCal681
+    100040: DrawCal682
+    100042: DrawCal691
+    100044: DrawCal693
+    100046: DrawCal694
+    100048: DrawCal695
+    100050: DrawCal696
+    100052: DrawCal697
+    100054: DrawCal698
+    100056: DrawCal699
+    100058: DrawCal700
+    100060: DrawCal701
+    100062: DrawCal702
+    100064: DrawCal703
+    100066: DrawCal704
+    100068: DrawCal705
+    100070: DrawCal706
+    100072: DrawCal707
+    100074: DrawCal708
+    100076: DrawCal709
+    100078: DrawCal710
+    100080: DrawCal711
+    100082: DrawCal713
+    100084: DrawCal715
+    100086: DrawCal716
+    100088: DrawCal717
+    100090: DrawCal718
+    100092: DrawCal723
+    100094: DrawCal724
+    100096: DrawCal729
+    100098: DrawCal730
+    100100: DrawCal731
+    100102: DrawCal733
+    100104: DrawCal734
+    100106: DrawCal736
+    100108: DrawCal739
+    100110: DrawCall10#1
+    100112: DrawCall11#1
+    100114: DrawCall21#1
+    100116: DrawCall22#1
+    100118: DrawCall23#1
+    100120: DrawCall24#1
+    100122: DrawCall25#1
+    100124: DrawCall26#1
+    100126: DrawCall27#1
+    100128: DrawCall28#1
+    100130: DrawCall29#1
+    100132: DrawCall30#1
+    100134: DrawCall31#1
+    100136: DrawCall32#1
+    100138: DrawCall33#1
+    100140: DrawCall34#1
+    100142: DrawCall35#1
+    100144: DrawCall36#1
+    100146: DrawCall37#1
+    100148: DrawCall38#1
+    100150: DrawCall39#1
+    100152: DrawCall40
+    100154: DrawCall41#1
+    100156: DrawCall42#1
+    100158: DrawCall43#1
+    100160: DrawCall44#1
+    100162: DrawCall45
+    100164: DrawCall46#1
+    100166: DrawCall47#1
+    100168: DrawCall48#1
+    100170: DrawCall49#1
+    100172: DrawCall50#1
+    100174: DrawCall51#1
+    100176: DrawCall52
+    100178: DrawCall53#1
+    100180: DrawCall54#1
+    100182: DrawCall55#1
+    100184: DrawCall56#1
+    100186: DrawCall57#1
+    100188: DrawCall58#1
+    100190: DrawCall59#1
+    100192: DrawCall60#1
+    100194: DrawCall61#1
+    100196: DrawCall62#1
+    100198: DrawCall63#1
+    100200: DrawCall64
+    100202: DrawCall65
+    100204: DrawCall66#1
+    100206: DrawCall67#1
+    100208: DrawCall68#1
+    100210: DrawCall_2
+    100212: DrawCall_4#1
+    100214: DrawCall_5
+    100216: DrawCall_6
+    100218: DrawCall_7#1
+    100220: DrawCall_8#1
+    100222: DrawCall_9#1
+    100224: //RootNode
+    100226: Group 1
+    100228: Group 10
+    100230: Group 12
+    100232: Group 14
+    100234: Group 16
+    100236: Group 18
+    100238: Group 2
+    100240: Group 20
+    100242: Group 22
+    100244: Group 24
+    100246: Group 26
+    100248: Group 28
+    100250: Group 30
+    100252: Group 32
+    100254: Group 34
+    100256: Group 36
+    100258: Group 38
+    100260: Group 4
+    100262: Group 40
+    100264: Group 42
+    100266: Group 44
+    100268: Group 45
+    100270: Group 47
+    100272: Group 49
+    100274: Group 50
+    100276: Group 52
+    100278: Group 54
+    100280: Group 56
+    100282: Group 58
+    100284: Group 6
+    100286: Group 60
+    100288: Group 62
+    100290: Group 64
+    100292: Group 66
+    100294: Group 68
+    100296: Group 70
+    100298: Group 72
+    100300: Group 74
+    100302: Group 76
+    100304: Group 8
+    400000: DrawCal129
+    400002: DrawCal146
+    400004: DrawCal215
+    400006: DrawCal216
+    400008: DrawCal219
+    400010: DrawCal220
+    400012: DrawCal223
+    400014: DrawCal224
+    400016: DrawCal225
+    400018: DrawCal226
+    400020: DrawCal230
+    400022: DrawCal231
+    400024: DrawCal568
+    400026: DrawCal569
+    400028: DrawCal570
+    400030: DrawCal571
+    400032: DrawCal659
+    400034: DrawCal666
+    400036: DrawCal679
+    400038: DrawCal681
+    400040: DrawCal682
+    400042: DrawCal691
+    400044: DrawCal693
+    400046: DrawCal694
+    400048: DrawCal695
+    400050: DrawCal696
+    400052: DrawCal697
+    400054: DrawCal698
+    400056: DrawCal699
+    400058: DrawCal700
+    400060: DrawCal701
+    400062: DrawCal702
+    400064: DrawCal703
+    400066: DrawCal704
+    400068: DrawCal705
+    400070: DrawCal706
+    400072: DrawCal707
+    400074: DrawCal708
+    400076: DrawCal709
+    400078: DrawCal710
+    400080: DrawCal711
+    400082: DrawCal713
+    400084: DrawCal715
+    400086: DrawCal716
+    400088: DrawCal717
+    400090: DrawCal718
+    400092: DrawCal723
+    400094: DrawCal724
+    400096: DrawCal729
+    400098: DrawCal730
+    400100: DrawCal731
+    400102: DrawCal733
+    400104: DrawCal734
+    400106: DrawCal736
+    400108: DrawCal739
+    400110: DrawCall10#1
+    400112: DrawCall11#1
+    400114: DrawCall21#1
+    400116: DrawCall22#1
+    400118: DrawCall23#1
+    400120: DrawCall24#1
+    400122: DrawCall25#1
+    400124: DrawCall26#1
+    400126: DrawCall27#1
+    400128: DrawCall28#1
+    400130: DrawCall29#1
+    400132: DrawCall30#1
+    400134: DrawCall31#1
+    400136: DrawCall32#1
+    400138: DrawCall33#1
+    400140: DrawCall34#1
+    400142: DrawCall35#1
+    400144: DrawCall36#1
+    400146: DrawCall37#1
+    400148: DrawCall38#1
+    400150: DrawCall39#1
+    400152: DrawCall40
+    400154: DrawCall41#1
+    400156: DrawCall42#1
+    400158: DrawCall43#1
+    400160: DrawCall44#1
+    400162: DrawCall45
+    400164: DrawCall46#1
+    400166: DrawCall47#1
+    400168: DrawCall48#1
+    400170: DrawCall49#1
+    400172: DrawCall50#1
+    400174: DrawCall51#1
+    400176: DrawCall52
+    400178: DrawCall53#1
+    400180: DrawCall54#1
+    400182: DrawCall55#1
+    400184: DrawCall56#1
+    400186: DrawCall57#1
+    400188: DrawCall58#1
+    400190: DrawCall59#1
+    400192: DrawCall60#1
+    400194: DrawCall61#1
+    400196: DrawCall62#1
+    400198: DrawCall63#1
+    400200: DrawCall64
+    400202: DrawCall65
+    400204: DrawCall66#1
+    400206: DrawCall67#1
+    400208: DrawCall68#1
+    400210: DrawCall_2
+    400212: DrawCall_4#1
+    400214: DrawCall_5
+    400216: DrawCall_6
+    400218: DrawCall_7#1
+    400220: DrawCall_8#1
+    400222: DrawCall_9#1
+    400224: //RootNode
+    400226: Group 1
+    400228: Group 10
+    400230: Group 12
+    400232: Group 14
+    400234: Group 16
+    400236: Group 18
+    400238: Group 2
+    400240: Group 20
+    400242: Group 22
+    400244: Group 24
+    400246: Group 26
+    400248: Group 28
+    400250: Group 30
+    400252: Group 32
+    400254: Group 34
+    400256: Group 36
+    400258: Group 38
+    400260: Group 4
+    400262: Group 40
+    400264: Group 42
+    400266: Group 44
+    400268: Group 45
+    400270: Group 47
+    400272: Group 49
+    400274: Group 50
+    400276: Group 52
+    400278: Group 54
+    400280: Group 56
+    400282: Group 58
+    400284: Group 6
+    400286: Group 60
+    400288: Group 62
+    400290: Group 64
+    400292: Group 66
+    400294: Group 68
+    400296: Group 70
+    400298: Group 72
+    400300: Group 74
+    400302: Group 76
+    400304: Group 8
+    2300000: DrawCal129
+    2300002: DrawCal146
+    2300004: DrawCal215
+    2300006: DrawCal216
+    2300008: DrawCal219
+    2300010: DrawCal220
+    2300012: DrawCal223
+    2300014: DrawCal224
+    2300016: DrawCal225
+    2300018: DrawCal226
+    2300020: DrawCal230
+    2300022: DrawCal231
+    2300024: DrawCal568
+    2300026: DrawCal569
+    2300028: DrawCal570
+    2300030: DrawCal571
+    2300032: DrawCal659
+    2300034: DrawCal666
+    2300036: DrawCal679
+    2300038: DrawCal681
+    2300040: DrawCal682
+    2300042: DrawCal691
+    2300044: DrawCal693
+    2300046: DrawCal694
+    2300048: DrawCal695
+    2300050: DrawCal696
+    2300052: DrawCal697
+    2300054: DrawCal698
+    2300056: DrawCal699
+    2300058: DrawCal700
+    2300060: DrawCal701
+    2300062: DrawCal702
+    2300064: DrawCal703
+    2300066: DrawCal704
+    2300068: DrawCal705
+    2300070: DrawCal706
+    2300072: DrawCal707
+    2300074: DrawCal708
+    2300076: DrawCal709
+    2300078: DrawCal710
+    2300080: DrawCal711
+    2300082: DrawCal713
+    2300084: DrawCal715
+    2300086: DrawCal716
+    2300088: DrawCal717
+    2300090: DrawCal718
+    2300092: DrawCal723
+    2300094: DrawCal724
+    2300096: DrawCal729
+    2300098: DrawCal730
+    2300100: DrawCal731
+    2300102: DrawCal733
+    2300104: DrawCal734
+    2300106: DrawCal736
+    2300108: DrawCal739
+    2300110: DrawCall10#1
+    2300112: DrawCall11#1
+    2300114: DrawCall21#1
+    2300116: DrawCall22#1
+    2300118: DrawCall23#1
+    2300120: DrawCall24#1
+    2300122: DrawCall25#1
+    2300124: DrawCall26#1
+    2300126: DrawCall27#1
+    2300128: DrawCall28#1
+    2300130: DrawCall29#1
+    2300132: DrawCall30#1
+    2300134: DrawCall31#1
+    2300136: DrawCall32#1
+    2300138: DrawCall33#1
+    2300140: DrawCall34#1
+    2300142: DrawCall35#1
+    2300144: DrawCall36#1
+    2300146: DrawCall37#1
+    2300148: DrawCall38#1
+    2300150: DrawCall39#1
+    2300152: DrawCall40
+    2300154: DrawCall41#1
+    2300156: DrawCall42#1
+    2300158: DrawCall43#1
+    2300160: DrawCall44#1
+    2300162: DrawCall45
+    2300164: DrawCall46#1
+    2300166: DrawCall47#1
+    2300168: DrawCall48#1
+    2300170: DrawCall49#1
+    2300172: DrawCall50#1
+    2300174: DrawCall51#1
+    2300176: DrawCall52
+    2300178: DrawCall53#1
+    2300180: DrawCall54#1
+    2300182: DrawCall55#1
+    2300184: DrawCall56#1
+    2300186: DrawCall57#1
+    2300188: DrawCall58#1
+    2300190: DrawCall59#1
+    2300192: DrawCall60#1
+    2300194: DrawCall61#1
+    2300196: DrawCall62#1
+    2300198: DrawCall63#1
+    2300200: DrawCall64
+    2300202: DrawCall65
+    2300204: DrawCall66#1
+    2300206: DrawCall67#1
+    2300208: DrawCall68#1
+    2300210: DrawCall_2
+    2300212: DrawCall_4#1
+    2300214: DrawCall_5
+    2300216: DrawCall_6
+    2300218: DrawCall_7#1
+    2300220: DrawCall_8#1
+    2300222: DrawCall_9#1
+    2300224: Group 10
+    2300226: Group 12
+    2300228: Group 14
+    2300230: Group 16
+    2300232: Group 18
+    2300234: Group 2
+    2300236: Group 20
+    2300238: Group 22
+    2300240: Group 24
+    2300242: Group 26
+    2300244: Group 28
+    2300246: Group 30
+    2300248: Group 32
+    2300250: Group 34
+    2300252: Group 36
+    2300254: Group 38
+    2300256: Group 4
+    2300258: Group 40
+    2300260: Group 42
+    2300262: Group 45
+    2300264: Group 47
+    2300266: Group 50
+    2300268: Group 52
+    2300270: Group 54
+    2300272: Group 56
+    2300274: Group 58
+    2300276: Group 6
+    2300278: Group 60
+    2300280: Group 62
+    2300282: Group 64
+    2300284: Group 66
+    2300286: Group 68
+    2300288: Group 70
+    2300290: Group 72
+    2300292: Group 74
+    2300294: Group 76
+    2300296: Group 8
+    3300000: DrawCal129
+    3300002: DrawCal146
+    3300004: DrawCal215
+    3300006: DrawCal216
+    3300008: DrawCal219
+    3300010: DrawCal220
+    3300012: DrawCal223
+    3300014: DrawCal224
+    3300016: DrawCal225
+    3300018: DrawCal226
+    3300020: DrawCal230
+    3300022: DrawCal231
+    3300024: DrawCal568
+    3300026: DrawCal569
+    3300028: DrawCal570
+    3300030: DrawCal571
+    3300032: DrawCal659
+    3300034: DrawCal666
+    3300036: DrawCal679
+    3300038: DrawCal681
+    3300040: DrawCal682
+    3300042: DrawCal691
+    3300044: DrawCal693
+    3300046: DrawCal694
+    3300048: DrawCal695
+    3300050: DrawCal696
+    3300052: DrawCal697
+    3300054: DrawCal698
+    3300056: DrawCal699
+    3300058: DrawCal700
+    3300060: DrawCal701
+    3300062: DrawCal702
+    3300064: DrawCal703
+    3300066: DrawCal704
+    3300068: DrawCal705
+    3300070: DrawCal706
+    3300072: DrawCal707
+    3300074: DrawCal708
+    3300076: DrawCal709
+    3300078: DrawCal710
+    3300080: DrawCal711
+    3300082: DrawCal713
+    3300084: DrawCal715
+    3300086: DrawCal716
+    3300088: DrawCal717
+    3300090: DrawCal718
+    3300092: DrawCal723
+    3300094: DrawCal724
+    3300096: DrawCal729
+    3300098: DrawCal730
+    3300100: DrawCal731
+    3300102: DrawCal733
+    3300104: DrawCal734
+    3300106: DrawCal736
+    3300108: DrawCal739
+    3300110: DrawCall10#1
+    3300112: DrawCall11#1
+    3300114: DrawCall21#1
+    3300116: DrawCall22#1
+    3300118: DrawCall23#1
+    3300120: DrawCall24#1
+    3300122: DrawCall25#1
+    3300124: DrawCall26#1
+    3300126: DrawCall27#1
+    3300128: DrawCall28#1
+    3300130: DrawCall29#1
+    3300132: DrawCall30#1
+    3300134: DrawCall31#1
+    3300136: DrawCall32#1
+    3300138: DrawCall33#1
+    3300140: DrawCall34#1
+    3300142: DrawCall35#1
+    3300144: DrawCall36#1
+    3300146: DrawCall37#1
+    3300148: DrawCall38#1
+    3300150: DrawCall39#1
+    3300152: DrawCall40
+    3300154: DrawCall41#1
+    3300156: DrawCall42#1
+    3300158: DrawCall43#1
+    3300160: DrawCall44#1
+    3300162: DrawCall45
+    3300164: DrawCall46#1
+    3300166: DrawCall47#1
+    3300168: DrawCall48#1
+    3300170: DrawCall49#1
+    3300172: DrawCall50#1
+    3300174: DrawCall51#1
+    3300176: DrawCall52
+    3300178: DrawCall53#1
+    3300180: DrawCall54#1
+    3300182: DrawCall55#1
+    3300184: DrawCall56#1
+    3300186: DrawCall57#1
+    3300188: DrawCall58#1
+    3300190: DrawCall59#1
+    3300192: DrawCall60#1
+    3300194: DrawCall61#1
+    3300196: DrawCall62#1
+    3300198: DrawCall63#1
+    3300200: DrawCall64
+    3300202: DrawCall65
+    3300204: DrawCall66#1
+    3300206: DrawCall67#1
+    3300208: DrawCall68#1
+    3300210: DrawCall_2
+    3300212: DrawCall_4#1
+    3300214: DrawCall_5
+    3300216: DrawCall_6
+    3300218: DrawCall_7#1
+    3300220: DrawCall_8#1
+    3300222: DrawCall_9#1
+    3300224: Group 10
+    3300226: Group 12
+    3300228: Group 14
+    3300230: Group 16
+    3300232: Group 18
+    3300234: Group 2
+    3300236: Group 20
+    3300238: Group 22
+    3300240: Group 24
+    3300242: Group 26
+    3300244: Group 28
+    3300246: Group 30
+    3300248: Group 32
+    3300250: Group 34
+    3300252: Group 36
+    3300254: Group 38
+    3300256: Group 4
+    3300258: Group 40
+    3300260: Group 42
+    3300262: Group 45
+    3300264: Group 47
+    3300266: Group 50
+    3300268: Group 52
+    3300270: Group 54
+    3300272: Group 56
+    3300274: Group 58
+    3300276: Group 6
+    3300278: Group 60
+    3300280: Group 62
+    3300282: Group 64
+    3300284: Group 66
+    3300286: Group 68
+    3300288: Group 70
+    3300290: Group 72
+    3300292: Group 74
+    3300294: Group 76
+    3300296: Group 8
+    4300000: Mesh Group 2
+    4300002: Mesh Group 4
+    4300004: Mesh Group 6
+    4300006: Mesh Group 8
+    4300008: Mesh Group 10
+    4300010: Mesh Group 12
+    4300012: Mesh Group 14
+    4300014: Mesh Group 16
+    4300016: Mesh Group 18
+    4300018: Mesh Group 20
+    4300020: Mesh Group 22
+    4300022: Mesh Group 24
+    4300024: Mesh Group 26
+    4300026: Mesh Group 28
+    4300028: Mesh Group 30
+    4300030: Mesh Group 32
+    4300032: Mesh Group 34
+    4300034: Mesh Group 36
+    4300036: Mesh Group 38
+    4300038: Mesh Group 40
+    4300040: Mesh Group 42
+    4300042: Mesh Group 45
+    4300044: Mesh Group 47
+    4300046: Mesh Group 50
+    4300048: Mesh Group 52
+    4300050: Mesh Group 54
+    4300052: Mesh Group 56
+    4300054: Mesh Group 58
+    4300056: Mesh Group 60
+    4300058: Mesh Group 62
+    4300060: Mesh Group 64
+    4300062: Mesh Group 66
+    4300064: Mesh Group 68
+    4300066: Mesh Group 70
+    4300068: Mesh Group 72
+    4300070: Mesh Group 74
+    4300072: Mesh Group 76
+    4300074: Mesh DrawCal129
+    4300076: Mesh DrawCal146
+    4300078: Mesh DrawCal215
+    4300080: Mesh DrawCal216
+    4300082: Mesh DrawCal219
+    4300084: Mesh DrawCal220
+    4300086: Mesh DrawCal223
+    4300088: Mesh DrawCal224
+    4300090: Mesh DrawCal225
+    4300092: Mesh DrawCal226
+    4300094: Mesh DrawCal230
+    4300096: Mesh DrawCal231
+    4300098: Mesh DrawCal568
+    4300100: Mesh DrawCal569
+    4300102: Mesh DrawCal570
+    4300104: Mesh DrawCal571
+    4300106: Mesh DrawCal659
+    4300108: Mesh DrawCal666
+    4300110: Mesh DrawCal679
+    4300112: Mesh DrawCal681
+    4300114: Mesh DrawCal682
+    4300116: Mesh DrawCal691
+    4300118: Mesh DrawCal693
+    4300120: Mesh DrawCal694
+    4300122: Mesh DrawCal695
+    4300124: Mesh DrawCal696
+    4300126: Mesh DrawCal697
+    4300128: Mesh DrawCal698
+    4300130: Mesh DrawCal699
+    4300132: Mesh DrawCal700
+    4300134: Mesh DrawCal701
+    4300136: Mesh DrawCal702
+    4300138: Mesh DrawCal703
+    4300140: Mesh DrawCal704
+    4300142: Mesh DrawCal705
+    4300144: Mesh DrawCal706
+    4300146: Mesh DrawCal707
+    4300148: Mesh DrawCal708
+    4300150: Mesh DrawCal709
+    4300152: Mesh DrawCal710
+    4300154: Mesh DrawCal711
+    4300156: Mesh DrawCal713
+    4300158: Mesh DrawCal715
+    4300160: Mesh DrawCal716
+    4300162: Mesh DrawCal717
+    4300164: Mesh DrawCal718
+    4300166: Mesh DrawCal723
+    4300168: Mesh DrawCal724
+    4300170: Mesh DrawCal729
+    4300172: Mesh DrawCal730
+    4300174: Mesh DrawCal731
+    4300176: Mesh DrawCal733
+    4300178: Mesh DrawCal734
+    4300180: Mesh DrawCal736
+    4300182: Mesh DrawCal739
+    4300184: Mesh DrawCall10#1
+    4300186: Mesh DrawCall11#1
+    4300188: Mesh DrawCall21#1
+    4300190: Mesh DrawCall22#1
+    4300192: Mesh DrawCall23#1
+    4300194: Mesh DrawCall24#1
+    4300196: Mesh DrawCall25#1
+    4300198: Mesh DrawCall26#1
+    4300200: Mesh DrawCall27#1
+    4300202: Mesh DrawCall28#1
+    4300204: Mesh DrawCall29#1
+    4300206: Mesh DrawCall30#1
+    4300208: Mesh DrawCall31#1
+    4300210: Mesh DrawCall32#1
+    4300212: Mesh DrawCall33#1
+    4300214: Mesh DrawCall34#1
+    4300216: Mesh DrawCall35#1
+    4300218: Mesh DrawCall36#1
+    4300220: Mesh DrawCall37#1
+    4300222: Mesh DrawCall38#1
+    4300224: Mesh DrawCall39#1
+    4300226: Mesh DrawCall40
+    4300228: Mesh DrawCall41#1
+    4300230: Mesh DrawCall42#1
+    4300232: Mesh DrawCall43#1
+    4300234: Mesh DrawCall44#1
+    4300236: Mesh DrawCall45
+    4300238: Mesh DrawCall46#1
+    4300240: Mesh DrawCall47#1
+    4300242: Mesh DrawCall48#1
+    4300244: Mesh DrawCall49#1
+    4300246: Mesh DrawCall50#1
+    4300248: Mesh DrawCall51#1
+    4300250: Mesh DrawCall52
+    4300252: Mesh DrawCall53#1
+    4300254: Mesh DrawCall54#1
+    4300256: Mesh DrawCall55#1
+    4300258: Mesh DrawCall56#1
+    4300260: Mesh DrawCall57#1
+    4300262: Mesh DrawCall58#1
+    4300264: Mesh DrawCall59#1
+    4300266: Mesh DrawCall60#1
+    4300268: Mesh DrawCall61#1
+    4300270: Mesh DrawCall62#1
+    4300272: Mesh DrawCall63#1
+    4300274: Mesh DrawCall64
+    4300276: Mesh DrawCall65
+    4300278: Mesh DrawCall66#1
+    4300280: Mesh DrawCall67#1
+    4300282: Mesh DrawCall68#1
+    4300284: Mesh DrawCall_2
+    4300286: Mesh DrawCall_4#1
+    4300288: Mesh DrawCall_5
+    4300290: Mesh DrawCall_6
+    4300292: Mesh DrawCall_7#1
+    4300294: Mesh DrawCall_8#1
+    4300296: Mesh DrawCall_9#1
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

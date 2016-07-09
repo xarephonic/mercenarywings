@@ -10,7 +10,7 @@ public class BottomBarControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		for (int i = 0; i < ps.planesArray.Length; i++) {
+		for (int i = 0; i < ps.planesArray.Count; i++) {
 
 			GameObject x = Instantiate(bottomBarPlaneButtonPrefab,Vector3.zero,Quaternion.identity) as GameObject;
 

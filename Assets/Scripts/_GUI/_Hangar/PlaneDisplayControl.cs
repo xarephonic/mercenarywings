@@ -1,52 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
+using DataClasses;
 
 public class PlaneDisplayControl : MonoBehaviour {
 
-	public GameObject[] planesArray;
+	public List<GameObject> planesArray;
 
 	public int planesArrayIndex;
 
 	public AircraftCore currentPlane;
 
-	public void Forward()
-	{
-		planesArrayIndex++;
-
-		if(planesArrayIndex == planesArray.Length)
-			planesArrayIndex = 0;
-
-		for (int i = 0; i < planesArray.Length; i++) {
-			planesArray[i].SetActive(false);
-		}
-
-		planesArray[planesArrayIndex].SetActive(true);
-
-		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
-	}
-
-	public void Back()
-	{
-		planesArrayIndex--;
-
-		if(planesArrayIndex == -1)
-			planesArrayIndex = planesArray.Length-1;
-
-		for (int i = 0; i < planesArray.Length; i++) {
-			planesArray[i].SetActive(false);
-		}
-		
-		planesArray[planesArrayIndex].SetActive(true);
-
-		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
-	}
+	public GameObject DisplayedPlanesParent;
 
 	public void GoToIndex(int i)
 	{
-		planesArrayIndex = Mathf.Clamp(i,0,planesArray.Length-1);
+		planesArrayIndex = Mathf.Clamp(i,0,planesArray.Count-1);
 
-		for (int j = 0; j < planesArray.Length; j++) {
+		for (int j = 0; j < planesArray.Count; j++) {
 			planesArray[j].SetActive(false);
 		}
 
@@ -55,10 +27,28 @@ public class PlaneDisplayControl : MonoBehaviour {
 		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
 	}
 
+	void OnLevelWasLoaded () {
+
+		planesArray = new List<GameObject>();
+
+		foreach(PlaneVO plane in AssetKeeper.instance.playerPlanes){
+			StartCoroutine(AssetLoader.instance.GetAsset(plane.id,AssetLoader.PlaneAssetType.HANGAR,delegate(GameObject g){
+				GameObject x = Instantiate(g,Vector3.zero,Quaternion.identity) as GameObject;
+				x.transform.SetParent(DisplayedPlanesParent.transform);
+				x.transform.localPosition = x.GetComponent<HangarDetails>().hangarPos;
+				x.transform.localEulerAngles = Vector3.zero;
+				planesArray.Add(x);	
+				x.SetActive(false);
+			}));
+		}
+
+		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
+	}
+
 	// Use this for initialization
 	void Start () {
 
-        currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
+       
 
 	}
 	

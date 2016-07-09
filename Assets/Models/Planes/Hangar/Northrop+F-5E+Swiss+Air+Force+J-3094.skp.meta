@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 2364b799202f6ba4d994884bfd691eeb
+timeCreated: 1467896922
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f00000020000000210000002200000023000000240000002500000026000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 75ce3a8b6beb54a94b019260629275e6
+  longitude: 13.417
+  latitude: 52.533
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -33.279793, y: 9.254312, z: -8.590678}
+      lookAt: {x: 38.564224, y: -31.63937, z: 81.58504}
+      up: {x: 0.20829836, y: 0.9424738, z: 0.2614477}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ailerons
+    100002: Ailerons 1
+    100004: Canopy
+    100006: Cockpit
+    100008: Elevator
+    100010: Elevator 1
+    100012: Flaps
+    100014: Flaps 1
+    100016: Front Gear
+    100018: Front Gear Bay
+    100020: Fuselage/Wings
+    100022: Hook
+    100024: //RootNode
+    100026: Nozzle
+    100028: Pedals
+    100030: Rear Gear
+    100032: Rear Gear Bay
+    100034: Rudder
+    100036: Seat
+    100038: Tail
+    400000: Ailerons
+    400002: Ailerons 1
+    400004: Canopy
+    400006: Cockpit
+    400008: Elevator
+    400010: Elevator 1
+    400012: Flaps
+    400014: Flaps 1
+    400016: Front Gear
+    400018: Front Gear Bay
+    400020: Fuselage/Wings
+    400022: Hook
+    400024: //RootNode
+    400026: Nozzle
+    400028: Pedals
+    400030: Rear Gear
+    400032: Rear Gear Bay
+    400034: Rudder
+    400036: Seat
+    400038: Tail
+    2300000: Ailerons
+    2300002: Ailerons 1
+    2300004: Canopy
+    2300006: Cockpit
+    2300008: Elevator
+    2300010: Elevator 1
+    2300012: Flaps
+    2300014: Flaps 1
+    2300016: Front Gear
+    2300018: Front Gear Bay
+    2300020: Fuselage/Wings
+    2300022: Hook
+    2300024: Nozzle
+    2300026: Pedals
+    2300028: Rear Gear
+    2300030: Rear Gear Bay
+    2300032: Rudder
+    2300034: Seat
+    2300036: Tail
+    3300000: Ailerons
+    3300002: Ailerons 1
+    3300004: Canopy
+    3300006: Cockpit
+    3300008: Elevator
+    3300010: Elevator 1
+    3300012: Flaps
+    3300014: Flaps 1
+    3300016: Front Gear
+    3300018: Front Gear Bay
+    3300020: Fuselage/Wings
+    3300022: Hook
+    3300024: Nozzle
+    3300026: Pedals
+    3300028: Rear Gear
+    3300030: Rear Gear Bay
+    3300032: Rudder
+    3300034: Seat
+    3300036: Tail
+    4300000: Mesh Rudder
+    4300002: Mesh Elevator
+    4300004: Mesh Cockpit
+    4300006: Mesh Pedals
+    4300008: Mesh Flaps
+    4300010: Mesh Ailerons
+    4300012: Mesh Tail
+    4300014: Mesh Seat
+    4300016: Mesh Canopy
+    4300018: Mesh Nozzle
+    4300020: Mesh Hook
+    4300022: Mesh Front Gear
+    4300024: Mesh Rear Gear
+    4300026: Mesh Front Gear Bay
+    4300028: Mesh Rear Gear Bay
+    4300030: Mesh Fuselage/Wings
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

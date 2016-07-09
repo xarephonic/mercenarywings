@@ -4,13 +4,12 @@ using System.Collections.Generic;
 
 public class MissionLoadoutDataKeeper : MonoBehaviour {
 
-	public static MissionLoadoutDataKeeper missionLoadoutDataKeeper;
+	public static MissionLoadoutDataKeeper instance;
 
 	public List<int> planesToTakeIntoMission = new List<int>();
 
 	public void AddPlaneToMissionLoadout(int planeId)
 	{
-		planesToTakeIntoMission.Add(planeId);
 		planesToTakeIntoMission.Add(planeId);
 	}
 
@@ -26,9 +25,9 @@ public class MissionLoadoutDataKeeper : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		if(missionLoadoutDataKeeper == null)
+		if(instance == null)
 		{
-			missionLoadoutDataKeeper = this;
+			instance = this;
 
 			DontDestroyOnLoad(gameObject);
 		}
@@ -36,6 +35,10 @@ public class MissionLoadoutDataKeeper : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+	}
+
+	void Start () {
+		
 	}
 	
 	// Update is called once per frame

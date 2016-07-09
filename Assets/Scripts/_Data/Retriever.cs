@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using SimpleJSON;
 using System.Collections;
+using System.IO;
+using System;
 
 public class Retriever : MonoBehaviour {
 
@@ -8,7 +10,7 @@ public class Retriever : MonoBehaviour {
 
     public delegate void RetrieveDataCallback(string s);
 
-    public static IEnumerator RetrieveData(string url, WWWForm postForm = null,RetrieveDataCallback callback = null)
+	public static IEnumerator RetrieveData(string url, WWWForm postForm = null,RetrieveDataCallback callback = null)
     {
         WWW w;
 
@@ -19,9 +21,27 @@ public class Retriever : MonoBehaviour {
 
         yield return w;
 
-        callback(w.text);
+		if(!string.IsNullOrEmpty(w.error)){
+			Debug.Log(w.error);
+			callback("error");
+		}
+		else{
+        	callback(w.text);
+		}
 
     }
+
+	public static IEnumerator RetrieveData(string path, RetrieveDataCallback callback){
+
+		string file = Directory.GetFiles(path)[0];
+
+		string data = File.ReadAllText(file);
+
+		yield return true;
+
+		callback(data);
+
+	}
 
     void Awake()
     {
@@ -35,8 +55,6 @@ public class Retriever : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
     }
-
-
-
 }

@@ -2138,6 +2138,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 412004}
   - 114: {fileID: 11449556}
+  - 114: {fileID: 11489868}
   m_Layer: 0
   m_Name: EuroFighterHangar
   m_TagString: Untagged
@@ -2836,7 +2837,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178908}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -28.375868, y: 7.129, z: -1.2968173}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441148}
@@ -8954,11 +8955,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aircraftId: 1
+  aircraftName: Eurofighter Typhoon
   movementModule: {fileID: 0}
   trackingModule: {fileID: 0}
   loadoutModule: {fileID: 0}
   fireControlModule: {fileID: 0}
   aircraftPicture: {fileID: 21300000, guid: f858e3f61c11f6c4e86789b56f59e396, type: 3}
+--- !u!114 &11489868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2ca251a0f4a1649a5dca62291601c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hangarPos: {x: 0, y: -0.95, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -4,6 +4,8 @@ using System.Collections;
 
 public class MissionLoader : MonoBehaviour {
 
+	public static MissionLoader instance;
+
 	public GameObject loadingView;
 	public Image loadingBar;
 
@@ -21,7 +23,11 @@ public class MissionLoader : MonoBehaviour {
 
 	public void LoadHangar()
 	{
-		Application.LoadLevel("Hangar");
+		loadingView.SetActive(true);
+
+		AsyncOperation asyncOp = Application.LoadLevelAsync("Hangar");
+
+		StartCoroutine(UpdateProgressBar(asyncOp));
 	}
 
 	public void LoadTestFlightMission()
@@ -41,14 +47,20 @@ public class MissionLoader : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded(){
-		if(Application.loadedLevelName == "Hangar"){
-			GetLoadingElements();
-		}
+		GetLoadingElements();
 	}
 
 	// Use this for initialization
 	void Start () {
 		GetLoadingElements();
+
+		if(instance == null){
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+			DontDestroyOnLoad(loadingView.transform.parent.gameObject);
+		}else {
+			Destroy(gameObject);
+		}
 	}
 	
 	// Update is called once per frame

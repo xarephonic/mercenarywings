@@ -84,9 +84,9 @@ public class MovementModule : MonoBehaviour {
 
 		//Debug.Log(gameObject.name + "turneff: "+turnEfficiency);
 
-		airSpeed += (transform.forward.y >= 0) ? climbSpeedLoss*-1*transform.forward.y*Constants.delta : diveSpeedGain*-1*transform.forward.y*Constants.delta;
+		airSpeed += (transform.forward.y >= 0) ? climbSpeedLoss*-1*3.6f*transform.forward.y*Constants.delta : diveSpeedGain*-1*3.6f*transform.forward.y*Constants.delta;
 		
-		airSpeed += (s >= 0) ? s/100.0f*accelerationRate*Constants.delta: s/100.0f*decelerationRate*Constants.delta;
+		airSpeed += (s >= 0) ? s/100.0f*accelerationRate*3.6f*Constants.delta: s/100.0f*decelerationRate*3.6f*Constants.delta;
 		
 		airSpeed = Mathf.Clamp(airSpeed,0,maxSpeed);
 

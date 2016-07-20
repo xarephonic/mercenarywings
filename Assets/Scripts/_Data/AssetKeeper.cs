@@ -39,20 +39,30 @@ public class AssetKeeper : MonoBehaviour {
 			if(s == "error"){
 				StartCoroutine(Retriever.RetrieveData(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal),delegate(string l) {
 						PutIntoList(l,allPlanes);
+						RetrievePlayerPlaneData();
 				}));
 			}else {
 				PutIntoList(s, allPlanes);
+				RetrievePlayerPlaneData();
 			}
 		}));
     }
 
 	public void RetrievePlayerPlaneData(){
+		Debug.Log("retrieving player plane data");
 		StartCoroutine(Retriever.RetrieveData(Constants.inst.dbUrl + Constants.inst.getUserUrl, null, delegate(string s){
 			if(s == "error"){
 				StartCoroutine(Retriever.RetrieveData(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal), delegate(string l) {
+					Debug.Log(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal));
+					Debug.Log(Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal)));
+					Debug.Log(l);
 					JSONArray playerPlaneIds = JSON.Parse(l).AsArray;
 					foreach(JSONData id in playerPlaneIds){
-						playerPlanes.Add(allPlanes.Find(x => x.id == id.AsInt));
+						Debug.Log(id);
+						Debug.Log(allPlanes.Count);
+						PlaneVO vo = allPlanes.Find(x => x.id == id.AsInt);
+						Debug.Log(vo.id);
+						playerPlanes.Add(vo);
 					}
 				}));
 			}else {
@@ -64,6 +74,8 @@ public class AssetKeeper : MonoBehaviour {
 
 	//TODO Add a method to encrypt this data
 	public void PopulateStartData(){
+		Debug.Log("populating start data");
+
 		
 		TextAsset allPlanesJson = Resources.Load("allPlanes") as TextAsset;
 		string allPlanesPath = Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal);
@@ -71,19 +83,26 @@ public class AssetKeeper : MonoBehaviour {
 		FileStream fs = File.Create(Path.Combine(allPlanesPath,"allPlanes"));
 		fs.Write(allPlanesJson.bytes,0,allPlanesJson.bytes.Length);
 		fs.Close();
+
 	}
 
 	public void PopulatePlayerStartData(){
+		Debug.Log("Populating player start data");
+
+
 		TextAsset playerPlanesJson = Resources.Load("playerPlanes") as TextAsset;
 		string playerPlanesPath = Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal);
 		Directory.CreateDirectory(playerPlanesPath);
 		FileStream fs = File.Create(Path.Combine(playerPlanesPath,"playerPlanes"));
 		fs.Write(playerPlanesJson.bytes,0,playerPlanesJson.bytes.Length);
 		fs.Close();
+
 	}
 
 	void Awake()
     {
+		Debug.Log("AssetKeeper awake");
+
 		if(instance == null)
         {
 			instance = this;
@@ -92,19 +111,19 @@ public class AssetKeeper : MonoBehaviour {
         else
         {
             Destroy(gameObject);
-        }
-
-        
+        }        
     }
 		
     void Start()
     {
+		Debug.Log("AssetKeeper start");
+
 		if(!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal)))
 			PopulateStartData();
 		if(!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal)))
 			PopulatePlayerStartData();
-		
-        RetrieveAllPlaneData();
-		RetrievePlayerPlaneData();
+
+		RetrieveAllPlaneData();
+
     }
 }

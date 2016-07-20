@@ -32,6 +32,8 @@ public class PlaneDisplayControl : MonoBehaviour {
 		planesArray = new List<GameObject>();
 
 		foreach(PlaneVO plane in AssetKeeper.instance.playerPlanes){
+			Debug.Log(AssetKeeper.instance.playerPlanes.Count);
+			Debug.Log(plane);
 			StartCoroutine(AssetLoader.instance.GetAsset(plane.id,AssetLoader.PlaneAssetType.HANGAR,delegate(GameObject g){
 				GameObject x = Instantiate(g,Vector3.zero,Quaternion.identity) as GameObject;
 				x.transform.SetParent(DisplayedPlanesParent.transform);

@@ -35,6 +35,8 @@ public class Retriever : MonoBehaviour {
 
 		string file = Directory.GetFiles(path)[0];
 
+		Debug.Log("file: "+file);
+
 		string data = File.ReadAllText(file);
 
 		yield return true;

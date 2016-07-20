@@ -64,10 +64,10 @@ public class AssetLoader : MonoBehaviour {
 		}
 
 		//this is temporary
-		Invoke("PopulateLoadedAssetsWithData",0.5f);
+		//Invoke("PopulateLoadedAssetsWithData",0.5f);
 	}
 
-	void PopulateLoadedAssetsWithData ()
+	public void PopulateLoadedAssetsWithData ()
 	{
 		foreach (GameObject asset in loadedAssets) {
 			PlaneVO vo = AssetKeeper.instance.allPlanes.Find (delegate (DataClasses.PlaneVO obj) {

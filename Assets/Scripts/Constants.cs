@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Constants : MonoBehaviour {
@@ -20,12 +21,15 @@ public class Constants : MonoBehaviour {
 	public static int framesPerCombatRound = 60;
     public static float navigationConstant = 3.0f;
 
+	public Text text;
+
     void Awake()
     {
         if (inst == null)
         {
             inst = this;
 			localDbUrl = Application.persistentDataPath;
+			text.text = localDbUrl;
             DontDestroyOnLoad(gameObject);
 
         }

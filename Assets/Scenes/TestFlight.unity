@@ -3316,8 +3316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookAtTarget: {fileID: 0}
   rotateMode: 1
-  defaultXRot: -20
-  defaultYRot: 200
+  defaultXRot: 20
+  defaultYRot: 20
   xRotMin: -90
   xRotMax: 90
   rotateSpeed: 0.3

@@ -102,9 +102,11 @@ public class CombatCameraControl : MonoBehaviour {
 
 		Vector3 targetCameraPosition = Vector3.zero;
 
-		targetCameraPosition = Vector3.forward*targetZoom;
+		targetCameraPosition = Vector3.forward*-targetZoom;
 
-		targetCameraPosition = Quaternion.Euler(targetRotation.x, targetRotation.y,0) * targetCameraPosition;
+		targetCameraPosition = Quaternion.Euler(targetRotation.x+lookAtTarget.eulerAngles.x, targetRotation.y+lookAtTarget.eulerAngles.y,0) * targetCameraPosition;
+
+		//Debug.DrawLine(Vector3.zero,targetCameraPosition,Color.blue);
 
 		targetCameraPosition += lookAtTarget.position;
 
@@ -114,9 +116,10 @@ public class CombatCameraControl : MonoBehaviour {
 		if(Vector3.Distance(Camera.main.transform.position,targetCameraPosition) > 1)
 		Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,targetCameraPosition,moveSpeed);
 
-		Camera.main.transform.eulerAngles = new Vector3(targetRotation.x*-1 , targetRotation.y+180 ,0);
+		Camera.main.transform.eulerAngles = new Vector3(lookAtTarget.eulerAngles.x + targetRotation.x ,lookAtTarget.eulerAngles.y + targetRotation.y ,0);
 
 		cube.transform.eulerAngles = Camera.main.transform.eulerAngles;
+
 
 		//Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView,targetZoom,zoomSpeed);
 	}

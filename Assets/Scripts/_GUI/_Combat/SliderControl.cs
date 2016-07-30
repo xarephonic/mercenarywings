@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SliderControl : MonoBehaviour {
 
@@ -56,7 +57,13 @@ public class SliderControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		PlayerPlaneSelectionHandler.OnSelectedPlaneChanged += delegate(GameObject newSelectedPlane) {
 
+			Dictionary<string,float> commands = newSelectedPlane.GetComponent<MovementModule>().GetCommandsForThisTurn();
+
+			if(commands.Count > 0)
+				speedSlider.value = commands["speed"];
+		};
 	}
 	
 	// Update is called once per frame

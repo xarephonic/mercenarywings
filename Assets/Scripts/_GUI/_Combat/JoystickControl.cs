@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class JoystickControl : MonoBehaviour {
 
@@ -30,6 +31,10 @@ public class JoystickControl : MonoBehaviour {
 		stickRect.anchoredPosition = new Vector2(r / 100 * rollLimit, p / 100 * pitchLimit);
 	}
 
+	public void ResetJoystickPosition(){
+		SetJoystickPositionAccordingToValues(0,0);
+	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -43,6 +48,14 @@ public class JoystickControl : MonoBehaviour {
 		rollLimit = sizeDifference.x/2;
 		pitchLimit = sizeDifference.y/2;
 
+
+		PlayerPlaneSelectionHandler.OnSelectedPlaneChanged += delegate(GameObject newSelectedPlane) {
+
+			Dictionary<string,float> commands = newSelectedPlane.GetComponent<MovementModule>().GetCommandsForThisTurn();
+
+			if(commands.Count > 0)
+				SetJoystickPositionAccordingToValues(commands["pitch"], commands["roll"]);
+		};
 	}
 	
 	// Update is called once per frame

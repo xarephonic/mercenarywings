@@ -8,6 +8,10 @@ public class SceneStateManager : MonoBehaviour {
 
 	public UnityEvent OnPlayFramesCompleted;
 
+	public delegate void CombatStateChangeAction (CombatSceneState newState);
+
+	public static event CombatStateChangeAction OnSceneCombatStateChange;
+
 	public enum  CombatSceneState{
 		COMMAND,
 		MOVEMENT
@@ -31,6 +35,8 @@ public class SceneStateManager : MonoBehaviour {
 			currentState = newState;
 			break;
 		}
+
+		OnSceneCombatStateChange(newState);
 	}
 
 	// Use this for initialization

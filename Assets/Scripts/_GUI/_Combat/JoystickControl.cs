@@ -16,6 +16,17 @@ public class JoystickControl : MonoBehaviour {
 	public RectTransform myRect;
 	public RectTransform stickRect;
 
+	public delegate void JoystickValueChangeAction(float roll, float pitch);
+
+	public static event JoystickValueChangeAction OnJoystickValueChanged;
+
+
+	void CalculateRollAndPitch(){
+		roll = stickRect.anchoredPosition.x / rollLimit * 100;
+
+		pitch = stickRect.anchoredPosition.y / pitchLimit * 100;
+	}
+
 	public void ChangeJoystickPosition()
 	{
 		if(!interactable)
@@ -24,15 +35,28 @@ public class JoystickControl : MonoBehaviour {
 		stickRect.transform.position = Input.mousePosition;
 
 		stickRect.anchoredPosition = new Vector2(Mathf.Clamp(stickRect.anchoredPosition.x,-1*rollLimit,rollLimit),Mathf.Clamp(stickRect.anchoredPosition.y,-1*pitchLimit,pitchLimit));
+
+		CalculateRollAndPitch();
+
+		OnJoystickValueChanged(roll, pitch);
+
 	}
 
 	public void SetJoystickPositionAccordingToValues(float p, float r){
 
 		stickRect.anchoredPosition = new Vector2(r / 100 * rollLimit, p / 100 * pitchLimit);
+
+		CalculateRollAndPitch();
+
+		OnJoystickValueChanged(roll, pitch);
 	}
 
 	public void ResetJoystickPosition(){
 		SetJoystickPositionAccordingToValues(0,0);
+
+		CalculateRollAndPitch();
+
+		OnJoystickValueChanged(roll, pitch);
 	}
 
 	// Use this for initialization
@@ -61,9 +85,7 @@ public class JoystickControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		roll = stickRect.anchoredPosition.x / rollLimit * 100;
-
-		pitch = stickRect.anchoredPosition.y / pitchLimit * 100;
+		CalculateRollAndPitch();
 
 	}
 }

@@ -49,6 +49,8 @@ public class MovementEstimator : MonoBehaviour {
 			estimationLine.SetPosition(i,transform.position);
 
 			movementModule.ExecuteMovement();
+
+			//TODO add collision detection here to give collision warnings to player
 		}
 
 		float currentAirSpeed = movementModule.airSpeed;

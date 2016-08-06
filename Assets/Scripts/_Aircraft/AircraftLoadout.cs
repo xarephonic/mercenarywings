@@ -9,6 +9,8 @@ public class AircraftLoadout : MonoBehaviour {
 
 	public GameObject[] loadedArmament;
 
+	public GameObject testMissile;
+
 	public void GetHardPointPositions()
 	{
 		hardPointPositions = new Vector3[hardPointsRoot.transform.childCount];
@@ -31,9 +33,25 @@ public class AircraftLoadout : MonoBehaviour {
 		loadedArmament[indexOfItemToBeChanged] = newItem;
 	}
 
+	private void PopulateWithTestMissiles(){
+
+		loadedArmament = new GameObject[hardPointPositions.Length];
+
+		for (int i = 0; i < hardPointPositions.Length; i++) {
+			GameObject testMis = Instantiate(testMissile , hardPointPositions[i], Quaternion.identity) as GameObject;
+
+			testMis.transform.SetParent(gameObject.transform);
+
+			loadedArmament[i] = testMis;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
-	
+		if(hardPointsRoot)
+			GetHardPointPositions();
+
+		PopulateWithTestMissiles();
 	}
 	
 	// Update is called once per frame

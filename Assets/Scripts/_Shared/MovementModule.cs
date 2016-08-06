@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class MovementModule : MonoBehaviour {
 
+	public VorticeManager vM;
+
 	public float airSpeed;
 	public float altitude;
 	
@@ -88,9 +90,9 @@ public class MovementModule : MonoBehaviour {
 		
 		float turnEfficiency = 1.0f;
 
-		turnEfficiency = (Mathf.Abs(airSpeed - optimalSpeed) / ((maxSpeed-stallSpeed)/2.0f)) * turnEfficiencyMultiplier;
+		//turnEfficiency = (Mathf.Abs(airSpeed - optimalSpeed) / ((maxSpeed-stallSpeed)/2.0f)) * turnEfficiencyMultiplier;
 		
-		turnEfficiency = 1 - turnEfficiency;
+		//turnEfficiency = 1 - turnEfficiency;
 
 		//Debug.Log(gameObject.name + "turneff: "+turnEfficiency);
 
@@ -100,56 +102,57 @@ public class MovementModule : MonoBehaviour {
 		
 		airSpeed = Mathf.Clamp(airSpeed,1,maxSpeed);
 
-		float bankRotation = 0.0f;
+		//the faster you go, the slower you turn
+		//slowest you can turn is %90 of your turn rates
+		//that happens at maximum speed
+		//below 600kph all planes turn at maximum turn rates
+		float eff = 1;
 
-		float v = airSpeed/3.6f;
-		float v2 = airSpeed*airSpeed;
-		float bankDeg = transform.eulerAngles.z % 180;
-		/*
-		if(bankDeg < 91 && bankDeg > 89) {
-			bankDeg = (bankDeg >=90) ? 91 : 89;
-		}
-		*/
+		if(airSpeed > 600)
+			eff = 1 - (0.1f * ((airSpeed - 600) / (maxSpeed - 600)));
+			
 
-		if(Mathf.Abs(bankDeg) > 1){
-
-			float tan = 0.0f;
-
-			if(bankDeg < 91 && bankDeg > 89){
-				float perc = (bankDeg - 89) / 2;
-				tan = Mathf.Lerp(tanBot,tanTop,perc);
-			}else {
-				tan = Mathf.Tan(bankDeg*Mathf.Deg2Rad);
-			}
-
-			float radius = v2 / (tan*9.82f);
-			float bankRotationTime = (2*radius*Mathf.PI) / v;
-			bankRotation = Mathf.Sqrt(Mathf.Abs(360.0f / bankRotationTime));
-		}
-
-		//transform.Rotate(new Vector3(p/100.0f * pitchRate * turnEfficiency * Constants.delta, r/100.0f * yawRate * turnEfficiency * Constants.delta, r/100.0f * -rollRate * turnEfficiency * Constants.delta));
-
-		//transform.RotateAround(transform.position, Vector3.right, p/100.0f * pitchRate * Constants.delta);
-
-		//transform.RotateAround(transform.position, transform.forward, -1 * r/100.0f * rollRate * Constants.delta);
-
-		//transform.Rotate(new Vector3(0, 0, -1 * r/100.0f * rollRate * Constants.delta));
-
-		bankRotation *= (transform.eulerAngles.z > 180) ? 1 : -1;
-
-		//transform.RotateAround(transform.position,Vector3.up,bankRotation);
-
-		transform.Rotate(new Vector3(p/100.0f * pitchRate * Constants.delta, bankRotation * Constants.delta, -1 * r/100.0f * rollRate * Constants.delta));
+		transform.Rotate(new Vector3(p/100.0f * pitchRate * eff * Constants.delta, r/100.0f * yawRate * eff * Constants.delta, r/100.0f * -rollRate * eff * Constants.delta));
 
 		transform.position += transform.forward*airSpeed/3.6f*Constants.delta;
+
+		if(vM)
+			vM.SetCurrentForw(transform.forward);
+	}
+
+
+	//this is no longer used
+	float CalculateBankRotation ()
+	{
+		float bankRotation = 0.0f;
+		float v = airSpeed / 3.6f;
+		float v2 = v * v;
+		float bankDeg = transform.eulerAngles.z % 180;
+		if (Mathf.Abs (bankDeg) > 1) {
+			float tan = 0.0f;
+			if (bankDeg < 91 && bankDeg > 89) {
+				float perc = (bankDeg - 89) / 2;
+				tan = Mathf.Lerp (tanBot, tanTop, perc);
+			}
+			else {
+				tan = Mathf.Tan (bankDeg * Mathf.Deg2Rad);
+			}
+			float radius = v2 / (tan * 9.82f);
+			float bankRotationTime = (2 * radius * Mathf.PI) / v;
+			bankRotation = (Mathf.Abs (360.0f / bankRotationTime));
+		}
+
+		return bankRotation;
 	}
 
 	void Start(){
 
 		//these two are constants to interpolate between 89 and 91 degree banks' rotation rates
+		//turn this on if you want to use bank rotation instead
+		//tanBot = Mathf.Abs(Mathf.Tan(89 * Mathf.Deg2Rad));
+		//tanTop = Mathf.Abs(Mathf.Tan(91 * Mathf.Deg2Rad));
 
-		tanBot = Mathf.Abs(Mathf.Tan(89 * Mathf.Deg2Rad));
-		tanTop = Mathf.Abs(Mathf.Tan(91 * Mathf.Deg2Rad));
+		vM = GetComponent<VorticeManager>();
 	}
 
 	void Update(){

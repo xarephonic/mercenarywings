@@ -23,7 +23,7 @@ public class HitPointModule : MonoBehaviour {
 	{
 		crashing = true;
 
-		Destroy(gameObject);
+		SceneAssetsKeeper.instance.DestroyAsset(gameObject);
 	}
 
 	// Use this for initialization

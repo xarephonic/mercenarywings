@@ -81,6 +81,10 @@ public class TargetingUI : MonoBehaviour {
 
 		CombatMissionSetupHandler.OnMissionAssetsSpawned += CreateTargetIndicators;
 
+		SceneAssetsKeeper.OnAssetDestroyed += delegate(GameObject asset) {
+			HideTargetIndicators();
+		};
+
 		ToggleShow();
 	}
 	

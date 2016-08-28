@@ -45,6 +45,7 @@ public class PlaneDisplayControl : MonoBehaviour {
 		}
 
 		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
+		currentPlane.gameObject.SetActive(true);
 	}
 
 	// Use this for initialization

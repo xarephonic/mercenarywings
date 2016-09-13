@@ -41,6 +41,8 @@ public class PlayerPlaneSelectionHandler : MonoBehaviour {
 
 	public void SwitchToNextPlaneWithoutCommands(){
 
+		Debug.Log("Switching to next plane without commands");
+
 		foreach(GameObject playerAsset in sceneAssetsKeeper.playerAssets){
 			if(playerAsset.GetComponent<MovementModule>().commands.Count != TurnManager.currentTurn){
 				SetSelectedPlane(playerAsset);
@@ -51,6 +53,10 @@ public class PlayerPlaneSelectionHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		OnSelectedPlaneChanged += (GameObject newSelectedPlane) => { 
+			Debug.Log("Selected plane changed to "+newSelectedPlane.name);
+		};
+
 		CombatMissionSetupHandler.OnMissionAssetsSpawned += SwitchToNextPlaneWithoutCommands;
 	}
 	

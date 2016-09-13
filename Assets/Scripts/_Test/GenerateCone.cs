@@ -4,11 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GenerateCone : MonoBehaviour {
-
+	/*
 	public Slider radSlider;
 	public Slider angSlider;
 	public Slider disSlider;
 	public Slider cmpSlider;
+	*/
+
+	public GameObject coneObj;
 
 	public float baseRadius;
 	public void SetBaseRadius(float newbr){
@@ -37,10 +40,10 @@ public class GenerateCone : MonoBehaviour {
 
 	public void Cone(float h, float tR, float angle, int c){
 		MeshFilter filter;
-		if(gameObject.GetComponent<MeshFilter>() == null){
-			filter = gameObject.AddComponent<MeshFilter>();
+		if(coneObj.GetComponent<MeshFilter>() == null){
+			filter = coneObj.AddComponent<MeshFilter>();
 		}else{
-			filter = gameObject.GetComponent<MeshFilter>();
+			filter = coneObj.GetComponent<MeshFilter>();
 		}
 		Mesh mesh = filter.mesh;
 		mesh.Clear();
@@ -230,6 +233,8 @@ public class GenerateCone : MonoBehaviour {
 
 		mesh.RecalculateBounds();
 		mesh.Optimize();
+
+		coneObj.transform.localPosition = new Vector3(0,0,h);
 	}
 
 
@@ -238,9 +243,11 @@ public class GenerateCone : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Cone(distance,baseRadius,angle,complexity);
+		//Cone(distance,baseRadius,angle,complexity);
 
-		MeshRenderer rend = gameObject.AddComponent<MeshRenderer>();
+		coneObj = transform.GetChild(0).gameObject;
+
+		MeshRenderer rend = coneObj.AddComponent<MeshRenderer>();
 
 		rend.material = mat;
 
@@ -249,6 +256,7 @@ public class GenerateCone : MonoBehaviour {
 		curD = distance;
 		curC = complexity;
 
+		/*
 		radSlider.onValueChanged.AddListener(delegate(float arg0) {
 			SetBaseRadius(arg0);	
 		});
@@ -264,10 +272,12 @@ public class GenerateCone : MonoBehaviour {
 		cmpSlider.onValueChanged.AddListener(delegate(float arg0) {
 			SetComplexity((int)arg0);
 		});
+		*/
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
 		if(distance != curD || baseRadius != curRad || angle != curA || complexity != curC){
 			Cone(distance,baseRadius,angle,complexity);
 
@@ -276,5 +286,6 @@ public class GenerateCone : MonoBehaviour {
 			curD = distance;
 			curC = complexity;
 		}
+
 	}
 }

@@ -403,7 +403,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 195074539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ab41c416e35841238111ad216e4c901, type: 3}
   m_Name: 
@@ -1699,10 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed6c31e118d5344abd88fc0fdb24eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radSlider: {fileID: 2029159163}
-  angSlider: {fileID: 1317092922}
-  disSlider: {fileID: 1589435107}
-  cmpSlider: {fileID: 1904561575}
+  coneObj: {fileID: 0}
   baseRadius: 1
   angle: 120
   distance: 60
@@ -1804,6 +1801,48 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &1600074755
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458480, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6488969bbfbac804cb8bae3746156e0c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1659611066
 GameObject:
   m_ObjectHideFlags: 0

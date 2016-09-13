@@ -46,8 +46,12 @@ public class WeaponSelectionControl : MonoBehaviour {
 		}
 	}
 
+	private void SelectWeapon(AircraftFireControl fireControl, int selectedWeaponInd){
+		fireControl.activeWeaponInd = selectedWeaponInd;
+	}
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		int count = transform.childCount;
 		weaponButtons = new Button[count];
 		for (int i = 0; i < count; i++) {

@@ -21,6 +21,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 	public void SetAssetId(GameObject g){
 		g.AddComponent<AssetIdentifier>().sceneAssetId = sceneAssetId++;
+		Debug.Log("Set asset id "+sceneAssetId+" for "+g.name);
 	}
 
 	void GetPlayerSpawnPositions()
@@ -57,8 +58,12 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 					}
 				}
 			}
+
+			Debug.Log("Instantiating "+aircraftToBeSpawned.name+"...");
 			
 			GameObject x = Instantiate(aircraftToBeSpawned,playerSpawnPositions[i],Quaternion.identity) as GameObject;
+
+			Debug.Log("Instantiated "+aircraftToBeSpawned.name+"!");
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
 
@@ -71,7 +76,12 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 	void SpawnEnemyPlanes(){
 		for (int i = 0; i < Random.Range(3,6); i++) {
+
+			Debug.Log("Instantiating "+opponentPlanePrefab.name+"...");
+
 			GameObject x = Instantiate(opponentPlanePrefab,opponentSpawnPositions[i],Quaternion.identity) as GameObject;
+
+			Debug.Log("Instantiated "+opponentPlanePrefab.name+"!");
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
 
@@ -85,6 +95,8 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		OnMissionAssetsSpawned += () => Debug.Log("Mission Assets Spawned!");
+
 		sceneAssetsKeeper = GetComponent<SceneAssetsKeeper>();
 
 		aircraftAssets = AssetLoader.instance.loadedAssets.ToArray();
@@ -94,6 +106,8 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 		GetOpponentSpawnPositions();
 		SpawnEnemyPlanes();
+
+
 
 		OnMissionAssetsSpawned();
 	}

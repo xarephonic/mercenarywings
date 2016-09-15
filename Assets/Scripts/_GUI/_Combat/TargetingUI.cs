@@ -10,7 +10,6 @@ public class TargetingUI : MonoBehaviour {
 	public GameObject targetIndicatorPrefab;
 
 	public List<GameObject> targetIndicatorPool = new List<GameObject>();
-	public List<GameObject> targets = new List<GameObject>();
 
 	public bool show;
 
@@ -22,23 +21,27 @@ public class TargetingUI : MonoBehaviour {
 		for (int i = 0; i < SceneAssetsKeeper.instance.opponentAssets.Count; i++) {
 			GameObject target = SceneAssetsKeeper.instance.opponentAssets[i];
 
-			Vector3 screenPos = Camera.main.WorldToScreenPoint(target.transform.position);
+			if(target.activeSelf){
+				Vector3 screenPos = Camera.main.WorldToScreenPoint(target.transform.position);
 
-			if(screenPos.z > 0)
-			{
-				screenPos = new Vector3(screenPos.x / canvas.transform.localScale.x , screenPos.y / canvas.transform.localScale.y,0);
-			}
-			else
-			{
+				if(screenPos.z > 0)
+				{
+					screenPos = new Vector3(screenPos.x / canvas.transform.localScale.x , screenPos.y / canvas.transform.localScale.y,0);
+				}
+				else
+				{
+					targetIndicatorPool[i].SetActive(false);
+					return;
+				}
+
+				targetIndicatorPool[i].GetComponent<RectTransform>().anchoredPosition = screenPos;
+				targetIndicatorPool[i].transform.GetChild(0).GetComponent<Text>().text = target.GetComponent<AircraftCore>().aircraftName;
+				targetIndicatorPool[i].transform.GetChild(1).GetComponent<Text>().text = Vector3.Distance(PlayerPlaneSelectionHandler.selectedPlane.transform.position,target.transform.position).ToString(0+"m");
+
+				targetIndicatorPool[i].SetActive(true);
+			}else {
 				targetIndicatorPool[i].SetActive(false);
-				return;
 			}
-
-			targetIndicatorPool[i].GetComponent<RectTransform>().anchoredPosition = screenPos;
-			targetIndicatorPool[i].transform.GetChild(0).GetComponent<Text>().text = target.GetComponent<AircraftCore>().aircraftName;
-			targetIndicatorPool[i].transform.GetChild(1).GetComponent<Text>().text = Vector3.Distance(PlayerPlaneSelectionHandler.selectedPlane.transform.position,target.transform.position).ToString(0+"m");
-
-			targetIndicatorPool[i].SetActive(true);
 		}
 	}
 
@@ -83,6 +86,7 @@ public class TargetingUI : MonoBehaviour {
 
 		SceneAssetsKeeper.OnAssetDestroyed += delegate(GameObject asset) {
 			HideTargetIndicators();
+			ShowTargetIndicators();
 		};
 
 		ToggleShow();

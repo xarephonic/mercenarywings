@@ -21,6 +21,11 @@ public class AircraftFireControl : MonoBehaviour {
 	public ParticleSystem cannonParticles;
 	public AudioSource cannonAud;
 
+	public float cannonFireRate;
+	public float cannonAccuracy;
+	public float cannonDmg;
+	public float roundsPerFrame;
+
 	public void ChangeSelectedWeapon(int newInd){
 		Debug.Log("Changing selected weapon to "+newInd);
 		activeWeaponInd = newInd;
@@ -68,6 +73,11 @@ public class AircraftFireControl : MonoBehaviour {
 
 					if(Vector3.Distance(transform.position,target.transform.position) < 500 && angle < 10/2.0f)
 					{
+						float rand = Random.Range(0,1);
+						if(rand < cannonAccuracy){
+							target.GetComponent<HitPointModule>().RecieveDamage(cannonDmg);
+						}
+
 						if(cannonParticles)
 							cannonParticles.gameObject.SetActive(true);
 						if(cannonAud)

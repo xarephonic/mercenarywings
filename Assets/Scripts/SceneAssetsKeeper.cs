@@ -24,15 +24,15 @@ public class SceneAssetsKeeper :MonoBehaviour {
 
 	public void DestroyAsset(GameObject asset){
 		//TODO do not destroy the asset itself, set it as inactive
-		instantiatedAssets.Remove(asset);
-		playerAssets.Remove(asset);
-		opponentAssets.Remove(asset);
+		//instantiatedAssets.Remove(asset);
+		//playerAssets.Remove(asset);
+		//opponentAssets.Remove(asset);
 
 		OnAssetDestroyed(asset);
 
-		Destroy(asset);
+		//Destroy(asset);
 
-		//asset.SetActive(false);
+		asset.SetActive(false);
 	}
 
 	void Awake()

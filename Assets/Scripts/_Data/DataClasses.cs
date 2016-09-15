@@ -83,6 +83,11 @@ namespace DataClasses
 
 			TrackingModule tracking = plane.GetComponent<TrackingModule>();
 			tracking.sensorStrength = this.radarTrackingStrength;
+
+			AircraftFireControl fire = plane.GetComponent<AircraftFireControl>();
+			fire.cannonAccuracy = cannonAccuracy;
+			fire.cannonFireRate = cannonFireRate;
+			fire.cannonDmg = cannonDamage;
 		}
 
         public PlaneVO (int planeId,string planeName, float stallSpeed, float maxSpeed, float accRate, float decRate, float climbLoss,

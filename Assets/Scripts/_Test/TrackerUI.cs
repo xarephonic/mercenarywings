@@ -45,8 +45,6 @@ public class TrackerUI : MonoBehaviour {
 		myTargetingLine.SetWidth(0.5f,0.5f);
 		myTargetingLine.SetColors(Color.red,Color.red);
 		myTargetingLine.enabled = false;
-
-
 	}
 	
 	// Update is called once per frame
@@ -82,6 +80,7 @@ public class TrackerUI : MonoBehaviour {
 		}else{
 
 			myTargetingLine.enabled = false;
+			myTrackingCrosshair.enabled = false;
 		}
 
 	}

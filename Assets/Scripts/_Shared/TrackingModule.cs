@@ -96,7 +96,11 @@ public class TrackingModule : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		SceneAssetsKeeper.OnAssetDestroyed += (GameObject asset) => {
+			if(asset == target){
+				SetTarget(null);
+			}
+		};
 	}
 	
 	// Update is called once per frame

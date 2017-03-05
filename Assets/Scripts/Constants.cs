@@ -6,12 +6,12 @@ public class Constants : MonoBehaviour {
 
     public static Constants inst;
 
-    public string dbUrl = "46.101.97.178";
+	public string dbUrl = "https://mighty-fortress-94429.herokuapp.com/";
 	public string localDbUrl = "";
 	public string getAllPlanesLocal = "allPlanes";
 	public string getAllPlayerPlanesLocal = "playerPlanes";
-    public string getUserUrl = "/user";
-    public string getAllPlanesUrl = "/allPlanes";
+	public string getUserUrl = "playerPlanes";
+    public string getAllPlanesUrl = "allPlanes";
     public string getPlaneUrl = "/plane";
     public string getPilotUrl = "/pilot";
     public string getWeaponUrl = "/weapon";

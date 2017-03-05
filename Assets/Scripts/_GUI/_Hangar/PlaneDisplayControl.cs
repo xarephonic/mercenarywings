@@ -30,7 +30,7 @@ public class PlaneDisplayControl : MonoBehaviour {
 	void OnLevelWasLoaded () {
 
 		planesArray = new List<GameObject>();
-
+		/*
 		foreach(PlaneVO plane in AssetKeeper.instance.playerPlanes){
 			Debug.Log(AssetKeeper.instance.playerPlanes.Count);
 			Debug.Log(plane);
@@ -42,7 +42,7 @@ public class PlaneDisplayControl : MonoBehaviour {
 				planesArray.Add(x);	
 				x.SetActive(false);
 			}));
-		}
+		}*/
 
 		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
 		currentPlane.gameObject.SetActive(true);

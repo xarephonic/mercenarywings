@@ -9,6 +9,8 @@ namespace DataClasses
     {
         public int id;
         public string name;
+		public string hangarAssetUrl;
+		public string inFlightAssetUrl;
 
         public float stallSpeed;
         public float maxSpeed;
@@ -37,9 +39,13 @@ namespace DataClasses
 
         public PlaneVO()
         {
-
+			
         }
 
+		public static PlaneVO FromJson (string json) {
+			return JsonUtility.FromJson<PlaneVO>(json);
+		}
+		/*
         public static PlaneVO FromJson(JSONClass jClass)
         {
             PlaneVO pvo = new PlaneVO(jClass["id"].AsInt, jClass["name"], jClass["stallSpeed"].AsFloat, jClass["maxSpeed"].AsFloat,
@@ -53,6 +59,7 @@ namespace DataClasses
 
             return pvo;
         }
+        */
 
 		public void ToPlane(GameObject plane){
 			AircraftCore core = plane.GetComponent<AircraftCore>();

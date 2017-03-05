@@ -10,12 +10,12 @@ public class Retriever : MonoBehaviour {
 
     public delegate void RetrieveDataCallback(string s);
 
-	public static IEnumerator RetrieveData(string url, WWWForm postForm = null,RetrieveDataCallback callback = null)
+	public static IEnumerator RetrieveRemoteData(string url, WWWForm postForm = null,RetrieveDataCallback callback = null)
     {
         WWW w;
 
         if (postForm != null)
-            w = new WWW(url, postForm);
+			w = new WWW(url, postForm);
         else
             w = new WWW(url);
 
@@ -31,7 +31,7 @@ public class Retriever : MonoBehaviour {
 
     }
 
-	public static IEnumerator RetrieveData(string path, RetrieveDataCallback callback){
+	public static IEnumerator RetrieveLocalData(string path, RetrieveDataCallback callback){
 
 		string file = Directory.GetFiles(path)[0];
 

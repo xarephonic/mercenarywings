@@ -4,6 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using DataClasses;
 
+//this class 
+//loads/unloads assets
+//downloads and caches assets
+//creates the asset in prefab form when loading into memory
+
 public class AssetLoader : MonoBehaviour {
 
 	public static AssetLoader instance;
@@ -12,6 +17,23 @@ public class AssetLoader : MonoBehaviour {
 		HANGAR,
 		INFLIGHT
 	}
+
+	public IEnumerator LoadAsset(string assetUrl, string assetName, int version) {
+		WWW w = WWW.LoadFromCacheOrDownload(assetUrl,version);
+
+		yield return w;
+
+		if(!string.IsNullOrEmpty(w.error)) {
+			Debug.Log("Asset load error: "+w.error);
+		} else {
+			Debug.Log("got the asset from: "+assetUrl);
+			//Debug.Log(w.assetBundle.LoadAsset<GameObject>(assetName));
+			string[] names = w.assetBundle.GetAllAssetNames();
+			loadedAssets.Add(w.assetBundle.LoadAsset<GameObject>(names[0]));
+			Instantiate(w.assetBundle.LoadAsset<GameObject>(names[0]), Vector3.zero, Quaternion.identity);
+		}
+	}
+
 
 	public delegate void AssetLoadCallBack(GameObject g);
 
@@ -63,19 +85,18 @@ public class AssetLoader : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		//this is temporary
-		//Invoke("PopulateLoadedAssetsWithData",0.5f);
+		StartCoroutine(LoadAsset("http://ccsdacademy.com/mercwings/eurofighter/eurofighter.hangar","eurofighter.hangar",1));
 	}
 
 	public void PopulateLoadedAssetsWithData ()
 	{
 		foreach (GameObject asset in loadedAssets) {
-			PlaneVO vo = AssetKeeper.instance.allPlanes.Find (delegate (DataClasses.PlaneVO obj) {
+			/*PlaneVO vo = AssetKeeper.instance.allPlanes.Find (delegate (DataClasses.PlaneVO obj) {
 				return obj.id == asset.GetComponent<AircraftCore> ().aircraftId;
 			});
 			if (asset.GetComponent<MovementModule> () != null) {
 				vo.ToPlane (asset);
-			}
+			}*/
 		}
 	}
 	

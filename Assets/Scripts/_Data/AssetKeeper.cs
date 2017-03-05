@@ -15,61 +15,77 @@ using AssetBundles;
 public class AssetKeeper : MonoBehaviour {
 
     public static AssetKeeper instance;
-    public List<PlaneVO> allPlanes = new List<PlaneVO>();
+	public List<PlaneVO> allPlanes = new List<PlaneVO>();
 	public List<PlaneVO> playerPlanes = new List<PlaneVO>();
 
-    void PutIntoList<T>(string s, List<T> targetList)
+	public delegate void DataRetrieveAction (string data, RetrieveDataType t, bool remote);
+	public event DataRetrieveAction OnDataRetrieveSuccess;
+	public event DataRetrieveAction OnDataRetrieveError;
+
+	public enum RetrieveDataType {
+		ALL_PLANES,
+		PLAYER_PLANES
+	};
+
+	string CreateUrl(RetrieveDataType t, bool remote) {
+		switch (t) {
+		case RetrieveDataType.ALL_PLANES:
+			if(remote) {
+				return Constants.inst.dbUrl + Constants.inst.getAllPlanesUrl;
+			} else {
+				return Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal).ToString();
+			}
+			break;
+		case RetrieveDataType.PLAYER_PLANES:
+			if(remote) {
+				return Constants.inst.dbUrl + Constants.inst.getUserUrl;
+			} else {
+				return Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal);
+			}
+			break;
+		default:
+			return "Cannot create url for "+ t + "remote: "+ remote;
+			break;
+		};
+	}
+
+	void PutIntoList<T>(string s, List<T> targetList)
     {
-        JSONArray jArr = JSON.Parse(s).AsArray;
+		JSONClass jObj = JSON.Parse(s).AsObject;
+		JSONArray jArr = jObj["planes"].AsArray;
 
         MethodInfo m = typeof(T).GetMethod("FromJson");
 
         foreach (JSONClass jClass in jArr)
         {
-            var obj = m.Invoke(null,new JSONClass[1] { jClass });
+			string[] sArr = new string[1] { jClass.ToString() };
+
+			var obj = m.Invoke(null, sArr);
 
             targetList.Add((T)obj);
         }
     }
 
-    public void RetrieveAllPlaneData()
-    {
-		StartCoroutine(Retriever.RetrieveData(Constants.inst.dbUrl + Constants.inst.getAllPlanesUrl,null,delegate(string s)
-        {
-			if(s == "error"){
-				StartCoroutine(Retriever.RetrieveData(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal),delegate(string l) {
-						PutIntoList(l,allPlanes);
-						RetrievePlayerPlaneData();
-				}));
-			}else {
-				PutIntoList(s, allPlanes);
-				RetrievePlayerPlaneData();
-			}
-		}));
-    }
-
-	public void RetrievePlayerPlaneData(){
-		Debug.Log("retrieving player plane data");
-		StartCoroutine(Retriever.RetrieveData(Constants.inst.dbUrl + Constants.inst.getUserUrl, null, delegate(string s){
-			if(s == "error"){
-				StartCoroutine(Retriever.RetrieveData(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal), delegate(string l) {
-					Debug.Log(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal));
-					Debug.Log(Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal)));
-					Debug.Log(l);
-					JSONArray playerPlaneIds = JSON.Parse(l).AsArray;
-					foreach(JSONData id in playerPlaneIds){
-						Debug.Log(id);
-						Debug.Log(allPlanes.Count);
-						PlaneVO vo = allPlanes.Find(x => x.id == id.AsInt);
-						Debug.Log(vo.id);
-						playerPlanes.Add(vo);
-					}
-				}));
-			}else {
-				PutIntoList(s,playerPlanes);	
-			}
-
-		}));
+	public void RetrieveData(RetrieveDataType t, bool remote, WWWForm postData = null) {
+		string url = CreateUrl(t, remote);
+		Debug.Log("Retrieving "+ t.ToString() + "remote: "+ remote.ToString()+" from: "+ url);
+		if(remote){
+			StartCoroutine(Retriever.RetrieveRemoteData(url,postData, delegate(string s) {
+				if(s == "error") {
+					OnDataRetrieveError(s, t, remote);
+				} else {
+					OnDataRetrieveSuccess(s, t, remote);
+				}
+			}));
+		} else {
+			StartCoroutine(Retriever.RetrieveLocalData(url,delegate(string s) {
+				if(s == "error") {
+					OnDataRetrieveError(s, t, remote);
+				} else {
+					OnDataRetrieveSuccess(s, t, remote);
+				}
+			}));
+		}
 	}
 
 	//TODO Add a method to encrypt this data
@@ -116,12 +132,42 @@ public class AssetKeeper : MonoBehaviour {
     {
 		Debug.Log("AssetKeeper start");
 
+		//This creates the local files to start with. 
+		//We have this because at least we want the game to be playable without additional downloads first
 		if(!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal)))
 			PopulateStartData();
 		if(!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal)))
 			PopulatePlayerStartData();
+		
 
-		RetrieveAllPlaneData();
+		OnDataRetrieveError += (data, t, remote) => {
+			if(remote) {
+				Debug.Log("Failed remote data retrieve for "+ t);
+				Debug.Log("Falling back to local file");
+				RetrieveData(t,false);
+			} else {
+				Debug.Log("Failed local data retrieve for "+ t);
+			}
+		};
+
+		OnDataRetrieveSuccess += (data, t, remote) => {
+			Debug.Log("Retrieved data for "+ t+ "remote: "+remote);
+			switch(t) {
+			case RetrieveDataType.ALL_PLANES:
+				PutIntoList(data, allPlanes);
+				break;
+			case RetrieveDataType.PLAYER_PLANES:
+				PutIntoList(data,playerPlanes);
+				break;
+			default:
+				Debug.Log("I dont know where to put "+ t);
+				break;
+			}
+		};
+
+		//we first try to get the data from remote
+		RetrieveData(RetrieveDataType.ALL_PLANES, true);
+		RetrieveData(RetrieveDataType.PLAYER_PLANES, true);
 
     }
 }

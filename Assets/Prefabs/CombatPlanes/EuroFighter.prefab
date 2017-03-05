@@ -472,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &125454
 GameObject:
   m_ObjectHideFlags: 1
@@ -2056,7 +2056,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5050.6, y: 3491.1887, z: 3797.2358}
+  m_LocalPosition: {x: 564.3371, y: 316.35104, z: -692.6049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475588}
@@ -6177,8 +6177,8 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: 0.1
-  m_StartWidth: 0.5
-  m_EndWidth: 0.1
+  m_StartWidth: 0.1
+  m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -6224,8 +6224,8 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: 0.1
-  m_StartWidth: 0.5
-  m_EndWidth: 0.1
+  m_StartWidth: 0.1
+  m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -6267,6 +6267,7 @@ MonoBehaviour:
   yawRate: 10
   pitchRate: 30
   rollRate: 30
+  minTurnEffAppliedSpeed: 600
   turnEfficiencyMultiplier: 0.25
 --- !u!114 &11411710
 MonoBehaviour:
@@ -6400,9 +6401,10 @@ MonoBehaviour:
   activeWeapon: {fileID: 0}
   cannonParticles: {fileID: 19802790}
   cannonAud: {fileID: 8242078}
-  cannonFireRate: 0
-  cannonAccuracy: 0
-  cannonDmg: 0
+  cannonRange: 0
+  cannonFireRate: 10
+  cannonAccuracy: 1
+  cannonDmg: 1
   roundsPerFrame: 0
 --- !u!198 &19802790
 ParticleSystem:
@@ -6483,7 +6485,7 @@ ParticleSystem:
         m_RotationOrder: 0
       minMaxState: 0
     startSpeed:
-      scalar: 3000
+      scalar: 300
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -6612,7 +6614,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 0.5
+      scalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:

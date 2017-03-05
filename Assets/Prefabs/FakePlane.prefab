@@ -117,8 +117,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 14.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -23.446152, y: 1965.5, z: 578.91925}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 438436}
   - {fileID: 420832}
@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5a21eff6a67469181955ca4dbd9d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vM: {fileID: 0}
   airSpeed: 0
   altitude: 0
   stallSpeed: 0
@@ -299,6 +300,7 @@ MonoBehaviour:
   yawRate: 0
   pitchRate: 0
   rollRate: 0
+  minTurnEffAppliedSpeed: 600
   turnEfficiencyMultiplier: 0
 --- !u!120 &12020444
 LineRenderer:

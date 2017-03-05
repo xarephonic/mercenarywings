@@ -21,6 +21,10 @@ public class Constants : MonoBehaviour {
 	public static int framesPerCombatRound = 60;
     public static float navigationConstant = 3.0f;
 
+	public static float scaleFactor = 1.0f;
+
+	public static float showKmDistance = 2000;
+
 	public Text text;
 
     void Awake()

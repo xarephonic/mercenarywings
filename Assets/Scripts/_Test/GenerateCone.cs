@@ -232,7 +232,7 @@ public class GenerateCone : MonoBehaviour {
 		mesh.triangles = triangles;
 
 		mesh.RecalculateBounds();
-		mesh.Optimize();
+		;
 
 		coneObj.transform.localPosition = new Vector3(0,0,h);
 	}

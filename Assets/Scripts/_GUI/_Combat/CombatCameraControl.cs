@@ -79,7 +79,7 @@ public class CombatCameraControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		targetZoom = defaultZoom;
+		targetZoom = defaultZoom * Constants.scaleFactor;
 
 		targetRotation = new Vector2(defaultXRot,defaultYRot);
 	}
@@ -113,7 +113,7 @@ public class CombatCameraControl : MonoBehaviour {
 		cube.transform.position = targetCameraPosition;
 
 
-		if(Vector3.Distance(Camera.main.transform.position,targetCameraPosition) > 1)
+		if(Vector3.Distance(Camera.main.transform.position,targetCameraPosition) > 1*Constants.scaleFactor)
 		Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,targetCameraPosition,moveSpeed);
 
 		Camera.main.transform.eulerAngles = new Vector3(lookAtTarget.eulerAngles.x + targetRotation.x ,lookAtTarget.eulerAngles.y + targetRotation.y ,0);

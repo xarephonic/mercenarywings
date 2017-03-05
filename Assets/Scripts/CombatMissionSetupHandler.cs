@@ -67,6 +67,8 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
 
+			x.transform.localScale *= Constants.scaleFactor;
+
 			SetAssetId(x);
 
 			sceneAssetsKeeper.instantiatedAssets.Add(x);
@@ -84,6 +86,8 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 			Debug.Log("Instantiated "+opponentPlanePrefab.name+"!");
 
 			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
+
+			x.transform.localScale *= Constants.scaleFactor;
 
 			SetAssetId(x);
 

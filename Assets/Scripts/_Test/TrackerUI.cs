@@ -42,7 +42,7 @@ public class TrackerUI : MonoBehaviour {
 		myTargetingLine.useWorldSpace = true;
 		myTargetingLine.SetVertexCount(2);
 		myTargetingLine.SetPositions(new Vector3[]{Vector3.zero,Vector3.zero});
-		myTargetingLine.SetWidth(0.5f,0.5f);
+		myTargetingLine.SetWidth(0.25f,0.25f);
 		myTargetingLine.SetColors(Color.red,Color.red);
 		myTargetingLine.enabled = false;
 	}

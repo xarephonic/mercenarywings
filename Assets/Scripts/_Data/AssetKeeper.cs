@@ -75,7 +75,6 @@ public class AssetKeeper : MonoBehaviour {
 	//TODO Add a method to encrypt this data
 	public void PopulateStartData(){
 		Debug.Log("populating start data");
-
 		
 		TextAsset allPlanesJson = Resources.Load("allPlanes") as TextAsset;
 		string allPlanesPath = Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal);
@@ -88,7 +87,6 @@ public class AssetKeeper : MonoBehaviour {
 
 	public void PopulatePlayerStartData(){
 		Debug.Log("Populating player start data");
-
 
 		TextAsset playerPlanesJson = Resources.Load("playerPlanes") as TextAsset;
 		string playerPlanesPath = Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal);

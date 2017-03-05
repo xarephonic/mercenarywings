@@ -58,6 +58,11 @@ public class PlayerPlaneSelectionHandler : MonoBehaviour {
 		};
 
 		CombatMissionSetupHandler.OnMissionAssetsSpawned += SwitchToNextPlaneWithoutCommands;
+		SceneStateManager.OnSceneCombatStateChange += delegate(SceneStateManager.CombatSceneState newState) {
+			if(newState == SceneStateManager.CombatSceneState.COMMAND){
+				SwitchToNextPlaneWithoutCommands();
+			}
+		};
 	}
 	
 	// Update is called once per frame

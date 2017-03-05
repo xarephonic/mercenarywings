@@ -40,6 +40,8 @@ public class AircraftLoadout : MonoBehaviour {
 		for (int i = 0; i < hardPointPositions.Length; i++) {
 			GameObject testMis = Instantiate(testMissile , hardPointPositions[i], Quaternion.identity) as GameObject;
 
+			testMis.transform.localScale *= Constants.scaleFactor;
+
 			testMis.transform.SetParent(gameObject.transform);
 
 			loadedArmament[i] = testMis;

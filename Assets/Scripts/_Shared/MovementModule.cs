@@ -20,7 +20,8 @@ public class MovementModule : MonoBehaviour {
 	public float yawRate;
 	public float pitchRate;
 	public float rollRate;
-	
+
+	public float minTurnEffAppliedSpeed = 600.0f;
 	public float turnEfficiencyMultiplier;
 
 	private float tanBot;
@@ -96,9 +97,9 @@ public class MovementModule : MonoBehaviour {
 
 		//Debug.Log(gameObject.name + "turneff: "+turnEfficiency);
 
-		airSpeed += (transform.forward.y >= 0) ? climbSpeedLoss*-1*3.6f*transform.forward.y*Constants.delta : diveSpeedGain*-1*3.6f*transform.forward.y*Constants.delta;
+		airSpeed += (transform.forward.y >= 0) ? climbSpeedLoss*-1*3.6f*transform.forward.y*Constants.delta: diveSpeedGain*-1*3.6f*transform.forward.y*Constants.delta;
 		
-		airSpeed += (s >= 0) ? s/100.0f*accelerationRate*3.6f*Constants.delta: s/100.0f*decelerationRate*3.6f*Constants.delta;
+		airSpeed += (s >= 0) ? s/100.0f*accelerationRate*3.6f*Constants.delta : s/100.0f*decelerationRate*3.6f*Constants.delta;
 		
 		airSpeed = Mathf.Clamp(airSpeed,1,maxSpeed);
 
@@ -108,8 +109,8 @@ public class MovementModule : MonoBehaviour {
 		//below 600kph all planes turn at maximum turn rates
 		float eff = 1;
 
-		if(airSpeed > 600)
-			eff = 1 - (0.1f * ((airSpeed - 600) / (maxSpeed - 600)));
+		if(airSpeed > minTurnEffAppliedSpeed)
+			eff = 1 - (0.1f * ((airSpeed - minTurnEffAppliedSpeed) / (maxSpeed - minTurnEffAppliedSpeed)));
 			
 
 		transform.Rotate(new Vector3(p/100.0f * pitchRate * eff * Constants.delta, r/100.0f * yawRate * eff * Constants.delta, r/100.0f * -rollRate * eff * Constants.delta));
@@ -153,6 +154,15 @@ public class MovementModule : MonoBehaviour {
 		//tanTop = Mathf.Abs(Mathf.Tan(91 * Mathf.Deg2Rad));
 
 		vM = GetComponent<VorticeManager>();
+
+		airSpeed *= Constants.scaleFactor;
+		maxSpeed *= Constants.scaleFactor;
+		stallSpeed *= Constants.scaleFactor;
+		accelerationRate *= Constants.scaleFactor;
+		decelerationRate *= Constants.scaleFactor;
+		climbSpeedLoss *= Constants.scaleFactor;
+		diveSpeedGain *= Constants.scaleFactor;
+		minTurnEffAppliedSpeed *= Constants.scaleFactor;
 	}
 
 	void Update(){

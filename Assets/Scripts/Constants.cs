@@ -15,6 +15,9 @@ public class Constants : MonoBehaviour {
     public string getPlaneUrl = "/plane";
     public string getPilotUrl = "/pilot";
     public string getWeaponUrl = "/weapon";
+
+	public string assetDataUrl = "http://ccsdacademy.com/mercwings/";
+
 	public float timeout = 5.0f;
 
     public static float delta = (1.0f/60.0f);

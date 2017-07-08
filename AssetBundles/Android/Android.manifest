@@ -1,13 +1,31 @@
 ManifestFileVersion: 0
-CRC: 3295525181
+CRC: 2703255521
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: f22
       Dependencies: {}
     Info_1:
-      Name: eurofighter.inflight
+      Name: eurofighterhangar
       Dependencies: {}
     Info_2:
-      Name: eurofighter.hangar
+      Name: eurofighterinflight
+      Dependencies: {}
+    Info_3:
+      Name: f5etiger2hangar
+      Dependencies: {}
+    Info_4:
+      Name: f4ephantom2inflight
+      Dependencies: {}
+    Info_5:
+      Name: f4ephantom2hangar
+      Dependencies: {}
+    Info_6:
+      Name: f5etiger2inflight
+      Dependencies: {}
+    Info_7:
+      Name: ja37viggeninflight
+      Dependencies: {}
+    Info_8:
+      Name: ja37viggenhangar
       Dependencies: {}

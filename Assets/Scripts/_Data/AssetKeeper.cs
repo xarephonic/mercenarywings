@@ -15,7 +15,9 @@ using AssetBundles;
 public class AssetKeeper : MonoBehaviour {
 
     public static AssetKeeper instance;
+	public Dictionary<int, PlaneVO> allPlanesDict = new Dictionary<int, PlaneVO>();
 	public List<PlaneVO> allPlanes = new List<PlaneVO>();
+	public Dictionary<int, PlaneVO> playerPlanesDict = new Dictionary<int, PlaneVO>();
 	public List<PlaneVO> playerPlanes = new List<PlaneVO>();
 
 	public delegate void DataRetrieveAction (string data, RetrieveDataType t, bool remote);
@@ -88,6 +90,12 @@ public class AssetKeeper : MonoBehaviour {
 		}
 	}
 
+	public void planesListToDict(List<PlaneVO> planeList, Dictionary<int, PlaneVO> planeDict) {
+		foreach (var plane in planeList) {
+			planeDict.Add(plane.id, plane);
+		}
+	}
+
 	//TODO Add a method to encrypt this data
 	public void PopulateStartData(){
 		Debug.Log("populating start data");
@@ -155,9 +163,12 @@ public class AssetKeeper : MonoBehaviour {
 			switch(t) {
 			case RetrieveDataType.ALL_PLANES:
 				PutIntoList(data, allPlanes);
+				planesListToDict(allPlanes, allPlanesDict);
 				break;
 			case RetrieveDataType.PLAYER_PLANES:
 				PutIntoList(data,playerPlanes);
+				planesListToDict(playerPlanes, playerPlanesDict);
+				AssetLoader.instance.LoadPlayerAssets();
 				break;
 			default:
 				Debug.Log("I dont know where to put "+ t);

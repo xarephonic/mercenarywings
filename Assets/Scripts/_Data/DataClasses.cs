@@ -10,7 +10,14 @@ namespace DataClasses
         public int id;
         public string name;
 		public string hangarAssetUrl;
+		public GameObject hangarAsset;
 		public string inFlightAssetUrl;
+		public GameObject inFlightAsset;
+		public int assetVersion;
+
+		public float hangarPosX;
+		public float hangarPosY;
+		public float hangarPosZ;
 
         public float stallSpeed;
         public float maxSpeed;
@@ -60,13 +67,21 @@ namespace DataClasses
             return pvo;
         }
         */
-
-		public void ToPlane(GameObject plane){
-			AircraftCore core = plane.GetComponent<AircraftCore>();
+		public void ToHangarPlane(GameObject plane) {
+			AircraftCore core = plane.AddComponent<AircraftCore>();
 			core.aircraftId = this.id;
 			core.aircraftName = this.name;
 
-			MovementModule move = plane.GetComponent<MovementModule>();
+			HangarDetails hangarDetails = plane.AddComponent<HangarDetails>();
+			hangarDetails.hangarPos = new Vector3(hangarPosX, hangarPosY, hangarPosZ);
+		}
+
+		public void ToPlane(GameObject plane){
+			AircraftCore core = plane.AddComponent<AircraftCore>();
+			core.aircraftId = this.id;
+			core.aircraftName = this.name;
+
+			MovementModule move = plane.AddComponent<MovementModule>();
 			move.stallSpeed = this.stallSpeed;
 			move.maxSpeed = this.maxSpeed;
 			move.accelerationRate = this.accelerationRate;
@@ -78,20 +93,20 @@ namespace DataClasses
 			move.rollRate = this.rollRate;
 			move.turnEfficiencyMultiplier = this.turnEfficiencyMultiplier;
 
-			HitPointModule hits = plane.GetComponent<HitPointModule>();
+			HitPointModule hits = plane.AddComponent<HitPointModule>();
 			hits.hitPoints = this.hitPoints;
 			//TODO find solution for hardpoints
 			//TODO find solution for cannon
 
-			EcmModule ecm = plane.GetComponent<EcmModule>();
+			EcmModule ecm = plane.AddComponent<EcmModule>();
 			ecm.counterMeasuresCount = this.counterMeasuresCount;
 			ecm.radarEcmStrength = this.radarEcmStrength;
 			ecm.infraredEcmStrength = this.infraredEcmStrength;
 
-			TrackingModule tracking = plane.GetComponent<TrackingModule>();
+			TrackingModule tracking = plane.AddComponent<TrackingModule>();
 			tracking.sensorStrength = this.radarTrackingStrength;
 
-			AircraftFireControl fire = plane.GetComponent<AircraftFireControl>();
+			AircraftFireControl fire = plane.AddComponent<AircraftFireControl>();
 			fire.cannonAccuracy = cannonAccuracy;
 			fire.cannonFireRate = cannonFireRate;
 			fire.cannonDmg = cannonDamage;

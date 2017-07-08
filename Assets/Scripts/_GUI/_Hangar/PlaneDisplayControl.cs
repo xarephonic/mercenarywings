@@ -30,19 +30,15 @@ public class PlaneDisplayControl : MonoBehaviour {
 	void OnLevelWasLoaded () {
 
 		planesArray = new List<GameObject>();
-		/*
+
 		foreach(PlaneVO plane in AssetKeeper.instance.playerPlanes){
-			Debug.Log(AssetKeeper.instance.playerPlanes.Count);
-			Debug.Log(plane);
-			StartCoroutine(AssetLoader.instance.GetAsset(plane.id,AssetLoader.PlaneAssetType.HANGAR,delegate(GameObject g){
-				GameObject x = Instantiate(g,Vector3.zero,Quaternion.identity) as GameObject;
-				x.transform.SetParent(DisplayedPlanesParent.transform);
-				x.transform.localPosition = x.GetComponent<HangarDetails>().hangarPos;
-				x.transform.localEulerAngles = Vector3.zero;
-				planesArray.Add(x);	
-				x.SetActive(false);
-			}));
-		}*/
+			GameObject x = Instantiate(plane.hangarAsset, Vector3.zero, Quaternion.identity) as GameObject;
+			x.transform.SetParent(DisplayedPlanesParent.transform);
+			x.transform.localPosition = x.GetComponent<HangarDetails>().hangarPos;
+			x.transform.localEulerAngles = Vector3.zero;
+			planesArray.Add(x);	
+			x.SetActive(false);
+		}
 
 		currentPlane = planesArray[planesArrayIndex].GetComponent<AircraftCore>();
 		currentPlane.gameObject.SetActive(true);
@@ -50,8 +46,7 @@ public class PlaneDisplayControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-       
+		      
 
 	}
 	

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1825135485
+CRC: 909310791
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 16d9f38afe378f92777f33ad0bb79e80
+    Hash: cd91c1349620b935e66630344eccc0a8
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6c73e20ae5f396c4540e50d37b137dd7
+    Hash: 2fe923990329680657883f38cc01e537
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -25,8 +25,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
-- Class: 65
-  Script: {instanceID: 0}
 - Class: 82
   Script: {instanceID: 0}
 - Class: 83
@@ -37,8 +35,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 199
   Script: {instanceID: 0}
-- Class: 205
-  Script: {instanceID: 0}
 Assets:
-- Assets/_AssetsForBundling/EuroFighterInFlight.prefab
+- Assets/_AssetsForBundling/F5ETigerIIinFlight.prefab
 Dependencies: []

@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using SimpleJSON;
 using DataClasses;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Cryptography;
-using AssetBundles;
+using Firebase;
+using Firebase.Database;
 
 //this class keeps all the data related to every asset in the game
 
@@ -17,80 +14,10 @@ public class AssetKeeper : MonoBehaviour {
     public static AssetKeeper instance;
 	public Dictionary<int, PlaneVO> allPlanesDict = new Dictionary<int, PlaneVO>();
 	public List<PlaneVO> allPlanes = new List<PlaneVO>();
-	public Dictionary<int, PlaneVO> playerPlanesDict = new Dictionary<int, PlaneVO>();
-	public List<PlaneVO> playerPlanes = new List<PlaneVO>();
+    public List<PlaneVO> playerPlanes = new List<PlaneVO>();
+    public Dictionary<int, PlaneVO> playerPlanesDict = new Dictionary<int, PlaneVO>();
 
-	public delegate void DataRetrieveAction (string data, RetrieveDataType t, bool remote);
-	public event DataRetrieveAction OnDataRetrieveSuccess;
-	public event DataRetrieveAction OnDataRetrieveError;
-
-	public enum RetrieveDataType {
-		ALL_PLANES,
-		PLAYER_PLANES
-	};
-
-	string CreateUrl(RetrieveDataType t, bool remote) {
-		switch (t) {
-		case RetrieveDataType.ALL_PLANES:
-			if(remote) {
-				return Constants.inst.dbUrl + Constants.inst.getAllPlanesUrl;
-			} else {
-				return Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal).ToString();
-			}
-			break;
-		case RetrieveDataType.PLAYER_PLANES:
-			if(remote) {
-				return Constants.inst.dbUrl + Constants.inst.getUserUrl;
-			} else {
-				return Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal);
-			}
-			break;
-		default:
-			return "Cannot create url for "+ t + "remote: "+ remote;
-			break;
-		};
-	}
-
-	void PutIntoList<T>(string s, List<T> targetList)
-    {
-		JSONClass jObj = JSON.Parse(s).AsObject;
-		JSONArray jArr = jObj["planes"].AsArray;
-
-        MethodInfo m = typeof(T).GetMethod("FromJson");
-
-        foreach (JSONClass jClass in jArr)
-        {
-			string[] sArr = new string[1] { jClass.ToString() };
-
-			var obj = m.Invoke(null, sArr);
-
-            targetList.Add((T)obj);
-        }
-    }
-
-	public void RetrieveData(RetrieveDataType t, bool remote, WWWForm postData = null) {
-		string url = CreateUrl(t, remote);
-		Debug.Log("Retrieving "+ t.ToString() + "remote: "+ remote.ToString()+" from: "+ url);
-		if(remote){
-			StartCoroutine(Retriever.RetrieveRemoteData(url,postData, delegate(string s) {
-				if(s == "error") {
-					OnDataRetrieveError(s, t, remote);
-				} else {
-					OnDataRetrieveSuccess(s, t, remote);
-				}
-			}));
-		} else {
-			StartCoroutine(Retriever.RetrieveLocalData(url,delegate(string s) {
-				if(s == "error") {
-					OnDataRetrieveError(s, t, remote);
-				} else {
-					OnDataRetrieveSuccess(s, t, remote);
-				}
-			}));
-		}
-	}
-
-	public void planesListToDict(List<PlaneVO> planeList, Dictionary<int, PlaneVO> planeDict) {
+	public void PlanesListToDict(List<PlaneVO> planeList, Dictionary<int, PlaneVO> planeDict) {
 		foreach (var plane in planeList) {
 			planeDict.Add(plane.id, plane);
 		}
@@ -140,45 +67,47 @@ public class AssetKeeper : MonoBehaviour {
     {
 		Debug.Log("AssetKeeper start");
 
-		//This creates the local files to start with. 
-		//We have this because at least we want the game to be playable without additional downloads first
-		if(!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal)))
+        FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://mercenary-wings-94494733.firebaseio.com/");
+
+        FirebaseDatabase.DefaultInstance
+            .GetReference("planes")
+            .GetValueAsync().ContinueWith(task => {
+                if (task.IsFaulted)
+                {
+                    // Handle the error...
+                } else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+                    foreach(DataSnapshot child in snapshot.Children)
+                    {
+                        PlaneVO pvo = JsonUtility.FromJson<PlaneVO>(child.GetRawJsonValue());
+
+                        allPlanes.Add(pvo);
+                    }
+
+                    PlanesListToDict(allPlanes, allPlanesDict);
+                }
+            });
+
+        FirebaseDatabase.DefaultInstance
+            .GetReference("playerPlanes")
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+                    // Handle the error...
+                }
+                else if (task.IsCompleted)
+                {
+
+                }
+            });
+
+        //This creates the local files to start with. 
+        //We have this because at least we want the game to be playable without additional downloads first
+        if (!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal)))
 			PopulateStartData();
 		if(!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal)))
 			PopulatePlayerStartData();
-		
-
-		OnDataRetrieveError += (data, t, remote) => {
-			if(remote) {
-				Debug.Log("Failed remote data retrieve for "+ t);
-				Debug.Log("Falling back to local file");
-				RetrieveData(t,false);
-			} else {
-				Debug.Log("Failed local data retrieve for "+ t);
-			}
-		};
-
-		OnDataRetrieveSuccess += (data, t, remote) => {
-			Debug.Log("Retrieved data for "+ t+ "remote: "+remote);
-			switch(t) {
-			case RetrieveDataType.ALL_PLANES:
-				PutIntoList(data, allPlanes);
-				planesListToDict(allPlanes, allPlanesDict);
-				break;
-			case RetrieveDataType.PLAYER_PLANES:
-				PutIntoList(data,playerPlanes);
-				planesListToDict(playerPlanes, playerPlanesDict);
-				AssetLoader.instance.LoadPlayerAssets();
-				break;
-			default:
-				Debug.Log("I dont know where to put "+ t);
-				break;
-			}
-		};
-
-		//we first try to get the data from remote
-		RetrieveData(RetrieveDataType.ALL_PLANES, true);
-		RetrieveData(RetrieveDataType.PLAYER_PLANES, true);
-
     }
 }

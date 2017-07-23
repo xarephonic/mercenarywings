@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "339007701192",
+    "firebase_url": "https://mercenary-wings-94494733.firebaseio.com",
+    "project_id": "mercenary-wings-94494733",
+    "storage_bucket": "mercenary-wings-94494733.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339007701192:android:92db18590dcab531",
+        "android_client_info": {
+          "package_name": "com.bf.mercenarywings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339007701192-5357n715nfrg386ptjo19seesosochuk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bf.mercenarywings",
+            "certificate_hash": "d1dc1cc32b72c760384fe9178ea073ad96e1efa9"
+          }
+        },
+        {
+          "client_id": "339007701192-gmdjsdfnpinnknieoqhnjm8p2g9op5us.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY5MN52XM3Chu-htil2rM3o8XTO1IIACU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339007701192-gmdjsdfnpinnknieoqhnjm8p2g9op5us.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="firebase_database_url" translatable="false">https://mercenary-wings-94494733.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">339007701192</string>
+  <string name="google_storage_bucket" translatable="false">mercenary-wings-94494733.appspot.com</string>
+  <string name="project_id" translatable="false">mercenary-wings-94494733</string>
+  <string name="google_api_key" translatable="false">AIzaSyAY5MN52XM3Chu-htil2rM3o8XTO1IIACU</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAY5MN52XM3Chu-htil2rM3o8XTO1IIACU</string>
+  <string name="google_app_id" translatable="false">1:339007701192:android:92db18590dcab531</string>
+  <string name="default_web_client_id" translatable="false">339007701192-gmdjsdfnpinnknieoqhnjm8p2g9op5us.apps.googleusercontent.com</string>
+</resources>

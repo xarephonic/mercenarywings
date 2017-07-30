@@ -119,18 +119,18 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.bf.mercenarywings
-  bundleVersion: 1.0
+  bundleVersion: 1.1
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
   protectGraphicsMemory: 0
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 1
-  stripEngineCode: 1
+  stripEngineCode: 0
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
   iPhoneBuildNumber: 0
@@ -199,7 +199,7 @@ PlayerSettings:
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: G:/UnityTestProjects/mercenarywings/bfmercenarywings.keystore
   AndroidKeyaliasName: bfmercenarywings
-  AndroidTVCompatibility: 1
+  AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
   m_AndroidBanners:
@@ -401,7 +401,7 @@ PlayerSettings:
   platformArchitecture:
     iOS: 2
   scriptingBackend:
-    Android: 1
+    Android: 0
     Metro: 2
     Standalone: 0
     WP8: 2

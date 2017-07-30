@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MissionLoader : MonoBehaviour {
 
@@ -23,9 +24,11 @@ public class MissionLoader : MonoBehaviour {
 
 	public void LoadHangar()
 	{
+        Debug.Log("Load Hangar Called");
+
 		loadingView.SetActive(true);
 
-		AsyncOperation asyncOp = Application.LoadLevelAsync("Hangar");
+        AsyncOperation asyncOp = SceneManager.LoadSceneAsync(1,LoadSceneMode.Single);
 
 		StartCoroutine(UpdateProgressBar(asyncOp));
 	}

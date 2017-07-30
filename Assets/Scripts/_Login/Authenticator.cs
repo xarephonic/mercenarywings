@@ -5,6 +5,7 @@ using Firebase.Auth;
 using Firebase.Database;
 using Facebook;
 using Facebook.Unity;
+using Firebase;
 
 public class Authenticator : MonoBehaviour {
 
@@ -28,6 +29,8 @@ public class Authenticator : MonoBehaviour {
             FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
+
+            LoginComplete(newUser.UserId);
         });
     }
 
@@ -78,6 +81,8 @@ public class Authenticator : MonoBehaviour {
             FirebaseUser newUser = task.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})",
                 newUser.DisplayName, newUser.UserId);
+
+            LoginComplete(newUser.UserId);
         });
     }
 
@@ -108,6 +113,62 @@ public class Authenticator : MonoBehaviour {
             // Resume the game - we're getting focus again
             Time.timeScale = 1;
         }
+    }
+
+    private void LoginComplete (string userId)
+    {
+        Debug.Log("LOGIN COMPLETE");
+
+        FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://mercenary-wings-94494733.firebaseio.com/");
+
+        FirebaseDatabase.DefaultInstance
+            .GetReference("playerPlanes/" + userId)
+            .GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsFaulted)
+                {
+                    Debug.Log(task.Exception.Message);
+                    // Handle the error...
+                }
+                else if (task.IsCompleted)
+                {
+                    DataSnapshot snapshot = task.Result;
+
+                    Debug.Log(snapshot.GetRawJsonValue());
+
+                    if(snapshot.GetRawJsonValue() == null)
+                    {
+                        GivePlayerStartingPlanes(userId);
+                    } else
+                    {
+                        StartPullingInData(userId);
+                    }
+                }
+            });
+    }
+
+    private void GivePlayerStartingPlanes (string userId)
+    {
+        Debug.Log("Give Player Starting Planes");
+
+        FirebaseDatabase.DefaultInstance
+            .GetReference("playerPlanes/"+userId)
+            .SetRawJsonValueAsync("[2,2,2,2]").ContinueWith(task =>
+            {
+                if(task.IsFaulted)
+                {
+                    Debug.Log(task.Exception.Message);
+                } else if(task.IsCompleted)
+                {
+                    Debug.Log("Gave player with id: " + userId + " starting planes");
+                    StartPullingInData(userId);
+                }
+            });
+    }
+
+    private void StartPullingInData(string userId)
+    {
+        AssetKeeper.instance.GetAllDataFromDB(userId);   
     }
 
     void Awake ()

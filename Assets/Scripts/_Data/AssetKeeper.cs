@@ -18,6 +18,7 @@ public class AssetKeeper : MonoBehaviour {
     public Dictionary<int, PlaneVO> playerPlanesDict = new Dictionary<int, PlaneVO>();
 
 	public void PlanesListToDict(List<PlaneVO> planeList, Dictionary<int, PlaneVO> planeDict) {
+        planeDict.Clear();
 		foreach (var plane in planeList) {
 			planeDict.Add(plane.id, plane);
 		}
@@ -48,6 +49,73 @@ public class AssetKeeper : MonoBehaviour {
 
 	}
 
+    public void GetAllDataFromDB (string userId)
+    {
+        Debug.Log("AssetKeeper start");
+
+        FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://mercenary-wings-94494733.firebaseio.com/");
+
+        FirebaseDatabase.DefaultInstance
+            .GetReference("planes")
+            .GetValueAsync().ContinueWith(task => {
+                if (task.IsFaulted)
+                {
+                    // Handle the error...
+                }
+                else if (task.IsCompleted)
+                {
+                    allPlanes.Clear();
+                    DataSnapshot snapshot = task.Result;
+                    foreach (DataSnapshot child in snapshot.Children)
+                    {
+                        PlaneVO pvo = JsonUtility.FromJson<PlaneVO>(child.GetRawJsonValue());
+
+                        allPlanes.Add(pvo);
+                    }
+
+                    Debug.Log(allPlanes.Count);
+
+                    PlanesListToDict(allPlanes, allPlanesDict);
+                    GetPlayerDataFromDB(userId);
+                }
+            });
+
+        //This creates the local files to start with. 
+        //We have this because at least we want the game to be playable without additional downloads first
+        if (!Directory.Exists(Path.Combine(Constants.inst.localDbUrl, Constants.inst.getAllPlanesLocal)))
+            PopulateStartData();
+        if (!Directory.Exists(Path.Combine(Constants.inst.localDbUrl, Constants.inst.getAllPlayerPlanesLocal)))
+            PopulatePlayerStartData();
+    }
+
+    public void GetPlayerDataFromDB (string userId)
+    {
+        FirebaseDatabase.DefaultInstance
+            .GetReference("playerPlanes/" + userId)
+            .GetValueAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted)
+            {
+                        // Handle the error...
+                    }
+            else if (task.IsCompleted)
+            {
+                playerPlanes.Clear();
+                DataSnapshot snapshot = task.Result;
+                foreach (DataSnapshot child in snapshot.Children)
+                {
+                    PlaneVO pvo = new PlaneVO();
+                    allPlanesDict.TryGetValue(int.Parse(child.GetRawJsonValue()), out pvo);
+                    playerPlanes.Add(pvo);
+                }
+
+                Debug.Log(playerPlanes.Count);
+                PlanesListToDict(playerPlanes, playerPlanesDict);
+                MissionLoader.instance.LoadHangar();
+            }
+        });
+    }
+
 	void Awake()
     {
 		Debug.Log("AssetKeeper awake");
@@ -65,49 +133,6 @@ public class AssetKeeper : MonoBehaviour {
 		
     void Start()
     {
-		Debug.Log("AssetKeeper start");
 
-        FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://mercenary-wings-94494733.firebaseio.com/");
-
-        FirebaseDatabase.DefaultInstance
-            .GetReference("planes")
-            .GetValueAsync().ContinueWith(task => {
-                if (task.IsFaulted)
-                {
-                    // Handle the error...
-                } else if (task.IsCompleted)
-                {
-                    DataSnapshot snapshot = task.Result;
-                    foreach(DataSnapshot child in snapshot.Children)
-                    {
-                        PlaneVO pvo = JsonUtility.FromJson<PlaneVO>(child.GetRawJsonValue());
-
-                        allPlanes.Add(pvo);
-                    }
-
-                    PlanesListToDict(allPlanes, allPlanesDict);
-                }
-            });
-
-        FirebaseDatabase.DefaultInstance
-            .GetReference("playerPlanes")
-            .GetValueAsync().ContinueWith(task =>
-            {
-                if (task.IsFaulted)
-                {
-                    // Handle the error...
-                }
-                else if (task.IsCompleted)
-                {
-
-                }
-            });
-
-        //This creates the local files to start with. 
-        //We have this because at least we want the game to be playable without additional downloads first
-        if (!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlanesLocal)))
-			PopulateStartData();
-		if(!Directory.Exists(Path.Combine(Constants.inst.localDbUrl,Constants.inst.getAllPlayerPlanesLocal)))
-			PopulatePlayerStartData();
     }
 }

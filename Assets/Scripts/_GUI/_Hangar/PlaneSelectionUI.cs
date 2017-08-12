@@ -15,21 +15,19 @@ public class PlaneSelectionUI : MonoBehaviour {
 
 	public Button closeBttn;
 
-	public delegate void PlaneSelectionAction(int id);
+	public delegate void PlaneSelectionAction(PlaneVO plane);
 
-	public static event PlaneSelectionAction OnPlaneSelectionComplete;
+	public event PlaneSelectionAction OnPlaneSelectionComplete;
 
 	// Use this for initialization
 	void Start () {
-		List<GameObject> planesArray = GameObject.Find("PlaneDisplayControl").GetComponent<PlaneDisplayControl>().planesArray;
 
-		foreach(GameObject plane in planesArray){
+		foreach(PlaneVO plane in AssetKeeper.instance.playerPlanes){
 			GameObject entry = Instantiate(selectablePlaneEntryPrefab,Vector3.zero,Quaternion.identity) as GameObject;
-			entry.GetComponent<PlaneSelectionEntry>().planeImage.GetComponent<Image>().sprite = plane.GetComponent<AircraftCore>().aircraftPicture;
-			entry.GetComponent<PlaneSelectionEntry>().planeText.GetComponent<Text>().text = plane.GetComponent<AircraftCore>().aircraftName;
-			int id = plane.GetComponent<AircraftCore>().aircraftId;
+            entry.GetComponent<PlaneSelectionEntry>().planeImage.GetComponent<Image>().sprite = plane.hangarPicture;
+            entry.GetComponent<PlaneSelectionEntry>().planeText.GetComponent<Text>().text = plane.name;
 			entry.GetComponent<PlaneSelectionEntry>().selectButton.GetComponent<Button>().onClick.AddListener(delegate {
-				OnPlaneSelectionComplete(id);	
+				OnPlaneSelectionComplete(plane);	
 			});
 
 			selectablePlaneEntries.Add(entry);
@@ -38,12 +36,13 @@ public class PlaneSelectionUI : MonoBehaviour {
 		}
 
 		closeBttn.onClick.AddListener(delegate {
-			OnPlaneSelectionComplete(-1);	
+            gameObject.SetActive(false);	
 		});
 
-		OnPlaneSelectionComplete += delegate(int id) {
-			gameObject.SetActive(false);
-		};		
+        OnPlaneSelectionComplete += delegate (PlaneVO pvo)
+        {
+            gameObject.SetActive(false);
+        };
 	}
 	
 	// Update is called once per frame

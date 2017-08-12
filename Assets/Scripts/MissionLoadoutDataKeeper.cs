@@ -1,27 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using DataClasses;
+using UnityEngine.SceneManagement;
 
 public class MissionLoadoutDataKeeper : MonoBehaviour {
 
 	public static MissionLoadoutDataKeeper instance;
 
-	public List<int> planesToTakeIntoMission = new List<int>();
-
-	public void AddPlaneToMissionLoadout(int planeId)
-	{
-		planesToTakeIntoMission.Add(planeId);
-	}
-
-	public void RemovePlaneFromMissionLoadout(int planeId)
-	{
-		planesToTakeIntoMission.Remove(planeId);
-	}
-
-	public void ClearPlanesFromMissionLoadout()
-	{
-		planesToTakeIntoMission.Clear();
-	}
+	public List<PlaneVO> planesToTakeIntoMission = new List<PlaneVO>();
 
 	// Use this for initialization
 	void Awake () {
@@ -38,7 +25,13 @@ public class MissionLoadoutDataKeeper : MonoBehaviour {
 	}
 
 	void Start () {
-		
+        SceneManager.sceneLoaded += delegate (Scene scene, LoadSceneMode lsm)
+        {
+            if(scene.name == "Hangar")
+            {
+                planesToTakeIntoMission.Clear();
+            }
+        };
 	}
 	
 	// Update is called once per frame

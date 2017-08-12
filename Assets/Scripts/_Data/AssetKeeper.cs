@@ -18,10 +18,17 @@ public class AssetKeeper : MonoBehaviour {
     public Dictionary<int, PlaneVO> playerPlanesDict = new Dictionary<int, PlaneVO>();
 
 	public void PlanesListToDict(List<PlaneVO> planeList, Dictionary<int, PlaneVO> planeDict) {
-        planeDict.Clear();
-		foreach (var plane in planeList) {
-			planeDict.Add(plane.id, plane);
-		}
+        Debug.Log("planes list to dict called");
+        try {
+            planeDict.Clear();
+            foreach (var plane in planeList) {
+                planeDict.Add(plane.id, plane);
+            }
+        } catch(System.Exception e)
+        {
+            Debug.Log(e);
+        }
+        Debug.Log("planes list to dict finished");
 	}
 
 	//TODO Add a method to encrypt this data
@@ -109,8 +116,8 @@ public class AssetKeeper : MonoBehaviour {
                     playerPlanes.Add(pvo);
                 }
 
-                Debug.Log(playerPlanes.Count);
-                PlanesListToDict(playerPlanes, playerPlanesDict);
+                Debug.Log("player planes: " + playerPlanes.Count);
+                //PlanesListToDict(playerPlanes, playerPlanesDict);
                 MissionLoader.instance.LoadHangar();
             }
         });

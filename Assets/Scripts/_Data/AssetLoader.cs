@@ -13,7 +13,9 @@ public class AssetLoader : MonoBehaviour {
 
 	public static AssetLoader instance;
 
-	public enum PlaneAssetType {
+    public Dictionary<int, GameObject> loadedAssets = new Dictionary<int, GameObject>();
+
+    public enum PlaneAssetType {
 		HANGAR,
 		INFLIGHT,
 		NONE
@@ -56,15 +58,13 @@ public class AssetLoader : MonoBehaviour {
 			Debug.Log("got the asset from: "+assetUrl);
 			string[] names = w.assetBundle.GetAllAssetNames();
 			GameObject asset = w.assetBundle.LoadAsset<GameObject>(names[0]);
-			loadedAssets.Add(asset);
+            loadedAssets.Add(assetId, asset);
 			callback(asset, assetId);
 		}
 	}
 
 
 	public delegate void AssetLoadCallBack(GameObject g, int assetId);
-
-    public List<GameObject> loadedAssets = new List<GameObject>();
 
 	void Start () {
 		if(instance == null){

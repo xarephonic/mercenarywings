@@ -18,6 +18,7 @@ namespace DataClasses
 		public float hangarPosX;
 		public float hangarPosY;
 		public float hangarPosZ;
+        public Sprite hangarPicture;
 
         public float stallSpeed;
         public float maxSpeed;

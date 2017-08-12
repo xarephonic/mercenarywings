@@ -44,6 +44,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 	void SpawnPlayerPlanes()
 	{
+        /*
 		for (int i = 0; i < MissionLoadoutDataKeeper.instance.planesToTakeIntoMission.Count; i++) 
 		{
 			GameObject aircraftToBeSpawned = null;
@@ -73,7 +74,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 			sceneAssetsKeeper.instantiatedAssets.Add(x);
 			sceneAssetsKeeper.playerAssets.Add(x);
-		}
+		}*/
 	}
 
 	void SpawnEnemyPlanes(){
@@ -103,7 +104,7 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 		sceneAssetsKeeper = GetComponent<SceneAssetsKeeper>();
 
-		aircraftAssets = AssetLoader.instance.loadedAssets.ToArray();
+		//aircraftAssets = AssetLoader.instance.loadedAssets.ToArray();
 
 		GetPlayerSpawnPositions();
 		SpawnPlayerPlanes();

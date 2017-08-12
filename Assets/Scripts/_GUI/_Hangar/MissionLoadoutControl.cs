@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using DataClasses;
 
 public class MissionLoadoutControl : MonoBehaviour {
 
 	public MissionLoader missionLoader;
 	public MissionLoadoutDataKeeper missionLoadoutDataKeeper;
-	public PlaneDisplayControl planeDisplayControl;
+	public HangarPlaneDisplayControl planeDisplayControl;
 	public PlaneSelectionUI planeSelectionMenu;
 
 	[System.Serializable]
@@ -31,12 +32,11 @@ public class MissionLoadoutControl : MonoBehaviour {
 
 	public int selectedPlaneEntry;
 
-	public void ChangePlaneEntry(GameObject plane){
+	public void ChangePlaneEntry(PlaneVO pvo){
 		PlaneEntry entry = entries[selectedPlaneEntry];
-		AircraftCore core = plane.GetComponent<AircraftCore>();
 
-		entry.planeImg.sprite = core.aircraftPicture;
-		entry.planeName.text = core.aircraftName;
+        entry.planeImg.sprite = pvo.hangarPicture;
+        entry.planeName.text = pvo.name;
 		//TODO set pilot image
 		//TODO set pilot name
 
@@ -66,7 +66,7 @@ public class MissionLoadoutControl : MonoBehaviour {
 	}
 
 	public void CloseMissionLoadoutMenu(){
-		missionLoadoutDataKeeper.ClearPlanesFromMissionLoadout();
+        missionLoadoutDataKeeper.planesToTakeIntoMission.Clear();
 
 		for (int i = 0; i < entries.Length; i++) {
 			ResetPlaneEntry(i);
@@ -78,9 +78,9 @@ public class MissionLoadoutControl : MonoBehaviour {
 	}
 
 	public void TestFlight()
-	{
-		missionLoadoutDataKeeper.ClearPlanesFromMissionLoadout();
-		missionLoadoutDataKeeper.AddPlaneToMissionLoadout(planeDisplayControl.currentPlane.GetComponent<AircraftCore>().aircraftId);
+	{        
+		missionLoadoutDataKeeper.planesToTakeIntoMission.Clear();
+        missionLoadoutDataKeeper.planesToTakeIntoMission.Add(AssetKeeper.instance.playerPlanes[planeDisplayControl.displayedPlaneIndex]);
 		missionLoader.LoadTestFlightMission();
 	}
 
@@ -89,16 +89,13 @@ public class MissionLoadoutControl : MonoBehaviour {
 		missionLoader = GameObject.FindObjectOfType<MissionLoader>();
 		//missionLoader = GameObject.Find("MissionLoadoutDataKeeper").GetComponent<MissionLoader>();
 		missionLoadoutDataKeeper = MissionLoadoutDataKeeper.instance;
-		planeDisplayControl = GameObject.Find("PlaneDisplayControl").GetComponent<PlaneDisplayControl>();
+		planeDisplayControl = GameObject.Find("PlaneDisplayControl").GetComponent<HangarPlaneDisplayControl>();
 
-		PlaneSelectionUI.OnPlaneSelectionComplete += delegate(int id) {
-			if(id != -1){
-				missionLoadoutDataKeeper.AddPlaneToMissionLoadout(id);
-				ChangePlaneEntry(planeDisplayControl.planesArray.Find(delegate(GameObject obj) {
-					return id == obj.GetComponent<AircraftCore>().aircraftId;
-				}));
-			}
-		};
+        planeSelectionMenu.OnPlaneSelectionComplete += delegate (PlaneVO plane)
+        {
+            missionLoadoutDataKeeper.planesToTakeIntoMission.Add(plane);
+            ChangePlaneEntry(plane);
+        };
 	}
 	
 	// Update is called once per frame

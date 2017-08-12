@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Firebase.Unity.Editor;
 using Firebase.Auth;
 using Firebase.Database;
 using Facebook;
@@ -66,24 +67,32 @@ public class Authenticator : MonoBehaviour {
 
     public void AnonLoginPrompt()
     {
-        auth.SignInAnonymouslyAsync().ContinueWith(task => {
-            if (task.IsCanceled)
+        if (Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            LoginComplete("QQqsOH0STKbcSyBiaCUGeDawY4s2");
+        }
+        else
+        {
+            auth.SignInAnonymouslyAsync().ContinueWith(task =>
             {
-                Debug.LogError("SignInAnonymouslyAsync was canceled.");
-                return;
-            }
-            if (task.IsFaulted)
-            {
-                Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
-                return;
-            }
+                if (task.IsCanceled)
+                {
+                    Debug.LogError("SignInAnonymouslyAsync was canceled.");
+                    return;
+                }
+                if (task.IsFaulted)
+                {
+                    Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
+                    return;
+                }
 
-            FirebaseUser newUser = task.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})",
-                newUser.DisplayName, newUser.UserId);
+                FirebaseUser newUser = task.Result;
+                Debug.LogFormat("User signed in successfully: {0} ({1})",
+                    newUser.DisplayName, newUser.UserId);
 
-            LoginComplete(newUser.UserId);
-        });
+                LoginComplete(newUser.UserId);
+            });
+        }
     }
 
     private void InitCallback()
@@ -119,7 +128,9 @@ public class Authenticator : MonoBehaviour {
     {
         Debug.Log("LOGIN COMPLETE");
 
-        FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://mercenary-wings-94494733.firebaseio.com/");
+        //FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://mercenary-wings-94494733.firebaseio.com/");
+
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://mercenary-wings-94494733.firebaseio.com/");
 
         FirebaseDatabase.DefaultInstance
             .GetReference("playerPlanes/" + userId)
@@ -127,6 +138,7 @@ public class Authenticator : MonoBehaviour {
             {
                 if (task.IsFaulted)
                 {
+                    Debug.Log("login complete fault");
                     Debug.Log(task.Exception.Message);
                     // Handle the error...
                 }
@@ -188,8 +200,7 @@ public class Authenticator : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-    auth = FirebaseAuth.DefaultInstance;
-
+        auth = FirebaseAuth.DefaultInstance;
     }
 
     // Update is called once per frame

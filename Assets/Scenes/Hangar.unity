@@ -8177,10 +8177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905b95b53439011488eef5b48f16e35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planesArray: []
-  planesArrayIndex: 0
-  currentPlane: {fileID: 0}
-  DisplayedPlanesParent: {fileID: 1200999823}
+  displayedPlaneIndex: 0
+  displayedPlane: {fileID: 0}
+  displayedPlanesParent: {fileID: 1200999823}
 --- !u!4 &558296575
 Transform:
   m_ObjectHideFlags: 0

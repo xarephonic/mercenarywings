@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DataClasses;
 
 public class CombatMissionSetupHandler : MonoBehaviour {
 
-	public GameObject[] aircraftAssets;
 	public GameObject playerSpawnPositionsRoot;
 	public GameObject opponentSpawnPositionsRoot;
 	public SceneAssetsKeeper sceneAssetsKeeper;
@@ -44,37 +44,25 @@ public class CombatMissionSetupHandler : MonoBehaviour {
 
 	void SpawnPlayerPlanes()
 	{
-        /*
+        
 		for (int i = 0; i < MissionLoadoutDataKeeper.instance.planesToTakeIntoMission.Count; i++) 
 		{
-			GameObject aircraftToBeSpawned = null;
-			
-			foreach(GameObject aircraftAsset in aircraftAssets)
-			{
-				if(aircraftAsset.GetComponent<AircraftCore>().aircraftId == MissionLoadoutDataKeeper.instance.planesToTakeIntoMission[i])
-				{
-					if(aircraftAsset.GetComponent<MovementModule>() != null){
-						aircraftToBeSpawned = aircraftAsset;
-						break;
-					}
-				}
-			}
+			PlaneVO pvo = MissionLoadoutDataKeeper.instance.planesToTakeIntoMission [i];
 
-			Debug.Log("Instantiating "+aircraftToBeSpawned.name+"...");
-			
-			GameObject x = Instantiate(aircraftToBeSpawned,playerSpawnPositions[i],Quaternion.identity) as GameObject;
+			StartCoroutine(AssetLoader.instance.LoadAsset(pvo.inFlightAssetUrl, pvo.name, pvo.assetVersion, pvo.inFlightAssetId, delegate(GameObject g, int assetId) {
+				GameObject x = Instantiate(g, playerSpawnPositions[i], Quaternion.identity) as GameObject;
+				pvo.ToPlane(x);
 
-			Debug.Log("Instantiated "+aircraftToBeSpawned.name+"!");
+				x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
 
-			x.GetComponent<MovementModule>().airSpeed = x.GetComponent<MovementModule>().GetOptimalSpeed();
+				x.transform.localScale *= Constants.scaleFactor;
 
-			x.transform.localScale *= Constants.scaleFactor;
+				SetAssetId(x);
 
-			SetAssetId(x);
-
-			sceneAssetsKeeper.instantiatedAssets.Add(x);
-			sceneAssetsKeeper.playerAssets.Add(x);
-		}*/
+				sceneAssetsKeeper.instantiatedAssets.Add(x);
+				sceneAssetsKeeper.playerAssets.Add(x);
+			}));
+		}
 	}
 
 	void SpawnEnemyPlanes(){

@@ -47,19 +47,27 @@ public class AssetLoader : MonoBehaviour {
 	}
 
 	public IEnumerator LoadAsset(string assetUrl, string assetName, int version, int assetId, AssetLoadCallBack callback = null) {
-		Debug.Log("Loading asset "+assetName+" from "+assetUrl+" of version "+version);
-		WWW w = WWW.LoadFromCacheOrDownload(assetUrl,version);
-
-		yield return w;
-
-		if(!string.IsNullOrEmpty(w.error)) {
-			Debug.Log(assetUrl+" with name "+assetName+" ver: "+version+" load error: "+w.error);
+		//TODO loads the asset if its already loaded but asset ids of hangar and in-flight assets are same. FIX THIS!!
+		GameObject foundObj = null;
+		loadedAssets.TryGetValue (assetId, out foundObj);
+		if (foundObj != null) {
+			callback (foundObj, assetId);
 		} else {
-			Debug.Log("got the asset from: "+assetUrl);
-			string[] names = w.assetBundle.GetAllAssetNames();
-			GameObject asset = w.assetBundle.LoadAsset<GameObject>(names[0]);
-            loadedAssets.Add(assetId, asset);
-			callback(asset, assetId);
+
+			Debug.Log ("Loading asset " + assetName + " from " + assetUrl + " of version " + version);
+			WWW w = WWW.LoadFromCacheOrDownload (assetUrl, version);
+
+			yield return w;
+
+			if (!string.IsNullOrEmpty (w.error)) {
+				Debug.Log (assetUrl + " with name " + assetName + " ver: " + version + " load error: " + w.error);
+			} else {
+				Debug.Log ("got the asset from: " + assetUrl);
+				string[] names = w.assetBundle.GetAllAssetNames ();
+				GameObject asset = w.assetBundle.LoadAsset<GameObject> (names [0]);
+				loadedAssets.Add (assetId, asset);
+				callback (asset, assetId);
+			}
 		}
 	}
 

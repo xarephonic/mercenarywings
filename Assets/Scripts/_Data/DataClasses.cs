@@ -11,8 +11,10 @@ namespace DataClasses
         public string name;
 		public string hangarAssetUrl;
 		public GameObject hangarAsset;
+		public int hangarAssetId;
 		public string inFlightAssetUrl;
 		public GameObject inFlightAsset;
+		public int inFlightAssetId;
 		public int assetVersion;
 
 		public float hangarPosX;
